@@ -1,0 +1,36 @@
+Package: NVIcheckmate
+Title: Extension of the R-package checkmate that is used for argument checking
+Version: 0.0.0.9000
+Date: 2021-02-##
+Author: Petter Hopp <Petter.Hopp@vetinst.no>,
+Authors@R: 
+    person(given = "First",
+           family = "Last",
+           role = c("aut", "cre", "cph"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Maintainer: Petter Hopp <Petter.Hopp@vetinst.no>
+Description: Extension of the R-package checkmate with functions for argument checking that are 
+    adapted to NVIverse. The extensions are of two types:
+    1 Wrappers around checkmate functions like assert_choice_nocase wrapping assert_choice. 
+    2 New argument checks specific for NVIverse functions. 
+URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
+BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/issues
+License: 
+Encoding: UTF-8
+LazyData: true
+Imports:
+    checkmate,
+    RODBC
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    testthat
+
+
+NVIcheckmate intend to follow the same principles as checkmate concerning input and error messages. Functions and code from checkmate have been imported to facilitate this. 
+
+Licence bsd 3. Copyright Petter Hopp. For functions and material imported from checkmate M Lang has the copyright. The followong functions and material have been imported from checkmate
+set_collapse
+Templates in man-roxygen which goves text for parameter descriptions.
+
