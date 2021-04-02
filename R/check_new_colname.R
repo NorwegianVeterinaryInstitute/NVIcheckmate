@@ -12,13 +12,11 @@
 
 #' @return error if columns exist or TRUE if no error
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
-#'
+#' @export
 #' @examples
-#' \dontrun{
-#' # warning:
+#' # error:
 #' check_new_colname(columns = colnames(data), new_column = new_column, code_column = FALSE, overwrite = overwrite)
-#' }
-#' @noRd
+
 
 check_new_colname = function(columns, new_column, code_column = FALSE, overwrite = FALSE) {
   if (length(intersect(columns, new_column) ) >0) {
@@ -41,8 +39,10 @@ check_new_colname = function(columns, new_column, code_column = FALSE, overwrite
   }
 }
 
-# For assertions:
-assert_new_colname  <- checkmate::makeAssertionFunction(check_new_colname)
-
+#' @export
+#' @include makeAssertion.R
+#' @template assert
+#' @rdname check_new_colname
+assert_new_colname <- makeAssertionFunction(check_new_colname, use.namespace = FALSE)
 
 
