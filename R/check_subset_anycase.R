@@ -1,26 +1,23 @@
-# ARGUMENT CHECKING ----
-# Argument checking is based on package checkmate. Here argument checking extending checkmate is given.
-
-#
-### check_subset_anycase
-#' @title Extension of check_subset that don't check the case.
-#' @description Argument checking of choices that accept both lower and upper case, ie the check is caseinsensitive. The function is based on code/{checkmate::check_choice}
-#' @details check the argument is in agreement with the choices. By having caseinsensitive check it is possible to write the argument with combinations of lower and upper case which May make the argument easier to remember.
+#' @title Check if an argument is a subset of a given set regardless of case
+#' @description Wrapper around code/{checkmate::check_subset} that accept code/{x} and code/{choices} in different case, ie the check is case insensitive.
+#' @details check the argument is in agreement with the choices. By having case insensitive check it is possible to write the argument with combinations of lower and upper case which may make the argument easier to remember.
 #'
-#' @param x Object to check.
-#' @param choices Set of valid values for x
-#' @param null.ok If set to TRUE, x may also be NULL. In this case only a type check of x is performed, all additional checks are disabled.
-#' @param fmatch Use the set operations implemented in fmatch in package fastmatch. If fastmatch is not installed, this silently falls back to match.
-
-#' @return error if columns exist or TRUE if no error
-#' @author Petter Hopp Petter.Hopp@@vetinst.no
-#'
+#' @templateVar fn subset_anycase
+#' @template x
+#' @param choices [\code{atomic}]\cr
+#'  Set of possible values. May be empty.
+#' @param empty.ok [\code{logical(1)}]\cr
+#'  Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})?
+#'  Default is \code{TRUE}.
+#' @template fmatch
+#' @template checker
+#' @export
 #' @examples
-#' \dontrun{
-#' # warning:
-#' check_subset_anycase(x = "colClasses", choices = c() , null.ok = FALSE, fmatch = FALSE)
-#' }
-#' @noRd
+#' #TRUE
+#' check_subset_anycase(x = "Apple", choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_anycase(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"))
+#' #Error
+#' check_subset_anycase(x = "Apples", choices = c("apple", "pear", "orange", "banana"))
 
 
 check_subset_anycase = function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
@@ -42,9 +39,11 @@ check_subset_anycase = function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
   return(res)
 }
 
-# assertions:
-assert_subset_anycase  = checkmate::makeAssertionFunction(check_subset_anycase)
-
+#' @export
+#' @include makeAssertion.R
+#' @template assert
+#' @rdname check_subset_anycase
+assert_subset_anycase <- makeAssertionFunction(check_subset_anycase, use.namespace = FALSE)
 
 
 
