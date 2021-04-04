@@ -1,15 +1,20 @@
 Package: NVIcheckmate
 Title: Extension of the R-package checkmate that is used for argument checking
 Version: 0.0.0.9000
-Date: 2021-02-##
-Author: Petter Hopp <Petter.Hopp@vetinst.no>,
+Date: 2021-04-##
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Petter",
+           family = "Hopp",
            role = c("aut", "cre", "cph"),
-           email = "first.last@example.com",
+           email = "Petter.Hopp@vetinst.no",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Maintainer: Petter Hopp <Petter.Hopp@vetinst.no>
+    person(name = "Norwegian Veterinayry Institute",
+           role = c("cph"))
+    person(given = "Michael",
+           family = "Lang",
+           role = c("aut", "cph"),
+           email = "",
+           comment = c("Creator of the package checkmate from which some code is imported"))
 Description: Extension of the R-package checkmate with functions for argument checking that are 
     adapted to NVIverse. The extensions are of two types:
     1 Wrappers around checkmate functions like assert_choice_nocase wrapping assert_choice. 
@@ -21,7 +26,8 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     checkmate,
-    RODBC
+    RODBC,
+    keyring
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
