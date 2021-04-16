@@ -9,6 +9,7 @@ test_that("No error for check_subset_anycase", {
     check_subset_anycase(x = "apple",
                          choices = c("Apple", "Pear", "Orange", "Banana")),
     TRUE)
+    
 expect_identical(
     check_subset_anycase(x = "bAnAnA",
                          choices = c("Apple", "Pear", "Orange", "Banana")),
@@ -23,9 +24,11 @@ test_that("Make error for check_subset_anycase", {
   expect_identical(
     check_subset_anycase(x = "Tomato",
                          choices = c("Apple", "Pear", "Orange", "Banana")),
-    "Must be element of set {'Apple','Pear','Orange','Banana'} (case insensitive), but is 'Tomato'")
+    "Must be a subset of {'Apple','Pear','Orange','Banana'} (case insensitive), but is {'Tomato'}")
+  
+    "Must be a subset of {'Apple','Pear','Orange','Banana'} (case insensitive), but is {'Tomato'}"
 expect_identical(
     check_subset_anycase(x = c("Tomato", "Apple"), 
                          choices = c("Apple", "Pear", "Orange", "Banana")),
-    "Must be element of set {'Apple','Pear','Orange','Banana'} (case insensitive), but is {'Tomato', 'Apple'}")
+    "Must be a subset of {'Apple','Pear','Orange','Banana'} (case insensitive), but is {'Tomato','Apple'}")
 })
