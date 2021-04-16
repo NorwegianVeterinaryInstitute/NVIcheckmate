@@ -18,7 +18,7 @@
 #' check_new_colname(columns = colnames(data), new_column = new_column, code_column = FALSE, overwrite = overwrite)
 
 
-check_new_colname = function(columns, new_column, code_column = FALSE, overwrite = FALSE) {
+check_new_colname <- function(columns, new_column, code_column = FALSE, overwrite = FALSE) {
   if (length(intersect(columns, new_column) ) >0) {
     if (code_column) {
       # issue error if the new column name is the same as the code column.
