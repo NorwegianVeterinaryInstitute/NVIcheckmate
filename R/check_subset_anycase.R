@@ -4,10 +4,8 @@
 #'
 #' @templateVar fn subset_anycase
 #' @template x
-#' @param choices [\code{atomic}]\cr
-#'  Set of possible values. May be empty.
-#' @param empty.ok [\code{logical(1)}]\cr
-#'  Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})?
+#' @param choices Set of possible values. May be empty.
+#' @param empty.ok  Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})?
 #'  Default is \code{TRUE}.
 #' @template fmatch
 #' @template checker
@@ -20,20 +18,23 @@
 #' check_subset_anycase(x = "Apples", choices = c("apple", "pear", "orange", "banana"))
 
 
-check_subset_anycase = function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
-  res <- checkmate::check_character(x=x, min.len = 1)
+check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
+  res <- checkmate::check_character(x=x)
   if (res != TRUE) { return(res)}
 
     xx <- tolower(x)
   choicesx <- tolower(choices)
-  res <- checkmate::check_subset(x = xx, choices = choicesx , null.ok = null.ok, fmatch = fmatch)
+  res <- checkmate::check_subset(x = xx, choices = choicesx , empty.ok = empty.ok, fmatch = fmatch)
   if (res != TRUE) {
     # set_collapse as used in check_choices to get identical string
     # copied from check_choice_anycase, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   checkmate:::set_collapse(choices),
-                  " (case insensitive)",
-                  sub(xx, x, substr(res, regexpr("\\}", res)[1]+1, nchar(res))))
+                  " (case insensitive), but is ",
+                  checkmate:::set_collapse(x))
+                  # sub(paste0("'", paste0(xx, collapse = "', '"), "'"),
+                  #     paste0("'", paste0(x, collapse = "', '"), "'"), 
+                  #     substr(res, gregexpr("\\{", res)[[1]][2]+1, nchar(res))))
 
   }
   return(res)
