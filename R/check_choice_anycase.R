@@ -1,12 +1,12 @@
-### check_choice_anycase
 #' @title Extension of check_choice that don't check the case.
-#' @description Argument checking of choices that accept both lower and upper case, ie the check is caseinsensitive. The function is based on code/{checkmate::check_choice}
-#' @details check the argument is in agreement with the choices. By having caseinsensitive check it is possible to write the argument with combinations of lower and upper case which May make the argument easier to remember.
+#' @description Argument checking of choices that accept both lower and upper case, ie the check is caseinsensitive. 
+#'     The function is based on code/{checkmate::check_choice}
+#' @details check the argument is in agreement with the choices. By having caseinsensitive check it is possible to 
+#'     write the argument with combinations of lower and upper case which May make the argument easier to remember.
 #'
 #' @templatear fn choice_anycase
 #' @template x
-#' @param choices [\code{atomic}]\cr
-#'  Set of possible values.
+#' @param choices Set of possible values.
 #' @template null.ok
 #' @template fmatch
 #' @template checker
@@ -19,7 +19,7 @@
 #' }
 #' @export
 
-check_choice_anycase = function(x, choices, null.ok = FALSE, fmatch = FALSE) {
+check_choice_anycase <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x, len = 1)
   if (res != TRUE) { return(res)}
 
