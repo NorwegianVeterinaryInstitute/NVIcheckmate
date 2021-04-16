@@ -1,7 +1,7 @@
 ### check_RODBC
 #' @title Check if x is an open RODBC-channel
 #' @description Argument checking of RODBC channels to check if the channel is open.
-    If the channel is not open and the database has returned an error message, this error message is added to the message. 
+#'     If the channel is not open and the database has returned an error message, this error message is added to the message. 
 #' @details The check uses \code{RODBC:::odbcValidChannel} to check if the argument is anopen RODBC-channel.
 #'     Be aware that this function is internal and may change within the package without warning.
 #'
