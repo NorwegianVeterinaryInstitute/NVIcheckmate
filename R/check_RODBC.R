@@ -1,15 +1,15 @@
-### check_RODBC
-#' @title Check if x is an open RODBC-channel
-#' @description Argument checking of RODBC channels to check if the channel is open.
-#'     If the channel is not open and the database has returned an error message, this error message is added to the message. 
-#' @details The check uses \code{RODBC:::odbcValidChannel} to check if the argument is anopen RODBC-channel.
-#'     Be aware that this function is internal and may change within the package without warning.
-#'
-#' @templateVar fn RODBC
-#' @template x
-#' @param dbservice The database the channel should be connect to. 
-#' @template checker
+#' @title Check if an object is an open RODBC-channel
+#' @description Check if an object is an open RODBC-channel.  
+#' @details The check uses \code{RODBC:::odbcValidChannel} to check if the argument is an open RODBC-channel.
+#'     Be aware that this function is an internal \code{RODBC}-function and may change within that package without warning.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
+#'
+#' @templateVar fn rodbc
+#' @template x
+#' @param dbservice \[character(1)\]\cr
+#'     The database the channel should be connect to. 
+#' @template checker
+#' 
 #' @export
 #'
 #' @examples
@@ -18,15 +18,15 @@
 #' journal_rapp <- login("PJS")
 #'
 #' # error check:
-#' check_RODBC(x = "journal_rapp", dbservice = "PJS")
+#' check_rodbc(x = "journal_rapp", dbservice = "PJS")
 #' }
 
 
-check_RODBC <- function(x, dbservice) {
+check_rodbc <- function(x, dbservice = NULL) {
   if(!RODBC:::odbcValidChannel(x)) {
-    res <- paste( deparse(substitute(x)),
-                  "is not an open RODBC channel for",
-                  dbservice)
+    res <- paste(deparse(substitute(x)),
+                  "is not an open RODBC channel")
+    if (!is.null(dbservice)) {res <- paste(res, "for", dbservice)}
 } else {
   res <- TRUE
 }
@@ -36,5 +36,5 @@ check_RODBC <- function(x, dbservice) {
 #' @export
 #' @include makeAssertion.R
 #' @template assert
-#' @rdname check_RODBC
-assert_RODBC  = checkmate::makeAssertionFunction(check_RODBC, use.namespace = FALSE)
+#' @rdname check_rodbc
+assert_rodbc = checkmate::makeAssertionFunction(check_rodbc, use.namespace = FALSE)
