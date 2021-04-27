@@ -1,34 +1,43 @@
-### check_new_colname
-#' @title check if name of new column already exist
-#' @description Used in the add-functions to check if the name of a new column already exists as colnames in the data frame.
-#' @details Compares the names of existing column in data with the new names of the columns that will be created.
-#'    If a new column is the same as the code_column, an error is issues.
-#'   if the name of the new already exist, an error is issued unless overwrite = TRUE.
+#' @title Check if an object already is used as a column name
+#' @description Used in the add-functions to check if the name of a new column already exists as column name in 
+#'    the data frame.
+#' @details Compares the names of existing column(s) in data frame with the new names of the columns that should be created.
+#'    If a new column is the same as the code column, an error is issued. Use the argument \code{code_columne = TRUE} to
+#'    indicate that the argument to the columns are the code column.
+#'    If the name of the new column already exist but \code{code_column = FALSE}, an error is issued unless \code{overwrite = TRUE}.
 #'
-#' @param columns column names of existing columns in the data frame
-#' @param new_column the column names of the new columns
-#' @param code_column logical, TRUE if columns are the code variable, FALSE if the columns are not the code_column
-#' @param overwrite whether existing columns should be overwriten
+#' @templateVar fn NewColname
+#' @template x
+#' @param columns \[\code{character}\]\cr
+#'    The column names of the existing column(s)
+#' @param code_column \[\code{logical(1)}\]\cr
+#'    Whether the existing column(s) (\code{x}) is the code_column or not.
+#' @param overwrite \[\code{logical(1)}\]\cr
+#'    Whether existing columns should be overwritten. Only applicable if \code{code_column = FALSE}
 
-#' @return error if columns exist or TRUE if no error
+#' @template checker
+
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
 #' @examples
 #' # error:
-#' check_new_colname(columns = colnames(data), new_column = new_column, code_column = FALSE, overwrite = overwrite)
+#'   check_new_colname(x = "komnr",
+#'                     columns = c("saksnr", "komnr"),
+#'                     code_column = FALSE,
+#'                     overwrite = FALSE)
 
 
-check_new_colname <- function(columns, new_column, code_column = FALSE, overwrite = FALSE) {
-  if (length(intersect(columns, new_column) ) >0) {
+check_new_colname <- function(x, columns, code_column = FALSE, overwrite = FALSE) {
+  if (length(intersect(columns, x) ) >0) {
     if (code_column) {
       # issue error if the new column name is the same as the code column.
-      return(paste0("The new column cannot have the same name as the code_column '",  paste(intersect(columns,  new_column), collapse = ", "),  "`."))
+      return(paste0("The new column cannot have the same name as the code_column '",  paste(intersect(columns,  x), collapse = ", "),  "`."))
     }
     if (!code_column) {
       if (!overwrite) {
         # issue error if names already exists
-        return(paste(paste0("The column name(s): '", paste(intersect(columns,  new_column), collapse = ", "), "' already exist in the data frame."),
-                     paste0("Either give new column name(s) for the column(s) named '", paste(intersect(columns,  new_column), collapse = ", "), "' or"),
+        return(paste(paste0("The column name(s): '", paste(intersect(columns,  x), collapse = ", "), "' already exist in the data frame."),
+                     paste0("Either give new column name(s) for the column(s) named '", paste(intersect(columns,  x), collapse = ", "), "' or"),
                      "specify overwrite = TRUE to replace values in the existing column(s) with new content.", sep = " "))
       } else {
         return(TRUE)
@@ -39,10 +48,10 @@ check_new_colname <- function(columns, new_column, code_column = FALSE, overwrit
   }
 }
 
+
 #' @export
 #' @include makeAssertion.R
 #' @template assert
 #' @rdname check_new_colname
-assert_new_colname <- makeAssertionFunction(check_new_colname, use.namespace = FALSE)
-
+assert_new_colname <- checkmate::makeAssertionFunction(check_new_colname, use.namespace = FALSE)
 
