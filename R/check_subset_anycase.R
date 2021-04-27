@@ -1,21 +1,29 @@
 #' @title Check if an argument is a subset of a given set regardless of case
-#' @description Wrapper around code/{checkmate::check_subset} that accept code/{x} and code/{choices} in different case, ie the check is case insensitive.
-#' @details check the argument is in agreement with the choices. By having case insensitive check it is possible to write the argument with combinations of lower and upper case which may make the argument easier to remember.
+#' @description Check if an object is a subset of a given set regardless of the object name is 
+#'     written in lower and upper case. The function is based on code/{checkmate::check_subset}.
+#' @details The object must be of type character. The check is intended for functions were using 
+#'     camelCase may make the argument easier to remember. Therefore, the input to the function is
+#'     made case insensitive.
+#' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
 #' @templateVar fn subset_anycase
 #' @template x
-#' @param choices Set of possible values. May be empty.
-#' @param empty.ok  Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})?
-#'  Default is \code{TRUE}.
+#' @param choices \[\code{character}\]\cr
+#'    Set of possible values. May be empty.
+#' @param empty.ok \[\code{logical(1)}\]\cr
+#'    Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})? 
+#'    Default is \code{TRUE}.
 #' @template fmatch
 #' @template checker
+#' 
 #' @export
 #' @examples
-#' #TRUE
+#' # returns TRUE
 #' check_subset_anycase(x = "Apple", choices = c("apple", "pear", "orange", "banana"))
 #' check_subset_anycase(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"))
-#' #Error
-#' check_subset_anycase(x = "Apples", choices = c("apple", "pear", "orange", "banana"))
+#' 
+#' # returns a message
+#' check_subset_anycase(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
 
 
 check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
@@ -29,22 +37,20 @@ check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
     # set_collapse as used in check_choices to get identical string
     # copied from check_choice_anycase, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
-                  checkmate:::set_collapse(choices),
+                  # set_collapse(choices),
+                  paste0("{'", paste0(unique(choices), collapse = "','"), "'}"),
                   " (case insensitive), but is ",
-                  checkmate:::set_collapse(x))
-                  # sub(paste0("'", paste0(xx, collapse = "', '"), "'"),
-                  #     paste0("'", paste0(x, collapse = "', '"), "'"), 
-                  #     substr(res, gregexpr("\\{", res)[[1]][2]+1, nchar(res))))
+                  # set_collapse(x)
+                  paste0("{'", paste0(unique(x), collapse = "','"), "'}"))
 
   }
   return(res)
 }
 
+
 #' @export
 #' @include makeAssertion.R
 #' @template assert
 #' @rdname check_subset_anycase
-assert_subset_anycase <- makeAssertionFunction(check_subset_anycase, use.namespace = FALSE)
-
-
+assert_subset_anycase <- checkmate::makeAssertionFunction(check_subset_anycase, use.namespace = FALSE)
 
