@@ -1,22 +1,25 @@
-#' @title Extension of check_choice that don't check the case.
-#' @description Argument checking of choices that accept both lower and upper case, ie the check is caseinsensitive. 
-#'     The function is based on code/{checkmate::check_choice}
-#' @details check the argument is in agreement with the choices. By having caseinsensitive check it is possible to 
-#'     write the argument with combinations of lower and upper case which May make the argument easier to remember.
+#' @title Check if an object is an element of a given set regardless of case
+#' @description Check if an object is an element of a given set regardless of the object name is 
+#'     written in lower and upper case. The function is based on code/{checkmate::check_choice}.
+#' @details The object must be of type character. The check is intended for functions were using 
+#'     camelCase may make the argument easier to remember. Therefore, the input to the function is
+#'     made case insensitive.
+#' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
-#' @templatear fn choice_anycase
+#' @templateVar fn choice_anycase
 #' @template x
-#' @param choices Set of possible values.
+#' @param choices \[\code{character}\]\cr
+#'    Set of possible values.
 #' @template null.ok
 #' @template fmatch
 #' @template checker
-#' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
 #' @examples
-#' \dontrun{
-#' # warning:
-#' check_choice_anycase(x = "colClasses", choices = c() , null.ok = FALSE, fmatch = FALSE)
-#' }
+#' # returns TRUE
+#' check_choice_anycase(x = "APPLE", 
+#'                      choices = c("Apple", "Pear", "Orange") , 
+#'                      null.ok = FALSE, 
+#'                      fmatch = FALSE)
 #' @export
 
 check_choice_anycase <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
@@ -29,12 +32,14 @@ check_choice_anycase <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
   if (res != TRUE) {
     # set_collapse as used in check_choices to get identical string
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
-                  checkmate:::set_collapse(choices),
+                  # set_collapse(choices),
+                  paste0("{'", paste0(unique(choices), collapse = "','"), "'}"),
                   " (case insensitive)",
                   sub(xx, x, substr(res, regexpr("\\}", res)[1]+1, nchar(res))))
   }
   return(res)
 }
+
 
 #' @export
 #' @include makeAssertion.R
