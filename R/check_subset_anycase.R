@@ -24,6 +24,7 @@
 #' 
 #' # returns a message
 #' check_subset_anycase(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
+#' 
 
 
 check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
@@ -50,7 +51,8 @@ check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
 
 #' @export
 #' @include makeAssertion.R
+#' @template custom.msg
 #' @template assert
 #' @rdname check_subset_anycase
-assert_subset_anycase <- checkmate::makeAssertionFunction(check_subset_anycase, use.namespace = FALSE)
+assert_subset_anycase <- makeAssertionFunction(check_subset_anycase, use.namespace = TRUE)
 

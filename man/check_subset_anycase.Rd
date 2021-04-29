@@ -12,7 +12,8 @@ assert_subset_anycase(
   choices,
   empty.ok = TRUE,
   fmatch = FALSE,
-  .var.name = vname(x),
+  custom.msg = NULL,
+  .var.name = checkmate::vname(x),
   add = NULL
 )
 }
@@ -32,6 +33,9 @@ Use the set operations implemented in \code{fmatch} in package \pkg{fastmatch}.
 If \pkg{fastmatch} is not installed, this silently falls back to \code{\link[base]{match}}.
 \code{fastmatch::fmatch} modifies \code{y} by reference:
 A hash table is added as attribute which is used in subsequent calls.}
+
+\item{custom.msg}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
@@ -65,6 +69,7 @@ check_subset_anycase(x = c("Apple", "Pear"), choices = c("apple", "pear", "orang
 
 # returns a message
 check_subset_anycase(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no
