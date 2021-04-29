@@ -32,6 +32,7 @@ check_credentials <- function(x) {
 
 #' @export
 #' @include makeAssertion.R
+#' @template custom.msg
 #' @template assert
 #' @rdname check_credentials
-assert_credentials <- checkmate::makeAssertionFunction(check_credentials, use.namespace = FALSE)
+assert_credentials <- makeAssertionFunction(check_credentials, use.namespace = TRUE)
