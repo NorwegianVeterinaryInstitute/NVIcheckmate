@@ -12,7 +12,8 @@ assert_new_colname(
   columns,
   code_column = FALSE,
   overwrite = FALSE,
-  .var.name = vname(x),
+  custom.msg = NULL,
+  .var.name = checkmate::vname(x),
   add = NULL
 )
 }
@@ -28,6 +29,9 @@ Whether the existing column(s) (\code{x}) is the code_column or not.}
 
 \item{overwrite}{[\code{logical(1)}]\cr
 Whether existing columns should be overwritten. Only applicable if \code{code_column = FALSE}}
+
+\item{custom.msg}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
@@ -61,6 +65,7 @@ If the name of the new column already exist but \code{code_column = FALSE}, an e
                     columns = c("saksnr", "komnr"),
                     code_column = FALSE,
                     overwrite = FALSE)
+                    
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no
