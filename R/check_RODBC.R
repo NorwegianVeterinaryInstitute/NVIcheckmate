@@ -35,6 +35,7 @@ check_rodbc <- function(x, dbservice = NULL) {
 
 #' @export
 #' @include makeAssertion.R
+#' @template custom.msg
 #' @template assert
 #' @rdname check_rodbc
-assert_rodbc = checkmate::makeAssertionFunction(check_rodbc, use.namespace = FALSE)
+assert_rodbc = makeAssertionFunction(check_rodbc, use.namespace = TRUE)

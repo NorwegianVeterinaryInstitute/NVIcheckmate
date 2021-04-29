@@ -7,7 +7,13 @@
 \usage{
 check_rodbc(x, dbservice = NULL)
 
-assert_rodbc(x, dbservice = NULL, .var.name = vname(x), add = NULL)
+assert_rodbc(
+  x,
+  dbservice = NULL,
+  custom.msg = NULL,
+  .var.name = checkmate::vname(x),
+  add = NULL
+)
 }
 \arguments{
 \item{x}{[any]\cr
@@ -15,6 +21,9 @@ Object to check.}
 
 \item{dbservice}{[character(1)]\cr
 The database the channel should be connect to.}
+
+\item{custom.msg}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
