@@ -48,6 +48,7 @@ check_package <- function(x, version = NULL) {
 
 #' @export
 #' @include makeAssertion.R
+#' @template custom.msg
 #' @template assert
 #' @rdname check_package
-assert_package <- checkmate::makeAssertionFunction(check_package, use.namespace = FALSE)
+assert_package <- makeAssertionFunction(check_package, use.namespace = TRUE)
