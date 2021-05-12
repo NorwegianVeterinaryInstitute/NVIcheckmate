@@ -31,8 +31,8 @@ check_credentials <- function(x) {
 }
 
 #' @export
-#' @include makeAssertion.R
+#' @include makeAssertionFunction.R
 #' @template custom.msg
 #' @template assert
 #' @rdname check_credentials
-assert_credentials <- makeAssertionFunction(check_credentials, use.namespace = TRUE)
+assert_credentials <- makeAssertionFunction(check_credentials)
