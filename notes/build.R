@@ -1,6 +1,6 @@
 # TEST, DOCUMENT AND BUILD A PACKAGE
 
-package <- "NVIcheckmate"
+pkg <- "NVIcheckmate"
 
 # Set up environment
 # rm(list = ls())    # Benyttes for å tømme R-environment ved behov
@@ -29,8 +29,8 @@ devtools::test()
 # devtools::build(binary = TRUE)
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 
-version <- packageVersion(package, lib.loc = paste0(getwd(),"/.."))
-devtools::check_built(path = paste0("../", package, "_", version, ".tar.gz"), manual = TRUE)
+version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
+devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), manual = TRUE)
 
 # Extensive checking of package. Is done after build. Creates PDF-manual
 # system("R CMD check --ignore-vignettes ../NVIdb")
