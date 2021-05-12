@@ -50,9 +50,9 @@ check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
 
 
 #' @export
-#' @include makeAssertion.R
+#' @include makeAssertionFunction.R
 #' @template custom.msg
 #' @template assert
 #' @rdname check_subset_anycase
-assert_subset_anycase <- makeAssertionFunction(check_subset_anycase, use.namespace = TRUE)
+assert_subset_anycase <- makeAssertionFunction(check_subset_anycase)
 
