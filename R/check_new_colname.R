@@ -51,9 +51,9 @@ check_new_colname <- function(x, columns, code_column = FALSE, overwrite = FALSE
 
 
 #' @export
-#' @include makeAssertion.R
+#' @include makeAssertionFunction.R
 #' @template custom.msg
 #' @template assert
 #' @rdname check_new_colname
-assert_new_colname <- makeAssertionFunction(check_new_colname, use.namespace = TRUE)
+assert_new_colname <- makeAssertionFunction(check_new_colname)
 
