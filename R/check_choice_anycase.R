@@ -42,8 +42,8 @@ check_choice_anycase <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
 
 
 #' @export
-#' @include makeAssertion.R
+#' @include makeAssertionFunction.R
 #' @template custom.msg
 #' @template assert
 #' @rdname check_choice_anycase
-assert_choice_anycase  = makeAssertionFunction(check_choice_anycase, use.namespace = TRUE) 
+assert_choice_anycase  = makeAssertionFunction(check_choice_anycase) 
