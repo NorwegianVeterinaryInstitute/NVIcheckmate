@@ -1,7 +1,7 @@
 Package: NVIcheckmate
-Title: Extension of the R-package checkmate that is used for argument checking
-Version: 0.0.0.9000
-Date: 2021-04-##
+Title: Extension of checkmate with argument checking adapted for NVIverse
+Version: 0.1.0
+Date: 2021-0#-##
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -15,10 +15,8 @@ Authors@R:
            role = c("aut", "cph"),
            email = "",
            comment = c("Creator of the package checkmate from which some code is imported")))
-Description: Extension of the R-package checkmate with functions for argument checking that are 
-    adapted to NVIverse. The extensions are of two types:
-    1 Wrappers around checkmate functions like assert_choice_nocase wrapping assert_choice. 
-    2 New argument checks specific for NVIverse functions. 
+Description: Extension of checkmate with functions for argument checking that are 
+    adapted for NVIverse. NVIcheckmate is intended to be used together with checkmate.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
 BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/issues
 License: BSD_3_clause + file LICENSE
@@ -33,13 +31,10 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat
 Collate: 
-    'NVIcheckmate-package.R'
-    'helper.R'
-    'makeAssertion.R'
+    'makeAssertionFunction.R'
     'check_choice_anycase.R'
     'check_credentials.R'
     'check_new_colname.R'
     'check_package.R'
     'check_rodbc.R'
     'check_subset_anycase.R'
-    'vname.R'
