@@ -12,7 +12,7 @@ assert_subset_anycase(
   choices,
   empty.ok = TRUE,
   fmatch = FALSE,
-  custom.msg = NULL,
+  comment = NULL,
   .var.name = checkmate::vname(x),
   add = NULL
 )
@@ -34,7 +34,7 @@ If \pkg{fastmatch} is not installed, this silently falls back to \code{\link[bas
 \code{fastmatch::fmatch} modifies \code{y} by reference:
 A hash table is added as attribute which is used in subsequent calls.}
 
-\item{custom.msg}{[\code{character(1)}]\cr
+\item{comment}{[\code{character(1)}]\cr
 Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
