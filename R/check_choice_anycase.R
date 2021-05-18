@@ -43,7 +43,7 @@ check_choice_anycase <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template custom.msg
+#' @template comment
 #' @template assert
 #' @rdname check_choice_anycase
 assert_choice_anycase  = makeAssertionFunction(check_choice_anycase) 
