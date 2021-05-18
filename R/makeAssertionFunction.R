@@ -3,7 +3,7 @@
 #' @description \code{makeAssertionFunction} can be used to automatically create
 #'     an assertion function based on a check function (see example). This is a 
 #'     modification of \code{checkmate::makeAssertionFunction} that includes the 
-#'     argument custom.msg in the assertion function. 
+#'     argument comment in the assertion function. 
 #' 
 #' @details The code is imported from \code{checkmate}. The modifications in the
 #'     code is marked. The argument use.namespace is deleted as
@@ -38,9 +38,9 @@ makeAssertionFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = 
     fun.args = c(fun.args, alist(coerce = FALSE))
   }
   
-  # Modified to introduce argument custom.msg (2 lines)
-  fun.args = c(fun.args, alist(custom.msg = NULL))
-  body = paste0(body, "; if (!isTRUE(res) & !is.null(custom.msg)) {res = paste(res, custom.msg) }")
+  # Modified to introduce argument comment (2 lines)
+  fun.args = c(fun.args, alist(comment = NULL))
+  body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste(res, comment) }")
   
   # Removed argument use.namespace as checkmate:makeAssertion should always be used
   # if (use.namespace) {
