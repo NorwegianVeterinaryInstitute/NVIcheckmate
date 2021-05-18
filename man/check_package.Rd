@@ -10,7 +10,7 @@ check_package(x, version = NULL)
 assert_package(
   x,
   version = NULL,
-  custom.msg = NULL,
+  comment = NULL,
   .var.name = checkmate::vname(x),
   add = NULL
 )
@@ -22,7 +22,7 @@ Object to check.}
 \item{version}{[character(1)]\cr
 The required version of the installed package. May be \code{NULL}.}
 
-\item{custom.msg}{[\code{character(1)}]\cr
+\item{comment}{[\code{character(1)}]\cr
 Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
