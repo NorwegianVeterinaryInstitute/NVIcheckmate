@@ -31,7 +31,7 @@ The environment of the created function. Default is the \code{\link[base]{parent
 \code{makeAssertionFunction} can be used to automatically create
 an assertion function based on a check function (see example). This is a
 modification of \code{checkmate::makeAssertionFunction} that includes the
-argument custom.msg in the assertion function.
+argument comment in the assertion function.
 }
 \details{
 The code is imported from \code{checkmate}. The modifications in the
