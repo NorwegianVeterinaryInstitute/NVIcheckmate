@@ -9,7 +9,7 @@ check_credentials(x)
 
 assert_credentials(
   x,
-  custom.msg = NULL,
+  comment = NULL,
   .var.name = checkmate::vname(x),
   add = NULL
 )
@@ -18,7 +18,7 @@ assert_credentials(
 \item{x}{[any]\cr
 Object to check.}
 
-\item{custom.msg}{[\code{character(1)}]\cr
+\item{comment}{[\code{character(1)}]\cr
 Extra information to be appended to the standard error message in assert-functions}
 
 \item{.var.name}{[\code{character(1)}]\cr
