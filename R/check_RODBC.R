@@ -35,7 +35,7 @@ check_rodbc <- function(x, dbservice = NULL) {
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template custom.msg
+#' @template comment
 #' @template assert
 #' @rdname check_rodbc
 assert_rodbc = makeAssertionFunction(check_rodbc)
