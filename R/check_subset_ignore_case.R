@@ -1,12 +1,12 @@
-#' @title Check if an argument is a subset of a given set regardless of case
-#' @description Check if an object is a subset of a given set regardless of the object name is 
-#'     written in lower and upper case. The function is based on code/{checkmate::check_subset}.
+#' @title Check if an argument is a subset of a given set ignoring case
+#' @description Check if an object is a subset of a given set ignoring case in 
+#'     the object name. The function is based on code/{checkmate::check_subset}.
 #' @details The object must be of type character. The check is intended for functions were using 
 #'     camelCase may make the argument easier to remember. Therefore, the input to the function is
-#'     made case insensitive.
+#'     ignoring case.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
-#' @templateVar fn subset_anycase
+#' @templateVar fn subset_ignore_case
 #' @template x
 #' @param choices \[\code{character}\]\cr
 #'    Set of possible values. May be empty.
@@ -19,31 +19,31 @@
 #' @export
 #' @examples
 #' # returns TRUE
-#' check_subset_anycase(x = "Apple", choices = c("apple", "pear", "orange", "banana"))
-#' check_subset_anycase(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_ignore_case(x = "Apple", choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_ignore_case(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"))
 #' 
 #' # returns a message
-#' check_subset_anycase(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_ignore_case(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
 #' 
 
 
-check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
+check_subset_ignore_case <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x)
   if (res != TRUE) { return(res)}
-
-    xx <- tolower(x)
+  
+  xx <- tolower(x)
   choicesx <- tolower(choices)
   res <- checkmate::check_subset(x = xx, choices = choicesx , empty.ok = empty.ok, fmatch = fmatch)
   if (res != TRUE) {
     # set_collapse as used in check_choices to get identical string
-    # copied from check_choice_anycase, must be modified
+    # copied from check_choice_ignore_case, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   # set_collapse(choices),
                   paste0("{'", paste0(unique(choices), collapse = "','"), "'}"),
-                  " (case insensitive), but is ",
+                  " (case is ignored), but is ",
                   # set_collapse(x)
                   paste0("{'", paste0(unique(x), collapse = "','"), "'}"))
-
+    
   }
   return(res)
 }
@@ -53,6 +53,6 @@ check_subset_anycase <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
 #' @include makeAssertionFunction.R
 #' @template comment
 #' @template assert
-#' @rdname check_subset_anycase
-assert_subset_anycase <- makeAssertionFunction(check_subset_anycase)
+#' @rdname check_subset_ignore_case
+assert_subset_ignore_case <- makeAssertionFunction(check_subset_ignore_case)
 
