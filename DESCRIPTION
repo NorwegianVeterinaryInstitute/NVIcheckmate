@@ -5,16 +5,16 @@ Date: 2021-0#-##
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
-           role = c("aut", "cre", "cph"),
+           role = c("aut", "cre"),
            email = "Petter.Hopp@vetinst.no",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           comment = c(ORCID = "0000-0002-8695-0378")),
     person(given = "Norwegian Veterinary Institute",
            role = c("cph")),
     person(given = "Michael",
            family = "Lang",
            role = c("aut", "cph"),
-           email = "",
-           comment = c("Creator of the package checkmate from which some code is imported")))
+           email = "michellang@gmail.com",
+           comment = c("Creator and copyright holder of the package checkmate from which some code is imported")))
 Description: Extension of checkmate with functions for argument checking that are 
     adapted for NVIverse. NVIcheckmate is intended to be used together with checkmate.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
@@ -31,10 +31,12 @@ RoxygenNote: 7.1.1
 Suggests: 
     testthat
 Collate: 
+    'assert.R'
     'makeAssertionFunction.R'
-    'check_choice_anycase.R'
+    'check_choice_ignore_case.R'
     'check_credentials.R'
     'check_new_colname.R'
     'check_package.R'
     'check_rodbc.R'
-    'check_subset_anycase.R'
+    'check_subset_ignore_case.R'
+    'helper.R'
