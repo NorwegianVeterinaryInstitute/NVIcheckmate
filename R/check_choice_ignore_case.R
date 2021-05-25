@@ -24,12 +24,12 @@
 
 check_choice_ignore_case <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x, len = 1)
-  if (res != TRUE) { return(res)}
+  if (!isTRUE(res)) { return(res)}
   
   xx <- tolower(x)
   choicesx <- tolower(choices)
   res <- checkmate::check_choice(x = xx, choices = choicesx , null.ok = null.ok, fmatch = fmatch)
-  if (res != TRUE) {
+  if (!isTRUE(res)) {
     # set_collapse as used in check_choices to get identical string
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   # set_collapse(choices),
