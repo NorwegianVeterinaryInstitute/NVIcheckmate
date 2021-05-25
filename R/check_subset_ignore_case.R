@@ -29,12 +29,12 @@
 
 check_subset_ignore_case <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x)
-  if (res != TRUE) { return(res)}
+  if (!isTRUE(res)) { return(res)}
   
   xx <- tolower(x)
   choicesx <- tolower(choices)
   res <- checkmate::check_subset(x = xx, choices = choicesx , empty.ok = empty.ok, fmatch = fmatch)
-  if (res != TRUE) {
+  if (!isTRUE(res)) {
     # set_collapse as used in check_choices to get identical string
     # copied from check_choice_ignore_case, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
