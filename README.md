@@ -58,7 +58,7 @@ Copyright 2021 Norwegian Veterinary Institute
 
 NVIcheckmate intend to follow the same principles as checkmate concerning input and error messages. Functions and code from checkmate have been imported to facilitate this. 
 
-Licence bsd 3. Copyright Petter Hopp. For functions and material imported from checkmate M Lang has the copyright. The followong functions and material have been imported from checkmate
+Licence bsd 3. For functions and material imported from checkmate M Lang has the copyright. The following functions and material have been imported from checkmate
 set_collapse
 Templates in man-roxygen which goves text for parameter descriptions.
 
