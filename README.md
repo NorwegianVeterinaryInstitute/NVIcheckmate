@@ -56,15 +56,27 @@ remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
 # Copyright and license
 Copyright 2021 Norwegian Veterinary Institute
 
-NVIcheckmate intend to follow the same principles as checkmate concerning input and error messages. Functions and code from checkmate have been imported to facilitate this. 
+`NVIcheckmate` intend to follow the same principles as `checkmate` concerning 
+input and error messages. Functions and code from `checkmate` have been imported 
+to facilitate this. `checkmate` is the copyright of Michael Lang. 
 
-Licence bsd 3. For functions and material imported from checkmate M Lang has the copyright. The following functions and material have been imported from checkmate
-set_collapse
-Templates in man-roxygen which goves text for parameter descriptions.
+The following functions and code have been imported from `checkmate`, some of 
+them have been partly modified. The modifications are commented in the respective 
+source files. Code from `checkmate` is the copyright of Michael Lang (michellang@gmail.com).
+
+- makeAssertFunction.R (modified to include the argument `comment =` in assert-functions)
+- assert.R
+- helper.R (only the internal function mstop() is activated)
+- assert.R (template for help text)
+- checker.R (template for help text)
+- fmatch.R (template for help text)
+- makeFunction.R (template for help text)
+- null.ok.R (template for help text)
+- x.R (template for help text)
 
 
-Licensed under the BSD 3-Clause License (the "License"); The files in `NVIcheckmate` 
-can be used in compliance with the [License](https://opensource.org/licenses/BSD-3-Clause).
+Both `NVIcheckmate` and `checkmate` is licensed under the BSD 3-Clause License 
+(the "License"); The files in `NVIcheckmate` should be used in compliance with the [License](https://opensource.org/licenses/BSD-3-Clause).
 
 # Contributing
 
