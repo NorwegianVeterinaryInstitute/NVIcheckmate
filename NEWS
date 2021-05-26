@@ -1,0 +1,4 @@
+NVIcheckmate 0.1.0 - (2021-0#-##)
+
+First release:
+  - Extension of checkmate with functions for argument checking that are adapted for NVIverse.

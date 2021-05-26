@@ -1,15 +1,11 @@
-#' @return Depending on the function prefix:
-#'  If the check is successful, the functions 
-#'  \code{assert<%= fn %>}/\code{assert_<%= convertCamelCase(fn) %>} return 
-#'  \code{x} invisibly, whereas
-#'  \code{check<%= fn %>}/\code{check_<%= convertCamelCase(fn) %>} and 
-#'  \code{test<%= fn %>}/\code{test_<%= convertCamelCase(fn) %>} return 
-#'  \code{TRUE}.
+# File imported from https://gihub.com/mllg/checkmate/man-roxygen/ and modified for NVIcheckmate
+# Author and copyright Michel Lang, <michellang@@gmail.com>, see Licence and copyright.
+#' 
+#' @return Depending on the function prefix:\cr
+#'  If the check is successful, the function 
+#'  \code{assert_<%= fn %>} return \code{x} invisibly, whereas
+#'  \code{check_<%= fn %>} return \code{TRUE}.\cr
 #'  If the check is not successful, 
-#'  \code{assert<%= fn %>}/\code{assert_<%= convertCamelCase(fn) %>}
-#'  throws an error message, 
-#'  \code{test<%= fn %>}/\code{test_<%= convertCamelCase(fn) %>}
-#'  returns \code{FALSE},
-#'  and \code{check<%= fn %>} returns a string with the error message.
-#'  The function \code{expect_<%= convertCamelCase(fn) %>} always returns an
-#'  \code{\link[testthat]{expectation}}.
+#'  \code{assert_<%= fn %>} throws an error message and 
+#'  \code{check_<%= fn %>} returns a string with the error message.
+#
