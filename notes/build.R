@@ -1,9 +1,9 @@
-# TEST, DOCUMENT AND BUILD A PACKAGE
-
-pkg <- "NVIcheckmate"
+# DOCUMENT, TEST AND BUILD THE PACKAGE
 
 # Set up environment
 # rm(list = ls())    # Benyttes for å tømme R-environment ved behov
+
+pkg <- "NVIcheckmate"
 
 Rlibrary <- R.home()
 
@@ -15,7 +15,7 @@ library(withr)
 # Should be run before git push when documentation for functions have been changed
 devtools::document()
 
-# Run tests included in ./tests. NVIdb use testthat
+# Run tests included in ./tests.
 devtools::test()
 
 # Build the vignette
@@ -30,7 +30,7 @@ devtools::test()
 devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
 
 version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
-devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), manual = TRUE)
+devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
 
 # Extensive checking of package. Is done after build. Creates PDF-manual
 # system("R CMD check --ignore-vignettes ../NVIdb")
@@ -40,26 +40,4 @@ devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), manual
 #              "Rd2pdf",
 #              shQuote(paste0(Rlibrary,"/library/NVIdb"))))
 
-
-# Innstall rebuilt package
-detach("package:NVIcheckmate", unload=TRUE)
-
-with_libpaths(paste0(Rlibrary,"/library"),
-              install(sub("notes", "", dirname(rstudioapi::getSourceEditorContext()$path)),
-                      dependencies = TRUE,
-                      upgrade=FALSE,
-                      build_vignettes = TRUE) )
-
-# Install from binary file
-# remove.packages("NVIdb")
-# install.packages(pkgs = paste0(getwd(), "/..", "/NVIdb_", version, ".tar.gz"),
-#                  type = "source",
-#                  repos = NULL)
-
-# install.packages(paste0(getwd(), "/..", "/NVIdb_", version, ".zip"),
-#                  repos = NULL,
-#                  type = "binary")
-
-help(package="NVIcheckmate")
-library(NVIcheckmate)
 
