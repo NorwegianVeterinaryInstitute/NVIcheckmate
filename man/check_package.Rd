@@ -46,7 +46,7 @@ Check if an package is installed and if it is installed, check if the version is
 to or higher than the required version.
 }
 \examples{
-# returns TRUE 
+# returns TRUE i.e. no error message
 check_package(x = "checkmate" , version = "2.0.0")
 
 # returns an error message
