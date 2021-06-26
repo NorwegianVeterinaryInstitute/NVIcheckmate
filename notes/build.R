@@ -38,6 +38,4 @@ devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args =
 # system(paste(shQuote(file.path(R.home("bin"), "R")),
 #              "CMD",
 #              "Rd2pdf",
-#              shQuote(paste0(Rlibrary,"/library/NVIdb"))))
-
-
+#              paste0("../", pkg)))
