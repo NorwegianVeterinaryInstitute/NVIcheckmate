@@ -15,6 +15,14 @@ library(withr)
 # Should be run before git push when documentation for functions have been changed
 devtools::document()
 
+# For updating CONTRIBUTE.md when the vignette has been updated.
+rmarkdown::render(input = paste0("./vignettes/Contribute_to_", pkg, ".Rmd"),
+                  output_format = "md_document",
+                  output_file = "CONTRIBUTING.md",
+                  output_dir = "./")
+header <- paste0("# Contribute to ", pkg, "\n")
+writeLines(c(header,readLines("./CONTRIBUTING.md")),"./CONTRIBUTING.md")
+
 # Run tests included in ./tests.
 devtools::test()
 
