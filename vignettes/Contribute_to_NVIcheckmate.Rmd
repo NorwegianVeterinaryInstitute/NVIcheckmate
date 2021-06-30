@@ -27,13 +27,15 @@ Thank you for considering contributing to `NVIcheckmate`.
 ###  NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
 NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-                                  "Configuration information necessary for some functions in NVIverse"),
+                                  "Configuration information necessary for some NVIverse functions"),
                                 c("NVIdb", "Public",
                                   "Tools to facilitate the use of NVI's databases"),
                                 c("NVIpretty",  "Public",
                                   "Tools to make R-output pretty in accord with NVI's graphical profile"),
                                 c("NVIbatch",  "Public",
                                   "Tools to facilitate the running of R-scripts in batch mode at NVI"),
+                                c("NVIcheckmate",  "Public",
+                                  "Extension of checkmate with additional functions for argument checking in NVIverse functions"),
                                 c("OKplan",  "Public",
                                   "Tools to facilitate the planning of surveillance programmes for the NFSA"),
                                 c("OKcheck",  "Public",
