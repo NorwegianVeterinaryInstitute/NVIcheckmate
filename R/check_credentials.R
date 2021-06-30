@@ -20,10 +20,10 @@ check_credentials <- function(x) {
   
   # PERFORM CHECK
   if (!is.element(tolower(x), tolower(keyring::key_list()[, 1]))) {
-    res <- paste0(" (username and password) for the service '", 
+    res <- paste0("The credentials (username and password) for the service '", 
                   x, 
-                  "' have not been saved in the user's profile at this computer.",
-                  "Use 'NVIdb::set_credentials' for saving the credentials in the user's profile")
+                  "' have not been saved in the user's profile at this computer. ",
+                  "Use 'NVIdb::set_credentials' to save the credentials in the user's profile")
   } else {
     res <- TRUE
   }
