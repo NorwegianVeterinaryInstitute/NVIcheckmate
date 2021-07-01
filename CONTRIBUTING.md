@@ -1,4 +1,5 @@
 # Contribute to NVIcheckmate
+<!-- CONTRIBUTING.md is generated from ./vignettes/Contribute_to_NVIcheckmate.Rmd. Please edit that file -->
 
 Thank you for considering contributing to `NVIcheckmate`.
 

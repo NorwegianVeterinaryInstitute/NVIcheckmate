@@ -20,7 +20,8 @@ rmarkdown::render(input = paste0("./vignettes/Contribute_to_", pkg, ".Rmd"),
                   output_format = "md_document",
                   output_file = "CONTRIBUTING.md",
                   output_dir = "./")
-header <- paste0("# Contribute to ", pkg, "\n")
+header <- paste0("# Contribute to ", pkg, "\n",
+                 "<!-- CONTRIBUTING.md is generated from ./vignettes/Contribute_to_", pkg, ".Rmd. Please edit that file -->", "\n")
 writeLines(c(header,readLines("./CONTRIBUTING.md")),"./CONTRIBUTING.md")
 
 # Run tests included in ./tests.
