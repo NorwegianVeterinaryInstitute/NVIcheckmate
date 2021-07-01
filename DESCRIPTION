@@ -43,8 +43,8 @@ Collate:
     'check_choice_ignore_case.R'
     'check_credentials.R'
     'check_new_colname.R'
+    'check_odbc_channel.R'
     'check_package.R'
-    'check_rodbc.R'
     'check_subset_ignore_case.R'
     'helper.R'
 VignetteBuilder: knitr
