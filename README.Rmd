@@ -113,9 +113,9 @@ Both `NVIcheckmate` and `checkmate` is licensed under the BSD 3-Clause License
 
 # Contributing
 
-Contributions to develop `NVIcheckmate` is highly appreciated. You may, for example, 
-contribute by reporting a bug, fixing documentation errors, contributing new code, 
-or commenting on issues/pull requests. 
+Contributions to develop `NVIcheckmate` is highly appreciated. There are several ways you can contribute 
+to this project: ask a question, propose an idea, report a bug, improve the documentation, or contribute code. 
+Please have a look at the vignette "Contribute to NVIcheckmate". 
 
 -----
 
