@@ -27,7 +27,7 @@ NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
 `NVIcheckmate` is an extension of checkmate with additional functions for argument checking for use in NVIverse functions.   `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
 
 ###  NVIverse packages
-```{r echo = FALSE, resuls = 'asis'}
+```{r, echo = FALSE, resuls = 'asis'}
 NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
                                   "Configuration information necessary for some NVIverse functions"),
                                 c("NVIdb", "Public",
@@ -69,14 +69,14 @@ To install `NVIcheckmate` you will need:
 
 First install and attach the `devtools` package.  
 
-``` r
+``` {r, eval = FALSE} 
 install.packages("devtools")
 library(devtools)
 ```
 
 To install (or update) the `NVIcheckmate` package, run the following code:
 
-``` r
+``` {r, eval = FALSE} 
 remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
 	upgrade = FALSE, 
 	build = TRUE,
