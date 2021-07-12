@@ -76,14 +76,14 @@ To install `NVIcheckmate` you will need:
 
 First install and attach the `devtools` package.  
 
-``` r
+``` {r, eval = FALSE} 
 install.packages("devtools")
 library(devtools)
 ```
 
 To install (or update) the `NVIcheckmate` package, run the following code:
 
-``` r
+``` {r, eval = FALSE} 
 remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
 	upgrade = FALSE, 
 	build = TRUE,
