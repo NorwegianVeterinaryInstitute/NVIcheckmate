@@ -1,0 +1,160 @@
+In addition to the information in the DESCRIPTION file:
+  
+NVIcheckmate
+------------
+
+Copyright (c) 2021 Norwegian Veterinary Institute
+License: BSD 3-Clause  
+
+-----------------------------------------------------------------------------------------------------------------------
+
+`NVIcheckmate` is an extension of checkmate with additional functions for argument checking for use in NVIverse functions.   `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
+
+
+
+`NVIcheckmate` intend to follow the same principles as `checkmate` concerning 
+input and error messages. Functions and code from `checkmate` have been imported 
+to facilitate this. `checkmate` is the copyright of Michael Lang. 
+
+The following functions and code have been imported from `checkmate`, some of 
+them have been partly modified. The modifications are commented in the respective 
+source files. Code from `checkmate` is the copyright of Michael Lang (michellang@gmail.com).
+
+- ./R/makeAssertFunction.R (modified to include the argument `comment =` in assert-functions)
+- ./R/assert.R
+- ./R/helper.R (only the internal function mstop() is activated)
+- ./man-roxygen/assert.R (template for help text)
+- ./man-roxygen/checker.R (template for help text)
+- ./man-roxygen/fmatch.R (template for help text)
+- ./man-roxygen/makeFunction.R (template for help text)
+- ./man-roxygen/null.ok.R (template for help text)
+- ./man-roxygen/x.R (template for help text)
+
+
+Both `NVIcheckmate` and `checkmate` is licensed under the BSD 3-Clause License 
+(the "License"); The files in `NVIcheckmate` should be used in compliance with the [License](https://opensource.org/licenses/BSD-3-Clause).
+
+
+
+R package TDA includes open source C++ libraries GUDHI, Dionysus, PHAT, Boost, CGAL. Some files of included Boost are taken from R package BH.
+
+
+
+  
+  
+  I modified the 'porter2_stemmer.h' header file from the 'https://github.com/smassung/porter2_stemmer' github repository
+-----------------------------------------------------------------------------------------------------------------------
+  
+
+
+Files: inst/include/cppad/*
+  Copyright: 2003 - 2015  Bradley M. Bell
+License: GPL-3
+
+Files: inst/include/*
+  Copyright: 2013 - 2015  Kasper Kristensen
+License: GPL-2
+
+Files: inst/include/Rstream.hpp
+Copyright: 2011 - 2013  Dirk Eddelbuettel, Romain Francois and Jelmer Ypma
+License: GPL-2
+
+
+
+
+In addition to the information in the DESCRIPTION file:
+  
+  encryptedRmd
+
+Copyright (c) 2020 Dirk Schumacher, Jannis R
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  The javascript and html code used for decryption is based on a number of JavaScript packages. The licenses are listed below:
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  self-decrypting-html-page v1.0.1- License ISC
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Copyright (c) 2018, Jannis R
+
+Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  base64-js v1.3.1 - License MIT
+downloaded from <https://www.npmjs.com/package/base64-js>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  The MIT License (MIT)
+
+Copyright (c) 2014 Jameson Little
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  browser-resolve v1.11.3 - License MIT
+downloaded from <https://www.npmjs.com/package/browser-resolve>
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  The MIT License (MIT)
+
+Copyright (c) 2013-2015 Roman Shtylman <shtylman@gmail.com>
+  
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+  
+  The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  
+  
