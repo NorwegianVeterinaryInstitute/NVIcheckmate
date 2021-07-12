@@ -1,90 +1,242 @@
 NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
-================
+================================================================================
 
-  - [Overview](#overview)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Copyright and license](#copyright-and-license)
-  - [Contributing](#contributing)
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# Overview
-`NVIcheckmate` is an extension of `checkmate` with functions for argument checking 
-adapted to `NVIverse`. `NVIverse` is a collection of R-packages with tools for the 
-Norwegian Veterinary Institute.
+-   [Overview](#overview)
+-   [Installation](#installation)
+-   [Usage](#usage)
+-   [Copyright and license](#copyright-and-license)
+-   [Contributing](#contributing)
 
-The main purpose of `NVIcheckmate` is to include checks/assertions on requirements 
-necessary for the functions to work. These may not be arguments, but conditions 
-like if an open RODBC-channel exist, if the users credentials are available and, 
-if a package is installed.
+Overview
+========
 
-In addition the possibility of a custom message is included in assertions. Thereby, 
-the error messages may be adapted to the specific function for which the argument 
-is checked. The intention is to give more meaningful error messages.
+`NVIcheckmate` is an extension of
+[`checkmate`](https://CRAN.R-project.org/package=checkmate) with
+additional functions for argument checking for use in NVIverse
+functions. `NVIverse` is a collection of R-packages with tools to
+facilitate data management and data reporting at the Norwegian
+Veterinary Institute (NVI).
 
-`NVIcheckmate` is intended for use together with `checkmate`. The argument checking
-in `NVIverse` uses the assert class in `checkmate`for collecting and reporting the
-assertions, and assertions in `checkmate` and `NVIcheckmate` will be used together 
-to get the best argument checking.
+#### NVIverse packages
 
-# Installation
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Package</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NVIconfig</td>
+<td style="text-align: left;">Private</td>
+<td style="text-align: left;">Configuration information necessary for some NVIverse functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIdb</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the use of NVI’s databases</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIpretty</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to make R-output pretty in accord with NVI’s graphical profile</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NVIbatch</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NVIcheckmate</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Extension of checkmate with additional functions for argument checking for use in NVIverse functions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">OKplan</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">OKcheck</td>
+<td style="text-align: left;">Public</td>
+<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
+</tr>
+</tbody>
+</table>
 
-`NVIcheckmate` is available at https://github.com/NorwegianVeterinaryInstitute. 
+The main purpose of `NVIcheckmate` is to provide checks and assertions
+for functions in `NVIverse` in the case that the checks and assertions
+are not available in `checkmate`. These include specialized argument
+checking as well as checking other requirements like if a package is
+installed, if the users credentials are available and, if an valid
+ODBC-channel exists.
+
+In addition, an argument for adding a custom message is included in
+selected assertions from `checkmate`. Thereby, the error messages for a
+specific function may be adapted to provide more meaningful error
+messages.
+
+`NVIcheckmate` is intended for use together with `checkmate`.
+`NVIcheckmate` intend to follow the same principles as `checkmate`
+concerning input and error messages. The argument checking in `NVIverse`
+uses the assert class in `checkmate` for collecting and reporting the
+assertions, and assertions from `checkmate` and `NVIcheckmate` are
+combined when checking the arguments of a function.
+
+When and if functionality covered by `NVIcheckmate` are included in
+`checkmate` as available at Cran, the corresponding function will be
+depreciated and thereafter removed from `NVIcheckmate`.
+
+Installation
+============
+
+`NVIcheckmate` is available at
+<a href="https://github.com/NorwegianVeterinaryInstitute" class="uri">https://github.com/NorwegianVeterinaryInstitute</a>.
 To install `NVIcheckmate` you will need:
-  - R version > 4.0.0
-  - R package `devtools`
-  - Rtools 4.0
 
-First install and attach the `devtools` package.  
+-   R version &gt; 4.0.0
+-   R package `devtools`
+-   Rtools 4.0
 
-``` r
-install.packages("devtools")
-library(devtools)
-```
+First install and attach the `devtools` package.
 
-To install (or update) the `NVIcheckmate` package, run the following code:
+    install.packages("devtools")
+    library(devtools)
 
-``` r
-remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
-	upgrade = FALSE, 
-	build = TRUE,
-	build_manual = TRUE)
-```
+To install (or update) the `NVIcheckmate` package, run the following
+code:
 
-# Usage
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
+        upgrade = FALSE, 
+        build = TRUE,
+        build_manual = TRUE)
 
+Usage
+=====
 
-# Copyright and license
-Copyright 2021 Norwegian Veterinary Institute
+To come.
 
-`NVIcheckmate` intend to follow the same principles as `checkmate` concerning 
-input and error messages. Functions and code from `checkmate` have been imported 
-to facilitate this. `checkmate` is the copyright of Michael Lang. 
+Copyright and license
+=====================
 
-The following functions and code have been imported from `checkmate`, some of 
-them have been partly modified. The modifications are commented in the respective 
-source files. Code from `checkmate` is the copyright of Michael Lang (michellang@gmail.com).
+#### NVIcheckmate
 
-- makeAssertFunction.R (modified to include the argument `comment =` in assert-functions)
-- assert.R
-- helper.R (only the internal function mstop() is activated)
-- assert.R (template for help text)
-- checker.R (template for help text)
-- fmatch.R (template for help text)
-- makeFunction.R (template for help text)
-- null.ok.R (template for help text)
-- x.R (template for help text)
+Copyright (c) 2021 Norwegian Veterinary Institute  
+License: BSD 3-Clause
 
+Functions and code from `checkmate` have been imported into
+`NVIcheckmate`. For some of them, the code have been partly modified.
+The modifications are commented in the respective source files. Code
+from `checkmate` are the copyright of the copyright holders of
+`checkmate`.
 
-Both `NVIcheckmate` and `checkmate` is licensed under the BSD 3-Clause License 
-(the "License"); The files in `NVIcheckmate` should be used in compliance with the [License](https://opensource.org/licenses/BSD-3-Clause).
+#### checkmate
 
-# Contributing
+Copyright (c) 2021 Michael Lang
+(<a href="mailto:michellang@@gmail.com" class="email">michellang@@gmail.com</a>)  
+License: BSD 3-Clause
 
-Contributions to develop `NVIcheckmate` is highly appreciated. You may, for example, 
-contribute by reporting a bug, fixing documentation errors, contributing new code, 
-or commenting on issues/pull requests. 
+#### Functions and code imported from `checkmate`
 
------
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 8%" />
+<col style="width: 40%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Function</th>
+<th style="text-align: left;">Directory</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Modification</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">assert.R</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Combine multiple checks into one assertion</td>
+<td style="text-align: left;">Imported from checkmate 2.1.0 at Github to include argument ‘add =’</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mstopOrPush.R</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Internal function mstop used for assert.R</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">helper.R</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Internal function mstop used for assert.R</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">makeAssertFunction.R</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Automatically create an assertion function based on a check function</td>
+<td style="text-align: left;">Adds the argument ‘comment =’ to a created assertion function</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">assert.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">checker.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">fmatch.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">makeFunction.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">none</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">null.ok.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">x.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">yes</td>
+</tr>
+</tbody>
+</table>
 
-Please note that the NVIcheckmate project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
-contributing to this project, you agree to abide by its terms.
+Contributing
+============
+
+Contributions to develop `NVIcheckmate` is highly appreciated. There are
+several ways you can contribute to this project: ask a question, propose
+an idea, report a bug, improve the documentation, or contribute code.
+The vignette “Contribute to NVIcheckmate” gives more information.
+
+------------------------------------------------------------------------
+
+Please note that the NVIcheckmate project is released with a
+[Contributor Code of
+Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.

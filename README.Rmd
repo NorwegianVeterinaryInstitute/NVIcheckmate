@@ -1,7 +1,7 @@
 --- 
 title: "README"
 output: 
-md_document:
+  md_document:
   variant: markdown_github
 ---
 
@@ -24,9 +24,9 @@ NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
   - [Contributing](#contributing)
 
 # Overview
-`NVIcheckmate` is an extension of checkmate with additional functions for argument checking for use in NVIverse functions.   `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
+`NVIcheckmate` is an extension of [`checkmate`](https://CRAN.R-project.org/package=checkmate) with additional functions for argument checking for use in NVIverse functions. `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
 
-###  NVIverse packages
+####  NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
 NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
                                   "Configuration information necessary for some NVIverse functions"),
@@ -46,26 +46,33 @@ colnames(NVIverse) <- c("Package", "Status", "Description")
 knitr::kable(x = NVIverse)
 ```
 
-The main purpose of `NVIcheckmate` is to include checks/assertions on requirements 
-necessary for the functions to work. These may not be arguments, but conditions 
-like if an open RODBC-channel exist, if the users credentials are available and, 
-if a package is installed.
+The main purpose of `NVIcheckmate` is to provide checks and assertions for functions 
+in `NVIverse` in the case that the checks and assertions are not available in `checkmate`. 
+These include specialized argument checking as well as checking other requirements 
+like if a package is installed, if the users credentials are available and, if an 
+valid ODBC-channel exists.
 
-In addition the possibility of a custom message is included in assertions. Thereby, 
-the error messages may be adapted to the specific function for which the argument 
-is checked. The intention is to give more meaningful error messages.
+In addition, an argument for adding a custom message is included in selected assertions 
+from `checkmate`. Thereby, the error messages for a specific function may be adapted 
+to provide more meaningful error messages.
 
-`NVIcheckmate` is intended for use together with `checkmate`. The argument checking
-in `NVIverse` uses the assert class in `checkmate`for collecting and reporting the
-assertions, and assertions in `checkmate` and `NVIcheckmate` will be used together 
-to get the best argument checking.
+`NVIcheckmate` is intended for use together with `checkmate`. `NVIcheckmate` intend 
+to follow the same principles as `checkmate` concerning input and error messages. 
+The argument checking in `NVIverse` uses the assert class in `checkmate` for 
+collecting and reporting the assertions, and assertions from `checkmate` and 
+`NVIcheckmate` are combined when checking the arguments of a function.
+
+When and if functionality covered by `NVIcheckmate` are included in `checkmate` 
+as available at Cran, the corresponding function will be depreciated and thereafter 
+removed from `NVIcheckmate`. 
 
 # Installation
 `NVIcheckmate` is available at https://github.com/NorwegianVeterinaryInstitute. 
 To install `NVIcheckmate` you will need:
-  - R version > 4.0.0
-  - R package `devtools`
-  - Rtools 4.0
+
+- R version > 4.0.0
+- R package `devtools`
+- Rtools 4.0
 
 First install and attach the `devtools` package.  
 
@@ -84,38 +91,75 @@ remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
 ```
 
 # Usage
-
+To come.
 
 # Copyright and license
-Copyright 2021 Norwegian Veterinary Institute
 
-`NVIcheckmate` intend to follow the same principles as `checkmate` concerning 
-input and error messages. Functions and code from `checkmate` have been imported 
-to facilitate this. `checkmate` is the copyright of Michael Lang. 
+#### NVIcheckmate
+Copyright (c) 2021 Norwegian Veterinary Institute  
+License: BSD 3-Clause  
+  
+Functions and code from `checkmate` have been imported into `NVIcheckmate`. For some of 
+them, the code have been partly modified. The modifications are commented in the respective 
+source files. Code from `checkmate` are the copyright of the copyright holders of `checkmate`.
+  
+#### checkmate
+Copyright (c) 2021 Michael Lang (michellang@@gmail.com)  
+License: BSD 3-Clause  
+  
+#### Functions and code imported from `checkmate`
 
-The following functions and code have been imported from `checkmate`, some of 
-them have been partly modified. The modifications are commented in the respective 
-source files. Code from `checkmate` is the copyright of Michael Lang (michellang@gmail.com).
-
-- ./R/makeAssertFunction.R (modified to include the argument `comment =` in assert-functions)
-- ./R/assert.R
-- ./R/helper.R (only the internal function mstop() is activated)
-- ./man-roxygen/assert.R (template for help text)
-- ./man-roxygen/checker.R (template for help text)
-- ./man-roxygen/fmatch.R (template for help text)
-- ./man-roxygen/makeFunction.R (template for help text)
-- ./man-roxygen/null.ok.R (template for help text)
-- ./man-roxygen/x.R (template for help text)
-
-
-Both `NVIcheckmate` and `checkmate` is licensed under the BSD 3-Clause License 
-(the "License"); The files in `NVIcheckmate` should be used in compliance with the [License](https://opensource.org/licenses/BSD-3-Clause).
+```{r echo = FALSE, resuls = 'asis'}
+imports <- as.data.frame(rbind( c("assert.R", 
+                                 "./R",
+                                  "Combine multiple checks into one assertion",
+                                 "Imported from checkmate 2.1.0 at Github to include argument 'add ='"),
+                                c("mstopOrPush.R",  
+                                  "./R",
+                                  "Internal function mstop used for assert.R",
+                                  "none"),
+                                c("helper.R",  
+                                  "./R",
+                                  "Internal function mstop used for assert.R",
+                                  "none"),
+                               c("makeAssertFunction.R", 
+                                 "./R",
+                                 "Automatically create an assertion function based on a check function",
+                                 "Adds the argument 'comment =' to a created assertion function"),
+                                c("assert.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "yes"),
+                                c("checker.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "yes"),
+                                c("fmatch.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "none"),
+                                c("makeFunction.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "none"),
+                                c("null.ok.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "yes"),
+                                c("x.R",  
+                                  "./man-roxygen",
+                                  "help template",
+                                  "yes")))
+colnames(imports) <- c("Function", "Directory", "Description", "Modification")
+knitr::kable(x = imports)
+```
 
 # Contributing
 
-Contributions to develop `NVIcheckmate` is highly appreciated. You may, for example, 
-contribute by reporting a bug, fixing documentation errors, contributing new code, 
-or commenting on issues/pull requests. 
+Contributions to develop `NVIcheckmate` is highly appreciated. There are several 
+ways you can contribute to this project: ask a question, propose an idea, report 
+a bug, improve the documentation, or contribute code. The vignette 
+"Contribute to NVIcheckmate" gives more information.
 
 -----
 
