@@ -40,11 +40,11 @@ Suggests:
 Collate: 
     'assert.R'
     'makeAssertionFunction.R'
-    'check_choice_ignore_case.R'
+    'check_choice_character.R'
     'check_credentials.R'
     'check_new_colname.R'
     'check_odbc_channel.R'
     'check_package.R'
-    'check_subset_ignore_case.R'
+    'check_subset_character.R'
     'helper.R'
 VignetteBuilder: knitr
