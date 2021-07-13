@@ -11,25 +11,30 @@
 #' @param choices \[\code{character}\]\cr
 #'    Set of possible values.
 #' @template null.ok
+#' @param ignore.case \[\code{logical(1)}\]\cr
+#'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
 #' @template fmatch
 #' @template checker
 #'
 #' @examples
 #' # returns TRUE
-#' check_choice_ignore_case(x = "APPLE", 
-#'                      choices = c("Apple", "Pear", "Orange") , 
+#' check_choice_character(x = "APPLE", 
+#'                      choices = c("Apple", "Pear", "Orange"), 
 #'                      null.ok = FALSE, 
+#'                      ignore.case = TRUE, 
 #'                      fmatch = FALSE)
 #' @export
 
-check_choice_ignore_case <- function(x, choices, null.ok = FALSE, fmatch = FALSE) {
+check_choice_character <- function(x, choices, null.ok = FALSE, ignore.case = FALSE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x, len = 1)
   if (!isTRUE(res)) { return(res)}
   
-  xx <- tolower(x)
+  if (isTRUE(ignore.case)) { 
+    xx <- tolower(x)
   choicesx <- tolower(choices)
+  }
   res <- checkmate::check_choice(x = xx, choices = choicesx , null.ok = null.ok, fmatch = fmatch)
-  if (!isTRUE(res)) {
+  if (!isTRUE(res) & isTRUE(ignore.case)) {
     # set_collapse as used in check_choices to get identical string
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   # set_collapse(choices),
@@ -45,5 +50,5 @@ check_choice_ignore_case <- function(x, choices, null.ok = FALSE, fmatch = FALSE
 #' @include makeAssertionFunction.R
 #' @template comment
 #' @template assert
-#' @rdname check_choice_ignore_case
-assert_choice_ignore_case  = makeAssertionFunction(check_choice_ignore_case) 
+#' @rdname check_choice_character
+assert_choice_character  = makeAssertionFunction(check_choice_character) 
