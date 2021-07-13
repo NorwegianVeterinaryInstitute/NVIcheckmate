@@ -13,28 +13,32 @@
 #' @param empty.ok \[\code{logical(1)}\]\cr
 #'    Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})? 
 #'    Default is \code{TRUE}.
+#' @param ignore.case \[\code{logical(1)}\]\cr
+#'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
 #' @template fmatch
 #' @template checker
 #' 
 #' @export
 #' @examples
 #' # returns TRUE
-#' check_subset_ignore_case(x = "Apple", choices = c("apple", "pear", "orange", "banana"))
-#' check_subset_ignore_case(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_character(x = "Apple", choices = c("apple", "pear", "orange", "banana"), ignore.case = TRUE)
+#' check_subset_character(x = c("Apple", "Pear"), choices = c("apple", "pear", "orange", "banana"), ignore.case = TRUE)
 #' 
 #' # returns a message
-#' check_subset_ignore_case(x = "Tomato", choices = c("apple", "pear", "orange", "banana"))
+#' check_subset_character(x = "Tomato", choices = c("apple", "pear", "orange", "banana"), ignore.case = TRUE)
 #' 
 
 
-check_subset_ignore_case <- function(x, choices, empty.ok = TRUE, fmatch = FALSE) {
+check_subset_character <- function(x, choices, ignore.case = FALSE, empty.ok = TRUE, fmatch = FALSE) {
   res <- checkmate::check_character(x=x)
   if (!isTRUE(res)) { return(res)}
   
-  xx <- tolower(x)
-  choicesx <- tolower(choices)
+  if (isTRUE(ignore.case)) { 
+    xx <- tolower(x)
+    choicesx <- tolower(choices)
+  }
   res <- checkmate::check_subset(x = xx, choices = choicesx , empty.ok = empty.ok, fmatch = fmatch)
-  if (!isTRUE(res)) {
+  if (!isTRUE(res) & isTRUE(ignore.case)) {
     # set_collapse as used in check_choices to get identical string
     # copied from check_choice_ignore_case, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
@@ -53,6 +57,6 @@ check_subset_ignore_case <- function(x, choices, empty.ok = TRUE, fmatch = FALSE
 #' @include makeAssertionFunction.R
 #' @template comment
 #' @template assert
-#' @rdname check_subset_ignore_case
-assert_subset_ignore_case <- makeAssertionFunction(check_subset_ignore_case)
+#' @rdname check_subset_character
+assert_subset_character <- makeAssertionFunction(check_subset_character)
 
