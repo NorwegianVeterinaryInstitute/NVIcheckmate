@@ -1,4 +1,12 @@
 NVIcheckmate 0.1.0 - (2021-0#-##)
 
 First release:
-  - Extension of checkmate with functions for argument checking that are adapted for NVIverse.
+  - Extension of checkmate with argument checking adapted for NVIverse
+  
+New features:
+  - check_package checks if a package is installed/attached.
+  - check_credentials checks if credentials (username and password) for specified services are saved in the users profile.
+  - check_odbc_channel checks if an object is an open odbc channel
+  - check_choices_character is a modification of checkmate::check_choices with the argument: ignore.case
+  - check_subset_character is a modification of checkmate::check_subset with the argument: ignore.case
+  - assert_names is a modification of checkmate::assert_names with the argument: comment
