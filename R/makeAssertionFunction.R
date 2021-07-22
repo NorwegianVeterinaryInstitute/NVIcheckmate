@@ -40,7 +40,7 @@ makeAssertionFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = 
   
   # Modified to introduce argument comment (2 lines)
   fun.args = c(fun.args, alist(comment = NULL))
-  body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste(res, comment) }")
+  body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste0(res, '. ', comment) }")
   
   # Removed argument use.namespace as checkmate:makeAssertion should always be used
   # if (use.namespace) {
