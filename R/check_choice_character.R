@@ -1,12 +1,13 @@
 #' @title Check if an object is an element of a given set ignoring case
-#' @description Check if an object is an element of a given set ignoring case in 
-#'     the object name. The function is based on code/{checkmate::check_choice}.
+#' @description Check if an object is an element of a given set in 
+#'     the object name. The function is based on code/{checkmate::check_choice}, 
+#'     but includes the argument \code{ignore.case}.
 #' @details The object must be of type character. The check is intended for functions were using 
 #'     camelCase may make the argument easier to remember. Therefore, the input to the function is
 #'     ignoring case.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
-#' @templateVar fn choice_ignore_case
+#' @templateVar fn choice_character
 #' @template x
 #' @param choices \[\code{character}\]\cr
 #'    Set of possible values.
@@ -31,7 +32,7 @@ check_choice_character <- function(x, choices, null.ok = FALSE, ignore.case = FA
   
   if (isTRUE(ignore.case)) { 
     xx <- tolower(x)
-  choicesx <- tolower(choices)
+    choicesx <- tolower(choices)
   }
   res <- checkmate::check_choice(x = xx, choices = choicesx , null.ok = null.ok, fmatch = fmatch)
   if (!isTRUE(res) & isTRUE(ignore.case)) {
