@@ -3,13 +3,14 @@
 \name{check_package}
 \alias{check_package}
 \alias{assert_package}
-\title{Check if an object is an installed package of the required version}
+\title{Check if an object is an installed or attached package}
 \usage{
-check_package(x, version = NULL)
+check_package(x, version = NULL, type = "installed")
 
 assert_package(
   x,
   version = NULL,
+  type = "installed",
   comment = NULL,
   .var.name = checkmate::vname(x),
   add = NULL
@@ -21,6 +22,13 @@ Object to check.}
 
 \item{version}{[character(1)]\cr
 The required version of the installed package. May be \code{NULL}.}
+
+\item{type}{[character(1)]\cr
+Type of formal check(s) to perform on the package.
+\describe{
+\item{installed:}{Checks if \code{x} is installed.}
+\item{attached:}{Checks if \code{x} is attached.}
+}}
 
 \item{comment}{[\code{character(1)}]\cr
 Extra information to be appended to the standard error message in assert-functions}
@@ -42,13 +50,6 @@ If the check is not successful,
 \code{check_package} returns a string with the error message.
 }
 \description{
-Check if an package is installed and if it is installed, check if the version is equal
-to or higher than the required version.
-}
-\examples{
-# returns TRUE i.e. no error message
-check_package(x = "checkmate" , version = "2.0.0")
-
-# returns an error message
-check_package(x = "nopackage")
+Check if a package is installed and if it is installed, check if the version is equal
+to or higher than the required version or check if a package is attached.
 }
