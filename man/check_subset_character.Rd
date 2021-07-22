@@ -57,15 +57,16 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 \value{
 Depending on the function prefix:\cr
 If the check is successful, the function
-\code{assert_subset_ignore_case} return \code{x} invisibly, whereas
-\code{check_subset_ignore_case} return \code{TRUE}.\cr
+\code{assert_subset_character} return \code{x} invisibly, whereas
+\code{check_subset_character} return \code{TRUE}.\cr
 If the check is not successful,
-\code{assert_subset_ignore_case} throws an error message and
-\code{check_subset_ignore_case} returns a string with the error message.
+\code{assert_subset_character} throws an error message and
+\code{check_subset_character} returns a string with the error message.
 }
 \description{
-Check if an object is a subset of a given set ignoring case in
-the object name. The function is based on code/{checkmate::check_subset}.
+Check if an object is a subset of a given set in
+the object name. The function is based on code/{checkmate::check_subset},
+but includes the argument \code{ignore.case}.
 }
 \details{
 The object must be of type character. The check is intended for functions were using
