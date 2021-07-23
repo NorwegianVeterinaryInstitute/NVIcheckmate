@@ -151,8 +151,8 @@ License: BSD 3-Clause
 <colgroup>
 <col style="width: 12%" />
 <col style="width: 8%" />
-<col style="width: 40%" />
-<col style="width: 39%" />
+<col style="width: 31%" />
+<col style="width: 47%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -166,26 +166,26 @@ License: BSD 3-Clause
 <tr class="odd">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Combine multiple checks into one assertion</td>
-<td style="text-align: left;">Imported from checkmate 2.1.0 at Github to include argument ‘add =’</td>
+<td style="text-align: left;">Combines multiple checks into one assertion</td>
+<td style="text-align: left;">None. Imported as is from checkmate 2.1.0 at Github to include argument ‘add’</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">mstopOrPush.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function mstop used for assert.R</td>
-<td style="text-align: left;">none</td>
+<td style="text-align: left;">Internal function mstopOrPush used in assert.R</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">helper.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function mstop used for assert.R</td>
-<td style="text-align: left;">none</td>
+<td style="text-align: left;">Internal function mstop used in assert.R</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">makeAssertFunction.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Automatically create an assertion function based on a check function</td>
-<td style="text-align: left;">Adds the argument ‘comment =’ to a created assertion function</td>
+<td style="text-align: left;">Creates an assertion function from a check function</td>
+<td style="text-align: left;">Adds the argument ‘comment’ when creating an assertion function</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">assert.R</td>
@@ -203,25 +203,25 @@ License: BSD 3-Clause
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">none</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">makeFunction.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">none</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">null.ok.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">None</td>
 </tr>
 </tbody>
 </table>
