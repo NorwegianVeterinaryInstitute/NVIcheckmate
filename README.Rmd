@@ -37,7 +37,7 @@ NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
                                 c("NVIbatch",  "Public",
                                   "Tools to facilitate the running of R-scripts in batch mode at NVI"),
                                 c("NVIcheckmate",  "Public",
-                                  "Extension of checkmate with additional functions for argument checking for use in NVIverse functions"),
+                                  "Extension of checkmate with argument checking adapted for NVIverse"),
                                 c("OKplan",  "Public",
                                   "Tools to facilitate the planning of surveillance programmes for the NFSA"),
                                 c("OKcheck",  "Public",
@@ -67,7 +67,7 @@ as available at Cran, the corresponding function will be depreciated and thereaf
 removed from `NVIcheckmate`. 
 
 # Installation
-`NVIcheckmate` is available at https://github.com/NorwegianVeterinaryInstitute. 
+`NVIcheckmate` is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
 To install `NVIcheckmate` you will need:
 
 - R version > 4.0.0
@@ -109,7 +109,7 @@ License: BSD 3-Clause
   
 #### Functions and code imported from `checkmate`
 
-```{r echo = FALSE, resuls = 'asis'}
+```{r echo = FALSE, results = 'asis'}
 imports <- as.data.frame(rbind( c("assert.R", 
                                  "./R",
                                   "Combines multiple checks into one assertion",

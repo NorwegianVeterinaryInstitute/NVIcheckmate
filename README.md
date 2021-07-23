@@ -23,9 +23,9 @@ Veterinary Institute (NVI).
 
 <table>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 6%" />
-<col style="width: 82%" />
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 78%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -58,7 +58,7 @@ Veterinary Institute (NVI).
 <tr class="odd">
 <td style="text-align: left;">NVIcheckmate</td>
 <td style="text-align: left;">Public</td>
-<td style="text-align: left;">Extension of checkmate with additional functions for argument checking for use in NVIverse functions</td>
+<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">OKplan</td>
@@ -100,8 +100,8 @@ Installation
 ============
 
 `NVIcheckmate` is available at
-<a href="https://github.com/NorwegianVeterinaryInstitute" class="uri">https://github.com/NorwegianVeterinaryInstitute</a>.
-To install `NVIcheckmate` you will need:
+[GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
+`NVIcheckmate` you will need:
 
 -   R version &gt; 4.0.0
 -   R package `devtools`
