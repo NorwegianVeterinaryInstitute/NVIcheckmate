@@ -26,7 +26,7 @@ NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
 # Overview
 `NVIcheckmate` is an extension of [`checkmate`](https://CRAN.R-project.org/package=checkmate) with additional functions for argument checking for use in NVIverse functions. `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
 
-####  NVIverse packages
+####  Table 1. NVIverse packages
 ```{r echo = FALSE, resuls = 'asis'}
 NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
                                   "Configuration information necessary for some NVIverse functions"),
@@ -53,7 +53,7 @@ like if a package is installed, if the users credentials are available and, if a
 valid ODBC-channel exists.
 
 In addition, an argument for adding a custom message is included in selected assertions 
-from `checkmate`. Thereby, the error messages for a specific function may be adapted 
+from `checkmate`. Thereby, the error messages for a specific function may be explained 
 to provide more meaningful error messages.
 
 `NVIcheckmate` is intended for use together with `checkmate`. `NVIcheckmate` intend 
@@ -100,27 +100,29 @@ Copyright (c) 2021 Norwegian Veterinary Institute
 License: BSD 3-Clause  
   
 Functions and code from `checkmate` have been imported into `NVIcheckmate`. For some of 
-them, the code have been partly modified. The modifications are commented in the respective 
+them, the code have been partly modified. An overwiew of the functional modifications are 
+given in Table 2. In addition, some technical changes like escaping character, changing 
+links and correcting typos have been performed. The modifications are listed in the respective 
 source files. Code from `checkmate` are the copyright of the copyright holders of `checkmate`.
   
 #### checkmate
 Copyright (c) 2021 Michael Lang (michellang@@gmail.com)  
 License: BSD 3-Clause  
   
-#### Functions and code imported from `checkmate`
+#### Table 2. Functions and code imported from `checkmate`
 
 ```{r echo = FALSE, results = 'asis'}
 imports <- as.data.frame(rbind( c("assert.R", 
                                  "./R",
                                   "Combines multiple checks into one assertion",
                                  "None. Imported as is from checkmate 2.1.0 at Github to include argument 'add'"),
-                                c("mstopOrPush.R",  
+                                c("mstopOrPush",  
                                   "./R",
-                                  "Internal function mstopOrPush used in assert.R",
+                                  "Internal function in file assert.R",
                                   "None"),
-                                c("helper.R",  
+                                c("mstop",  
                                   "./R",
-                                  "Internal function mstop used in assert.R",
+                                  "Internal function in helper.R",
                                   "None"),
                                c("makeAssertFunction.R", 
                                  "./R",
@@ -129,11 +131,11 @@ imports <- as.data.frame(rbind( c("assert.R",
                                 c("assert.R",  
                                   "./man-roxygen",
                                   "help template",
-                                  "yes"),
+                                  "None),
                                 c("checker.R",  
                                   "./man-roxygen",
                                   "help template",
-                                  "yes"),
+                                  "Only included information on check and assert, the rest were removed"),
                                 c("fmatch.R",  
                                   "./man-roxygen",
                                   "help template",
@@ -151,7 +153,7 @@ imports <- as.data.frame(rbind( c("assert.R",
                                   "help template",
                                   "None")))
 colnames(imports) <- c("Function", "Directory", "Description", "Modification")
-knitr::kable(x = imports)
+knitr::kable(x = Imports, col.names = c("Function", "Directory", "Description", "Functional modifications")) 
 ```
 
 # Contributing
