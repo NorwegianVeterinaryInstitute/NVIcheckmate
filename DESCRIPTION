@@ -10,7 +10,7 @@ Authors@R:
            comment = c(ORCID = "0000-0002-8695-0378")),
     person(given = "Norwegian Veterinary Institute",
            role = c("cph")),
-    person(given = "Michael",
+    person(given = "Michel",
            family = "Lang",
            role = c("aut", "cph"),
            email = "michellang@gmail.com",
@@ -43,7 +43,6 @@ Collate:
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
-    'check_new_colname.R'
     'check_odbc_channel.R'
     'check_package.R'
     'check_subset_character.R'
