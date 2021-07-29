@@ -19,7 +19,7 @@ functions. `NVIverse` is a collection of R-packages with tools to
 facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI).
 
-#### NVIverse packages
+#### Table 1. NVIverse packages
 
 <table>
 <colgroup>
@@ -82,7 +82,7 @@ ODBC-channel exists.
 
 In addition, an argument for adding a custom message is included in
 selected assertions from `checkmate`. Thereby, the error messages for a
-specific function may be adapted to provide more meaningful error
+specific function may be explained to provide more meaningful error
 messages.
 
 `NVIcheckmate` is intended for use together with `checkmate`.
@@ -134,32 +134,34 @@ Copyright (c) 2021 Norwegian Veterinary Institute
 License: BSD 3-Clause
 
 Functions and code from `checkmate` have been imported into
-`NVIcheckmate`. For some of them, the code have been partly modified.
-The modifications are commented in the respective source files. Code
-from `checkmate` are the copyright of the copyright holders of
-`checkmate`.
+`NVIcheckmate`. For some of them, the code have been partly modified. An
+overwiew of the functional modifications are given in Table 2. In
+addition, some technical changes like escaping character, changing links
+and correcting typos have been performed. The modifications are listed
+in the respective source files. Code from `checkmate` are the copyright
+of the copyright holders of `checkmate`.
 
 #### checkmate
 
-Copyright (c) 2021 Michael Lang
+Copyright (c) 2019 Michael Lang
 (<a href="mailto:michellang@@gmail.com" class="email">michellang@@gmail.com</a>)  
 License: BSD 3-Clause
 
-#### Functions and code imported from `checkmate`
+#### Table 2. Functions and code imported from `checkmate`
 
 <table>
 <colgroup>
-<col style="width: 12%" />
-<col style="width: 8%" />
-<col style="width: 31%" />
-<col style="width: 47%" />
+<col style="width: 11%" />
+<col style="width: 7%" />
+<col style="width: 33%" />
+<col style="width: 46%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Function</th>
 <th style="text-align: left;">Directory</th>
 <th style="text-align: left;">Description</th>
-<th style="text-align: left;">Modification</th>
+<th style="text-align: left;">Functional modifications</th>
 </tr>
 </thead>
 <tbody>
@@ -170,15 +172,15 @@ License: BSD 3-Clause
 <td style="text-align: left;">None. Imported as is from checkmate 2.1.0 at Github to include argument ‘add’</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">mstopOrPush.R</td>
+<td style="text-align: left;">mstopOrPush</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function mstopOrPush used in assert.R</td>
+<td style="text-align: left;">Internal function. Located in file assert.R</td>
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">helper.R</td>
+<td style="text-align: left;">mstop</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function mstop used in assert.R</td>
+<td style="text-align: left;">Internal function. Located in file helper.R</td>
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
@@ -188,36 +190,42 @@ License: BSD 3-Clause
 <td style="text-align: left;">Adds the argument ‘comment’ when creating an assertion function</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">assert_names</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Perform various checks on character vectors, usually names</td>
+<td style="text-align: left;">Based on check_names and includes the argument ‘comment’</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">checker.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Only included information on check_- and assert_-functions, the rest were removed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">makeFunction.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">null.ok.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>

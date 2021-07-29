@@ -106,7 +106,7 @@ links and correcting typos have been performed. The modifications are listed in 
 source files. Code from `checkmate` are the copyright of the copyright holders of `checkmate`.
   
 #### checkmate
-Copyright (c) 2021 Michael Lang (michellang@@gmail.com)  
+Copyright (c) 2019 Michael Lang (michellang@@gmail.com)  
 License: BSD 3-Clause  
   
 #### Table 2. Functions and code imported from `checkmate`
@@ -118,11 +118,11 @@ imports <- as.data.frame(rbind( c("assert.R",
                                  "None. Imported as is from checkmate 2.1.0 at Github to include argument 'add'"),
                                 c("mstopOrPush",  
                                   "./R",
-                                  "Internal function in file assert.R",
+                                  "Internal function. Located in file assert.R",
                                   "None"),
                                 c("mstop",  
                                   "./R",
-                                  "Internal function in helper.R",
+                                  "Internal function. Located in file helper.R",
                                   "None"),
                                c("makeAssertFunction.R", 
                                  "./R",
@@ -130,16 +130,16 @@ imports <- as.data.frame(rbind( c("assert.R",
                                  "Adds the argument 'comment' when creating an assertion function"),
                                c("assert_names", 
                                  "./R",
-                                 "Various assertions of names",
+                                 "Perform various checks on character vectors, usually names",
                                  "Based on check_names and includes the argument 'comment'"),
                                c("assert.R",  
                                   "./man-roxygen",
                                   "help template",
-                                  "None),
+                                  "None"),
                                 c("checker.R",  
                                   "./man-roxygen",
                                   "help template",
-                                  "Only included information on check and assert, the rest were removed"),
+                                  "Only included information on check_- and assert_-functions, the rest were removed"),
                                 c("fmatch.R",  
                                   "./man-roxygen",
                                   "help template",
@@ -157,7 +157,7 @@ imports <- as.data.frame(rbind( c("assert.R",
                                   "help template",
                                   "None")))
 colnames(imports) <- c("Function", "Directory", "Description", "Modification")
-knitr::kable(x = Imports, col.names = c("Function", "Directory", "Description", "Functional modifications")) 
+knitr::kable(x = imports, col.names = c("Function", "Directory", "Description", "Functional modifications")) 
 ```
 
 # Contributing
