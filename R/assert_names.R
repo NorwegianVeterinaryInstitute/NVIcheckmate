@@ -1,3 +1,19 @@
+# BSD 3-Clause License
+# 
+# Copyright (c) 2019, Michel Lang
+# All rights reserved.
+#
+# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# Modifications
+# - Escaped square brackets in help text
+# - Included @details
+# - Corrected to names in @templateVar
+# - Corrected to disjunct.from in @param disjunct.from 
+# - Wrote a short version of @return in stead of using template
+# - Use @rdname assert_names
+# - generate the assert-function using
+#    NVIcheckmate::makeAssertionFunction to include argument comment. 
+# 
 #' Check names to comply to specific rules
 #'
 #' @description
@@ -45,7 +61,7 @@
 #'  \code{assert_names} throws an error message.
 #' 
 #' @export
-#' @rdname assert_names
+#' @rdname assert_namesø
 
 
 #' @include makeAssertionFunction.R
