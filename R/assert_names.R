@@ -1,6 +1,7 @@
 # BSD 3-Clause License
 # 
 # Copyright (c) 2019, Michel Lang
+# Copyright (c) 2021, Norwegian Veterinary Institute 
 # All rights reserved.
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/ 
