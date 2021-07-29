@@ -7,8 +7,8 @@ New features:
   - check_package and assert_packagechecks if a package is installed/attached.
   - check_credentials and assert_credentials checks if credentials (username and password) for specified services are saved in the users profile.
   - check_odbc_channel and assert_odbc_channel checks if an object is an open odbc channel.
-  - check_choices_character is a modification of checkmate::check_choices with the argument: ignore.case.
-  - assert_choices_character is a modification of checkmate::assert_choices with the arguments: ignore.case and comment.
-  - check_subset_character is a modification of checkmate::check_subset with the argument: ignore.case.
-  - assert_subset_character is a modification of checkmate::assert_subset with the arguments: ignore.case and comment.
+  - check_choices_character is a wrapper around checkmate::check_choices with the argument: ignore.case.
+  - assert_choices_character is a wrapper around checkmate::assert_choices with the arguments: ignore.case and comment.
+  - check_subset_character is a wrapper around checkmate::check_subset with the argument: ignore.case.
+  - assert_subset_character is a wrapper around checkmate::assert_subset with the arguments: ignore.case and comment.
   - assert_names is a modification of checkmate::assert_names with the argument: comment.
