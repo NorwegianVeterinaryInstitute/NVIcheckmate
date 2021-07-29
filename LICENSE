@@ -1,7 +1,13 @@
 BSD 3-Clause License
 
 Copyright (c) 2021, Norwegian Veterinary Institute 
-All rights reserved.
+
+Functions and code from checkmate have been imported into NVIcheckmate. See README for a list and an overwiew of the functional modifications. See the individual files for a full list of all changes.
+
+checkmate
+BSD 3-Clause License
+Copyright (c) 2021 Michael Lang (michellang@@gmail.com)
+
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
