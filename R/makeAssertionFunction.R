@@ -1,3 +1,17 @@
+# BSD 3-Clause License
+# 
+# Copyright (c) 2019, Michel Lang
+# Copyright (c) 2021, Norwegian Veterinary Institute 
+# All rights reserved.
+#
+# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# Modifications
+# - Escaped square brackets in help text
+# - Included information on source and functional changes in @description. 
+# - Included @details
+# - Removed use.namespace from help and function
+# - Included argument comment in created assert-functions. 
+# 
 #' @title Turn a Check into an Assertion
 #'
 #' @description \code{makeAssertionFunction} can be used to automatically create
@@ -11,7 +25,7 @@
 #'     be used.
 #'
 #' @template makeFunction
-# @template use.namespace  # Removed argument use.namespace as checkmate:makeAssertion should always be used
+#  @template use.namespace  # Removed argument use.namespace as checkmate:makeAssertion should always be used
 #' @param coerce \[\code{logical(1)}\]\cr
 #'  If \code{TRUE}, injects some lines of code to convert numeric values to integer after an successful assertion.
 #'  Currently used in \code{\link{assertCount}}, \code{\link{assertInt}} and \code{\link{assertIntegerish}}.
