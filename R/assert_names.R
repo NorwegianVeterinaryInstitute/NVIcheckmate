@@ -62,7 +62,7 @@
 #'  \code{assert_names} throws an error message.
 #' 
 #' @export
-#' @rdname assert_namesø
+#' @rdname assert_names
 
 
 #' @include makeAssertionFunction.R
