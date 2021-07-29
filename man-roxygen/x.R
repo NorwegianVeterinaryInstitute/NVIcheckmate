@@ -1,5 +1,11 @@
-# File imported from https://gihub.com/mllg/checkmate/man-roxygen/ and modified for NVIcheckmate
-# Author and copyright Michel Lang, <michellang@@gmail.com>, see Licence and copyright.
+# BSD 3-Clause License
+# 
+# Copyright (c) 2019, Michel Lang
+# All rights reserved.
+# 
+# The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
+# Modifications
+# - Square brackets are escaped
 #' 
 #' @param x \[any\]\cr
 #'  Object to check.
