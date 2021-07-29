@@ -1,3 +1,13 @@
+# BSD 3-Clause License
+# 
+# Copyright (c) 2019, Michel Lang
+# Copyright (c) 2020, Dénes Tóth
+# All rights reserved.
+#
+# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# Modifications
+# - Square brackets in help text are escaped
+# 
 #' Combine multiple checks into one assertion
 #'
 #' @description
