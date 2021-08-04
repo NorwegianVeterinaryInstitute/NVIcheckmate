@@ -17,11 +17,11 @@
 #' @export
 #' @examples
 #' # returns TRUE i.e. no error message
-#' check_package(x = "checkmate" , version = "2.0.0", type = "installed)
+#' check_package(x = "checkmate" , version = "2.0.0", type = "installed")
 #' 
 #' # returns an error message
-#' check_package(x = "nopackage", type = "installed)
-#' check_package(x = "nopackage", type = "attached)
+#' check_package(x = "nopackage", type = "installed")
+#' check_package(x = "nopackage", type = "attached")
 
 check_package <- function(x, version = NULL, type = "installed") {
   # ARGUMENT CHECKING ----
