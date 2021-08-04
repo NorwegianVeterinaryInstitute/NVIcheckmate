@@ -9,13 +9,12 @@ Rlibrary <- R.home()
 
 library(devtools)
 library(roxygen2)
-library(withr)
 
 # Creates new help files
 # Should be run before git push when documentation for functions have been changed
 devtools::document()
 
-# For updating README.md when the vignette has been updated.
+# For updating README.md when the Rmd-file has been updated.
 rmarkdown::render(input = paste0("./README.Rmd"),
                   # output_format = "md_document",
                   output_file = "README.md",
