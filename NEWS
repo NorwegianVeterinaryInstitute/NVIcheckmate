@@ -1,7 +1,13 @@
+NVIcheckmate 0.1.0.9000 - (2021-0#-##)
+
+New features:
+
+
 NVIcheckmate 0.1.0 - (2021-08-11)
 
 First release:
 Extension of checkmate with argument checking adapted for NVIverse
+
   - check_package and assert_packagechecks if a package is installed/attached.
   - check_credentials and assert_credentials checks if credentials (username and password) for specified services are saved in the users profile.
   - check_odbc_channel and assert_odbc_channel checks if an object is an open odbc channel.
