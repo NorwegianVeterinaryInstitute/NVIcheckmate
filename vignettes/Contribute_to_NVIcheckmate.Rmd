@@ -72,7 +72,7 @@ See below if you want to contribute code for your idea as well.
 
 ### Report a bug 
 
-Using `NVIcheckmate` and discovered a bug? Don't let others have the same experience and report it as an `r paste0("[issue on GitHub](https://github.com/NorwegianVeterinaryInstitute/",NVIpkg, "/issues/new)")` so we can fix it. A good bug report makes it easier for us to do so, so please include:
+Using `r NVIpkg_inline` and discovered a bug? Don't let others have the same experience and report it as an `r paste0("[issue on GitHub](https://github.com/NorwegianVeterinaryInstitute/",NVIpkg, "/issues/new)")` so we can fix it. A good bug report makes it easier for us to do so, so please include:
 
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
