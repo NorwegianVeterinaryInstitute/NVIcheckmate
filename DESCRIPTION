@@ -19,7 +19,7 @@ Authors@R:
            family = "Tóth",
            role = c("ctb"),
            email = "toth.denes@kogentum.hu",
-           comment = c("Contrbuter to the assert-function in the package checkmate")))
+           comment = c("Contributor to the assert-function in the package checkmate")))
 Description: Extension of checkmate with functions for argument checking that are æ
     adapted for NVIverse. NVIcheckmate is intended to be used together with checkmate.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
