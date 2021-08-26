@@ -49,7 +49,7 @@ check_choice_character <- function(x, choices, null.ok = FALSE, ignore.case = FA
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template comment
+# @template comment
 #' @template assert
 #' @rdname check_choice_character
 assert_choice_character  = makeAssertionFunction(check_choice_character) 

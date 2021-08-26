@@ -19,8 +19,8 @@ assert_choice_character(
   null.ok = FALSE,
   ignore.case = FALSE,
   fmatch = FALSE,
-  comment = NULL,
   .var.name = checkmate::vname(x),
+  comment = NULL,
   add = NULL
 )
 }
@@ -44,12 +44,12 @@ If \pkg{fastmatch} is not installed, this silently falls back to \code{\link[bas
 \code{fastmatch::fmatch} modifies \code{y} by reference:
 A hash table is added as attribute which is used in subsequent calls.}
 
-\item{comment}{[\code{character(1)}]\cr
-Extra information to be appended to the standard error message in assert-functions}
-
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link[checkmate]{vname}}.}
+
+\item{comment}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assertions.}
 
 \item{add}{[\code{AssertCollection}]\cr
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
