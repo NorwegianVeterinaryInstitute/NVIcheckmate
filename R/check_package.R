@@ -71,7 +71,6 @@ check_package <- function(x, version = NULL, type = "installed") {
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template comment
 #' @template assert
 #' @rdname check_package
 assert_package <- makeAssertionFunction(check_package)
