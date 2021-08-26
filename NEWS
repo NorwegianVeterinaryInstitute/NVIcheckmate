@@ -2,6 +2,13 @@ NVIcheckmate 0.1.0.9000 - (2021-0#-##)
 
 New features:
 
+  - assert now includes the argument 'comment'.
+  
+  
+Other changes:
+
+  - The order of arguments in assertion functions is changed so that 'comment' is placed just before 'add'.
+
 
 NVIcheckmate 0.1.0 - (2021-08-11)
 
