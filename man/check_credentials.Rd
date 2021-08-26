@@ -9,8 +9,8 @@ check_credentials(x)
 
 assert_credentials(
   x,
-  comment = NULL,
   .var.name = checkmate::vname(x),
+  comment = NULL,
   add = NULL
 )
 }
@@ -18,12 +18,12 @@ assert_credentials(
 \item{x}{[any]\cr
 Object to check.}
 
-\item{comment}{[\code{character(1)}]\cr
-Extra information to be appended to the standard error message in assert-functions}
-
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link[checkmate]{vname}}.}
+
+\item{comment}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assertions.}
 
 \item{add}{[\code{AssertCollection}]\cr
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}

@@ -32,7 +32,7 @@ check_credentials <- function(x) {
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template comment
+# @template comment
 #' @template assert
 #' @rdname check_credentials
 assert_credentials <- makeAssertionFunction(check_credentials)
