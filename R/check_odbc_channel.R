@@ -35,7 +35,6 @@ check_odbc_channel <- function(x, dbservice = NULL) {
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template comment
 #' @template assert
 #' @rdname check_odbc_channel
 assert_odbc_channel = makeAssertionFunction(check_odbc_channel)

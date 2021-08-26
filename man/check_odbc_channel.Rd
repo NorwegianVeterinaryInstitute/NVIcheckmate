@@ -10,8 +10,8 @@ check_odbc_channel(x, dbservice = NULL)
 assert_odbc_channel(
   x,
   dbservice = NULL,
-  comment = NULL,
   .var.name = checkmate::vname(x),
+  comment = NULL,
   add = NULL
 )
 }
@@ -22,12 +22,12 @@ Object to check.}
 \item{dbservice}{[character(1)]\cr
 The database the channel should be connect to.}
 
-\item{comment}{[\code{character(1)}]\cr
-Extra information to be appended to the standard error message in assert-functions}
-
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link[checkmate]{vname}}.}
+
+\item{comment}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assertions.}
 
 \item{add}{[\code{AssertCollection}]\cr
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
