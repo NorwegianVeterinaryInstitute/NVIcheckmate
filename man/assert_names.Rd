@@ -13,8 +13,8 @@ assert_names(
   identical.to = NULL,
   disjunct.from = NULL,
   what = "names",
-  comment = NULL,
   .var.name = checkmate::vname(x),
+  comment = NULL,
   add = NULL
 )
 }
@@ -57,12 +57,12 @@ Names provided in \code{x} must may not be present in the vector \code{disjunct.
 \item{what}{[\code{character(1)}]\cr
 Type of name vector to check, e.g. \dQuote{names} (default), \dQuote{colnames} or \dQuote{rownames}.}
 
-\item{comment}{[\code{character(1)}]\cr
-Extra information to be appended to the standard error message in assert-functions}
-
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link[checkmate]{vname}}.}
+
+\item{comment}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assertions.}
 
 \item{add}{[\code{AssertCollection}]\cr
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}

@@ -55,7 +55,6 @@
 #' @param what \[\code{character(1)}\]\cr
 #'  Type of name vector to check, e.g. \dQuote{names} (default), \dQuote{colnames} or \dQuote{rownames}.
 #' @template assert
-#' @template comment
 #' @return If the check is successful, the function 
 #'  \code{assert_names} return \code{x} invisibly.\cr
 #'  If the check is not successful, 
