@@ -53,13 +53,14 @@ makeAssertionFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = 
   }
   
   # Modified to introduce argument comment (2 lines)
-  fun.args = c(fun.args, alist(comment = NULL))
-  body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste0(res, '. ', comment) }")
+  # fun.args = c(fun.args, alist(comment = NULL))
+  # body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste0(res, '. ', comment) }")
   
   # Removed argument use.namespace as checkmate:makeAssertion should always be used
   # if (use.namespace) {
-    fun.args = c(fun.args,  list(.var.name = bquote(checkmate::vname(.(as.name(x.name)))), add = NULL))
-    body = paste0(body, "; checkmate::makeAssertion")
+  fun.args = c(fun.args,  list(.var.name = bquote(checkmate::vname(.(as.name(x.name)))), comment = NULL, add = NULL))
+  body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste0(res, '. ', comment) }")
+  body = paste0(body, "; checkmate::makeAssertion")
   # } else {
   #   fun.args = c(fun.args, list(.var.name = bquote(vname(.(as.name(x.name)))), add = NULL))
   #   body = paste0(body, "; makeAssertion")

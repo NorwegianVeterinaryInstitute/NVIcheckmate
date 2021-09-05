@@ -62,7 +62,6 @@ check_subset_character <- function(x, choices, ignore.case = FALSE, empty.ok = T
 
 #' @export
 #' @include makeAssertionFunction.R
-#' @template comment
 #' @template assert
 #' @rdname check_subset_character
 assert_subset_character <- makeAssertionFunction(check_subset_character)

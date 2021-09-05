@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.1.0
-Date: 2021-08-11
+Version: 0.2.0
+Date: 2021-09-05
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -20,7 +20,7 @@ Authors@R:
            role = c("ctb"),
            email = "toth.denes@kogentum.hu",
            comment = c("Contributor to the assert-function in the package checkmate")))
-Description: Extension of checkmate with functions for argument checking that are æ
+Description: Extension of checkmate with functions for argument checking that are 
     adapted for NVIverse. NVIcheckmate is intended to be used together with checkmate.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
 BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/issues
@@ -45,6 +45,7 @@ Suggests:
 Collate: 
     'assert.R'
     'makeAssertionFunction.R'
+    'assert_character.R'
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'

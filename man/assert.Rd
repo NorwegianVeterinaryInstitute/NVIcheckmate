@@ -4,7 +4,7 @@
 \alias{assert}
 \title{Combine multiple checks into one assertion}
 \usage{
-assert(..., combine = "or", .var.name = NULL, add = NULL)
+assert(..., combine = "or", .var.name = NULL, comment = NULL, add = NULL)
 }
 \arguments{
 \item{...}{[any]\cr
@@ -17,6 +17,9 @@ or AND, respectively.}
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
 the heuristic implemented in \code{\link[checkmate]{vname}}.}
+
+\item{comment}{[\code{character(1)}]\cr
+Extra information to be appended to the standard error message in assertions.}
 
 \item{add}{[\code{AssertCollection}]\cr
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
