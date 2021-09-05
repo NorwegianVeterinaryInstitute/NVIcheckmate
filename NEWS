@@ -1,8 +1,10 @@
-NVIcheckmate 0.1.0.9000 - (2021-0#-##)
+NVIcheckmate 0.2.0 - (2021-09-05)
 
 New features:
 
   - assert now includes the argument 'comment'.
+  
+  - assert_character with the argument 'comment'
   
   
 Other changes:
