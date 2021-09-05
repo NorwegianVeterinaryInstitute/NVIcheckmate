@@ -196,25 +196,37 @@ License: BSD 3-Clause
 <td style="text-align: left;">Based on check_names and includes the argument ‘comment’</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">assert_character</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Check if an argument is a vector of type character</td>
+<td style="text-align: left;">Based on check_character and includes the argument ‘comment’</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">checker.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">Only included information on check_- and assert_-functions, the rest were removed</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">makeFunction.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">na-handling.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
@@ -226,6 +238,12 @@ License: BSD 3-Clause
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">sorted.R</td>
+<td style="text-align: left;">./man-roxygen</td>
+<td style="text-align: left;">help template</td>
+<td style="text-align: left;">None</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
