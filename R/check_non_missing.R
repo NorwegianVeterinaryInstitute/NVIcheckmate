@@ -22,7 +22,9 @@ check_non_missing <- function(x) {
   # PERFORM CHECK ---- 
   res <- FALSE
   for (i in c(1:length(x))) {
-    if (!is.null(x[[i]]) && !is.na(x[[i]])) {res <- TRUE} 
+    if (!is.null(x[[i]])) {
+ if (!is.na(x[[i]])) {res <- TRUE} 
+} 
   } 
   if (!res) {
     res <- paste0("At least one of the arguments ", 
