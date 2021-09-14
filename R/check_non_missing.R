@@ -19,16 +19,16 @@ check_non_missing <- function(x) {
   # Report check-results
   checkmate::reportAssertions(checks)
   
-# PERFORM CHECK ---- 
-res <- FALSE
-for (i in x) {
-  if (!is.null(i) && !is.na(x)) {res <- TRUE} 
-} 
+  # PERFORM CHECK ---- 
+  res <- FALSE
+  for (i in c(1:length(x))) {
+    if (!is.null(x[[i]]) && !is.na(x[[i]])) {res <- TRUE} 
+  } 
   if (!res) {
     res <- paste0("At least one of the arguments ", 
                   "{'", 
-paste0(x, collapse = "','"),
- "'}", 
+                  paste0(x, collapse = "','"),
+                  "'}", 
                   " must have input different from NULL and NA.")
   } 
   return(res)
