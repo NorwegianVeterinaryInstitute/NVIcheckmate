@@ -44,6 +44,8 @@ Check whether two or more arguments that may replace each other both are NULL or
 In some functions, one argument may replace another. The check is used to ensure that at least on of the arguments have a value. Specific checks for each argument should be used in addition.
 }
 \examples{
-check_non_missing(x = c(data, nrows_in_data)
+data <- NULL
+nrows_in_data <- 56
+check_non_missing(x = list(data, nrows_in_data))
 
 }

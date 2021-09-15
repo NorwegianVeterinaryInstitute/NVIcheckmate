@@ -7,7 +7,9 @@
 #' @template checker
 #' @export
 #' @examples
-#' check_non_missing(x = c(data, nrows_in_data)
+#' data <- NULL
+#' nrows_in_data <- 56
+#' check_non_missing(x = list(data, nrows_in_data))
 #' 
 
 check_non_missing <- function(x) {
@@ -23,15 +25,15 @@ check_non_missing <- function(x) {
   res <- FALSE
   for (i in c(1:length(x))) {
     if (!is.null(x[[i]])) {
- if (!is.na(x[[i]])) {res <- TRUE} 
-} 
+      if (!is.na(x[[i]])) {res <- TRUE} 
+    } 
   } 
   if (!res) {
     res <- paste0("At least one of the arguments ", 
-                  "{'", 
-                  paste0(x, collapse = "','"),
-                  "'}", 
-                  " must have input different from NULL and NA.")
+                  # "{'", 
+                  # paste0(deparse(substitute(x)), collapse = "','"),
+                  # "'} ", 
+                  "must have input different from NULL and NA.")
   } 
   return(res)
 }
