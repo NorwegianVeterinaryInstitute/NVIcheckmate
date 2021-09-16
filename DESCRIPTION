@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.2.0
-Date: 2021-09-05
+Version: 0.3.0
+Date: 2021-09-16
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -49,6 +49,7 @@ Collate:
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
+    'check_non_missing.R'
     'check_odbc_channel.R'
     'check_package.R'
     'check_subset_character.R'

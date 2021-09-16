@@ -10,8 +10,8 @@
 # - Included @details
 # - Wrote a short version of @return in stead of using template
 # - Use @rdname assert_character
-# - generate the assert-function using
-#    NVIcheckmate::makeAssertionFunction to include argument comment. 
+# - included argument comment in the assert-function. 
+# - Corrected link to grepl [base:grep]
 # 
 #' Check if an argument is a vector of type character
 #'
@@ -43,14 +43,14 @@
 #'  Note that you can use \code{\link{checkSubset}} to check for a specific set of names.
 #'  
 #' @param pattern \[\code{character(1L)}\]\cr
-#'  Regular expression as used in \code{\link[base]{grepl}}.
+#'  Regular expression as used in \code{\link[base:grep]{grepl}}.
 #'  All non-missing elements of \code{x} must comply to this pattern.
 #' @param fixed \[\code{character(1)}\]\cr
-#'  Substring to detect in \code{x}. Will be used as \code{pattern} in \code{\link[base]{grepl}}
+#'  Substring to detect in \code{x}. Will be used as \code{pattern} in \code{\link[base:grep]{grepl}}
 #'  with option \code{fixed} set to \code{TRUE}.
 #'  All non-missing elements of \code{x} must contain this substring.
 #' @param ignore.case \[\code{logical(1)}\]\cr
-#'  See \code{\link[base]{grepl}}. Default is \code{FALSE}.
+#'  See \code{\link[base:grep]{grepl}}. Default is \code{FALSE}.
 #' @param min.chars \[\code{integer(1)}\]\cr
 #'  Minimum number of characters for each element of \code{x}.
 #' @template sorted
