@@ -10,8 +10,8 @@
 # - Included @details
 # - Wrote a short version of @return in stead of using template
 # - Use @rdname assert_character
-# - generate the assert-function using
-#    NVIcheckmate::makeAssertionFunction to include argument comment. 
+# - included argument comment in the assert-function. 
+# - Corrected link to grepl [base:grep]
 # 
 #' Check if an argument is a vector of type character
 #'
