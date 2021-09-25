@@ -16,7 +16,7 @@ assert_non_missing(
 }
 \arguments{
 \item{x}{[any]\cr
-Vector of objects to check.}
+List with objects to check.}
 
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
