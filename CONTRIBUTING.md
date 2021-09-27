@@ -114,7 +114,7 @@ documentation using [`roxygen2`](https://klutometis.github.io/roxygen/).
 If you want to improve a function description:
 
 1.  Go to `R/` directory in the [code
-    repository](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/tree/master/R).
+    repository](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/tree/main/R).
 2.  Look for the file with the name of the function.
 3.  [Propose a file
     change](https://help.github.com/articles/editing-files-in-another-user-s-repository/)

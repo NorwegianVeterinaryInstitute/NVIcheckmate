@@ -3,7 +3,7 @@
 #' @details In some functions, one argument may replace another. The check is used to ensure that at least on of the arguments have a value. Specific checks for each argument should be used in addition. 
 #' @templateVar fn non_missing
 #' @param x \[any\]\cr
-#'  Vector of objects to check.
+#'  List with objects to check.
 #' @template checker
 #' @export
 #' @examples
@@ -17,7 +17,7 @@ check_non_missing <- function(x) {
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # Perform checks
-  checkmate::assert_vector(x, min.len = 2, add = checks)
+  checkmate::assert_list(x, min.len = 2, null.ok = TRUE, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
   
