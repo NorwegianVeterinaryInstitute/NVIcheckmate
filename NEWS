@@ -1,3 +1,10 @@
+NVIcheckmate 0.3.1 - (2021-09-27)
+
+Bug fixes:
+
+  - input to check_non_missing and assert_non_missing check corrected to list, not vector
+  
+  
 NVIcheckmate 0.3.0 - (2021-09-16)
 
 New features:
