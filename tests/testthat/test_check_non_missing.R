@@ -31,24 +31,24 @@ test_that("Make error for check_non_missing", {
     assert_non_missing(x = list(fruit, vegetable)),
     regexp = "At least one of the arguments" )
   
-  fruit <- NA
-  vegetable <- NULL
-  expect_error(
-    assert_non_missing(x = list(fruit, vegetable)),
-    regexp = "At least one of the arguments" )
-  
-  fruit <- NA
-  vegetable <- NA
-  cereal = NA
-  expect_error(
-    assert_non_missing(x = list(fruit, vegetable, cereal)),
-    regexp = "At least one of the arguments" )
-  
-  fruit <- NULL
-  vegetable <- NA
-  cereal = NULL 
-  expect_error(
-    assert_non_missing(x = list(fruit, vegetable, cereal)),
-    regexp = "At least one of the arguments" )
+  # fruit <- NA
+  # vegetable <- NULL
+  # expect_error(
+  #   assert_non_missing(x = list(fruit, vegetable)),
+  #   regexp = "At least one of the arguments" )
+  # 
+  # fruit <- NA
+  # vegetable <- NA
+  # cereal = NA
+  # expect_error(
+  #   assert_non_missing(x = list(fruit, vegetable, cereal)),
+  #   regexp = "At least one of the arguments" )
+  # 
+  # fruit <- NULL
+  # vegetable <- NA
+  # cereal = NULL 
+  # expect_error(
+  #   assert_non_missing(x = list(fruit, vegetable, cereal)),
+  #   regexp = "At least one of the arguments" )
   
 })
