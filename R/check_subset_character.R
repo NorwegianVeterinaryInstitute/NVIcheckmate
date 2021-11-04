@@ -43,6 +43,9 @@ check_subset_character <- function(x, choices, ignore.case = FALSE, empty.ok = T
   if (isTRUE(ignore.case)) { 
     xx <- tolower(x)
     choicesx <- tolower(choices)
+  } else {
+    xx <- x
+    choicesx <- choices
   }
   res <- checkmate::check_subset(x = xx, choices = choicesx , empty.ok = empty.ok, fmatch = fmatch)
   if (!isTRUE(res) & isTRUE(ignore.case)) {

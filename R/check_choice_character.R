@@ -33,6 +33,9 @@ check_choice_character <- function(x, choices, null.ok = FALSE, ignore.case = FA
   if (isTRUE(ignore.case)) { 
     xx <- tolower(x)
     choicesx <- tolower(choices)
+  } else {
+    xx <- x
+    choicesx <- choices
   }
   res <- checkmate::check_choice(x = xx, choices = choicesx , null.ok = null.ok, fmatch = fmatch)
   if (!isTRUE(res) & isTRUE(ignore.case)) {
