@@ -1,3 +1,10 @@
+NVIcheckmate 0.3.3.9000 - (2021-11-##)
+
+Other changes:
+
+  - improved readability of error messages for assert_choices_character and assert_subset_character.
+  
+  
 NVIcheckmate 0.3.3 - (2021-11-04)
 
 Bug fixes:
