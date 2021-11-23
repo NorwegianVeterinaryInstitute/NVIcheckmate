@@ -42,7 +42,7 @@ check_choice_character <- function(x, choices, null.ok = FALSE, ignore.case = FA
     # set_collapse as used in check_choices to get identical string
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   # set_collapse(choices),
-                  paste0("{'", paste0(unique(choices), collapse = "','"), "'}"),
+                  paste0("{'", paste0(unique(choices), collapse = "', '"), "'}"),
                   " (case is ignored)",
                   sub(xx, x, substr(res, regexpr("\\}", res)[1]+1, nchar(res))))
   }
