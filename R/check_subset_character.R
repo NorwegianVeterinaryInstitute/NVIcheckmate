@@ -53,10 +53,10 @@ check_subset_character <- function(x, choices, ignore.case = FALSE, empty.ok = T
     # copied from check_choice_ignore_case, must be modified
     res <- paste0(substr(res, 1, regexpr("\\{", res)[1]-1),
                   # set_collapse(choices),
-                  paste0("{'", paste0(unique(choices), collapse = "','"), "'}"),
+                  paste0("{'", paste0(unique(choices), collapse = "', '"), "'}"),
                   " (case is ignored), but is ",
                   # set_collapse(x)
-                  paste0("{'", paste0(unique(x), collapse = "','"), "'}"))
+                  paste0("{'", paste0(unique(x), collapse = "', '"), "'}"))
     
   }
   return(res)
