@@ -28,12 +28,11 @@ test_that("Make error for check_subset_character", {
     check_subset_character(x = "Tomato",
                            choices = c("Apple", "Pear", "Orange", "Banana"),
                            ignore.case = TRUE),
-    "Must be a subset of {'Apple','Pear','Orange','Banana'} (case is ignored), but is {'Tomato'}")
+    "Must be a subset of {'Apple', 'Pear', 'Orange', 'Banana'} (case is ignored), but is {'Tomato'}")
   
-  "Must be a subset of {'Apple','Pear','Orange','Banana'} (case is ignored), but is {'Tomato'}"
   expect_identical(
     check_subset_character(x = c("Tomato", "Apple"), 
                            choices = c("Apple", "Pear", "Orange", "Banana"),
                            ignore.case = TRUE),
-    "Must be a subset of {'Apple','Pear','Orange','Banana'} (case is ignored), but is {'Tomato','Apple'}")
+    "Must be a subset of {'Apple', 'Pear', 'Orange', 'Banana'} (case is ignored), but is {'Tomato', 'Apple'}")
 })
