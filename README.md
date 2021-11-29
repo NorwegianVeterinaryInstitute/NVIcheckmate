@@ -1,4 +1,4 @@
-NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
+NVIcheckmate: Extension of checkmate with argument checking adapted for NVIverse
 ================================================================================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -12,66 +12,16 @@ NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
 Overview
 ========
 
-`NVIcheckmate` is an extension of
+`NVIcheckmate` extends
 [`checkmate`](https://CRAN.R-project.org/package=checkmate) with
-additional functions for argument checking for use in NVIverse
-functions. `NVIverse` is a collection of R-packages with tools to
-facilitate data management and data reporting at the Norwegian
-Veterinary Institute (NVI).
+functions for argument checking that are adapted for NVIverse.
 
-#### Table 1. NVIverse packages
-
-<table>
-<colgroup>
-<col style="width: 13%" />
-<col style="width: 8%" />
-<col style="width: 78%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Package</th>
-<th style="text-align: left;">Status</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">NVIconfig</td>
-<td style="text-align: left;">Private</td>
-<td style="text-align: left;">Configuration information necessary for some NVIverse functions</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NVIdb</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the use of NVI’s databases</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NVIpretty</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to make R-output pretty in accord with NVI’s graphical profile</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">NVIbatch</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the running of R-scripts in batch mode at NVI</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">NVIcheckmate</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Extension of checkmate with argument checking adapted for NVIverse</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">OKplan</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate the planning of surveillance programmes for the NFSA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">OKcheck</td>
-<td style="text-align: left;">Public</td>
-<td style="text-align: left;">Tools to facilitate checking of data from national surveillance programmes</td>
-</tr>
-</tbody>
-</table>
+`NVIcheckmate` is part of `NVIverse`, a collection of R-packages with
+tools to facilitate data management and data reporting at the Norwegian
+Veterinary Institute (NVI). The NVIverse consists of the following
+packages: NVIconfig, NVIdb, NVIpretty, NVIbatch, OKplan, OKcheck,
+NVIcheckmate, NVIpackager. See the vignette “Contribute to NVIcheckmate”
+for more information.
 
 The main purpose of `NVIcheckmate` is to provide checks and assertions
 for functions in `NVIverse` in the case that the checks and assertions
@@ -104,31 +54,49 @@ Installation
 `NVIcheckmate` you will need:
 
 -   R version &gt; 4.0.0
--   R package `devtools`
+-   R package `remotes`
 -   Rtools 4.0
 
-First install and attach the `devtools` package.
+First install and attach the `remotes` package.
 
-    install.packages("devtools")
-    library(devtools)
+    install.packages("remotes")
+    library(remotes)
 
 To install (or update) the `NVIcheckmate` package, run the following
 code:
 
-    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
-        upgrade = FALSE, 
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate")
+        upgrade = FALSE,
         build = TRUE,
         build_manual = TRUE)
 
 Usage
 =====
 
-To come.
+The `NVIcheckmate` package needs to be attached.
+
+    library(NVIdb)
+
+`NVIcheckmate`extends `checkmate` with functions for argument checking
+that are adapted for NVIverse. NVIcheckmate is intended to be used
+together with `checkmate`.
+
+The list of available functions and datasets can be accessed by typing
+
+    help(package="NVIdb")
+
+Please check the NEWS for information on new features, bug fixes and
+other changes.
 
 Copyright and license
 =====================
 
 #### NVIcheckmate
+
+Copyright (c) 2021 Norwegian Veterinary Institute.  
+Licensed under the BSD\_3\_clause License. See
+[License](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/LICENSE)
+for details.
 
 Copyright (c) 2021 Norwegian Veterinary Institute  
 License: BSD 3-Clause
@@ -260,9 +228,10 @@ several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
 The vignette “Contribute to NVIcheckmate” gives more information.
 
-------------------------------------------------------------------------
+<!-- Code of conduct -->
+------------------------
 
 Please note that the NVIcheckmate project is released with a
 [Contributor Code of
-Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+Conduct](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/CODE_OF_CONDUCT.md).
 By contributing to this project, you agree to abide by its terms.
