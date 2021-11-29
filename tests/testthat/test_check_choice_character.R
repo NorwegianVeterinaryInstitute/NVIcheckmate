@@ -19,7 +19,7 @@ test_that("Make error for check_choice_character", {
     check_choice_character(x = "Apples",
                            choices = c("Apple", "Pear", "Orange", "Pineapple"),
                            ignore.case = TRUE),
-    "Must be element of set {'Apple','Pear','Orange','Pineapple'} (case is ignored), but is 'Apples'")
+    "Must be element of set {'Apple', 'Pear', 'Orange', 'Pineapple'} (case is ignored), but is 'Apples'")
   
   expect_identical(
     check_choice_character(x = c("Apple", "pear"),
