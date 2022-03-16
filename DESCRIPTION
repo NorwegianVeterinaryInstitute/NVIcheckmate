@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
 Version: 0.3.3.9000
-Date: 2021-11-04
+Date: 2022-##-##
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -32,7 +32,7 @@ Imports:
     RODBC,
     keyring
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     devtools,
     knitr,
@@ -55,4 +55,5 @@ Collate:
     'check_package.R'
     'check_subset_character.R'
     'helper.R'
+    'match_arg.R'
 VignetteBuilder: knitr
