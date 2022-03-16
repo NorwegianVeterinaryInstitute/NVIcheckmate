@@ -1,4 +1,9 @@
-NVIcheckmate 0.3.3.9000 - (2021-11-##)
+NVIcheckmate 0.3.3.9000 - (2022-##-##)
+
+New features:
+
+- match_arg performs partial matching of arguments and includes the argument ignore.case. 
+
 
 Other changes:
 
