@@ -1,26 +1,26 @@
 # BSD 3-Clause License
-# 
+#
 # Copyright (c) 2019, Michel Lang
-# Copyright (c) 2021, Norwegian Veterinary Institute 
+# Copyright (c) 2021, Norwegian Veterinary Institute
 # All rights reserved.
 #
-# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
 # - Escaped square brackets in help text
 # - Included @details
 # - Corrected to names in @templateVar
-# - Corrected to disjunct.from in @param disjunct.from 
+# - Corrected to disjunct.from in @param disjunct.from
 # - Wrote a short version of @return in stead of using template
 # - Use @rdname assert_names
 # - generate the assert-function using
-#    NVIcheckmate::makeAssertionFunction to include argument comment. 
-# 
+#    NVIcheckmate::makeAssertionFunction to include argument comment.
+#
 #' Check names to comply to specific rules
 #'
 #' @description
 #' Performs assertions with various checks on character vectors, usually names.
-#' @details The assertions are based on \code{checkmate::checkNames}. \code{NVIcheckmate::assert_names} 
-#'     differs from \code{checkmate::assert_names} in including the argument \code{comment = }. The help 
+#' @details The assertions are based on \code{checkmate::checkNames}. \code{NVIcheckmate::assert_names}
+#'     differs from \code{checkmate::assert_names} in including the argument \code{comment = }. The help
 #'     is updated to reflect the changes.
 #'
 #' @templateVar fn names
@@ -32,8 +32,8 @@
 #'  \item{unnamed:}{Checks \code{x} to be \code{NULL}.}
 #'  \item{named:}{Checks \code{x} for regular names which excludes names to be \code{NA} or empty (\code{""}).}
 #'  \item{unique:}{Performs checks like with \dQuote{named} and additionally tests for non-duplicated names.}
-#'  \item{strict:}{Performs checks like with \dQuote{unique} and additionally fails for names with UTF-8 characters 
-#'      and names which do not comply to R's variable name restrictions. As regular expression, this is 
+#'  \item{strict:}{Performs checks like with \dQuote{unique} and additionally fails for names with UTF-8 characters
+#'      and names which do not comply to R's variable name restrictions. As regular expression, this is
 #'      \dQuote{^\[.\]*\[a-zA-Z\]+\[a-zA-Z0-9._\]*$}.}
 #'  \item{ids:}{Same as \dQuote{strict}, but does not enforce uniqueness.}
 #'  }
@@ -55,15 +55,14 @@
 #' @param what \[\code{character(1)}\]\cr
 #'  Type of name vector to check, e.g. \dQuote{names} (default), \dQuote{colnames} or \dQuote{rownames}.
 #' @template assert
-#' @return If the check is successful, the function 
+#' @return If the check is successful, the function
 #'  \code{assert_names} return \code{x} invisibly.\cr
-#'  If the check is not successful, 
+#'  If the check is not successful,
 #'  \code{assert_names} throws an error message.
-#' 
+#'
 #' @export
 #' @rdname assert_names
 
 
 #' @include makeAssertionFunction.R
 assert_names = makeAssertionFunction(checkmate::checkNames)
-

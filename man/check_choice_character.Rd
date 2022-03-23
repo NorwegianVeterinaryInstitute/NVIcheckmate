@@ -75,10 +75,10 @@ ignoring case.
 }
 \examples{
 # returns TRUE
-check_choice_character(x = "APPLE", 
-                     choices = c("Apple", "Pear", "Orange"), 
-                     null.ok = FALSE, 
-                     ignore.case = TRUE, 
+check_choice_character(x = "APPLE",
+                     choices = c("Apple", "Pear", "Orange"),
+                     null.ok = FALSE,
+                     ignore.case = TRUE,
                      fmatch = FALSE)
 }
 \author{

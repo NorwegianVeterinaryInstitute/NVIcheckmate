@@ -50,12 +50,13 @@ Be aware that this function is an internal \code{RODBC}-function and may change 
 }
 \examples{
 \dontrun{
-#login to PJS
+# login to PJS
 journal_rapp <- login("PJS")
 
 # error check:
 check_odbc_channel(x = "journal_rapp", dbservice = "PJS")
 }
+
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

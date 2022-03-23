@@ -42,5 +42,4 @@ In some functions, one argument may replace another. The check is used to ensure
 data <- NULL
 nrows_in_data <- 56
 check_non_null(x = list(data, nrows_in_data))
-
 }

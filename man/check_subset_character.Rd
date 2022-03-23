@@ -75,18 +75,17 @@ ignoring case.
 }
 \examples{
 # returns TRUE
-check_subset_character(x = "Apple", 
-                       choices = c("apple", "pear", "orange", "banana"), 
+check_subset_character(x = "Apple",
+                       choices = c("apple", "pear", "orange", "banana"),
                        ignore.case = TRUE)
-check_subset_character(x = c("Apple", "Pear"), 
-                       choices = c("apple", "pear", "orange", "banana"), 
+check_subset_character(x = c("Apple", "Pear"),
+                       choices = c("apple", "pear", "orange", "banana"),
                        ignore.case = TRUE)
 
 # returns a message
-check_subset_character(x = "Tomato", 
-                       choices = c("apple", "pear", "orange", "banana"), 
+check_subset_character(x = "Tomato",
+                       choices = c("apple", "pear", "orange", "banana"),
                        ignore.case = TRUE)
-
 }
 \author{
 Petter Hopp Petter.Hopp@vetinst.no

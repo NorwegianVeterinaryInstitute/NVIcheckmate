@@ -1,12 +1,12 @@
 # BSD 3-Clause License
-# 
+#
 # Copyright (c) 2019, Michel Lang
 # All rights reserved.
 #
-# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
 # - Commented out all functions except mstop
-# 
+#
 mstop = function(msg, ..., call. = NULL) {
   stop(simpleError(sprintf(msg, ...), call.))
 }
@@ -14,7 +14,7 @@ mstop = function(msg, ..., call. = NULL) {
 # "%and%" = function(lhs, rhs) {
 #   if (isTRUE(lhs)) rhs else lhs
 # }
-# 
+#
 # "%nin%" = function(x, y) {
 #   !match(x, y, nomatch = 0L)
 # }

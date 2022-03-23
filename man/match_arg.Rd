@@ -57,5 +57,4 @@ The behavior is very similar to \code{\link[base]{match.arg}}, except that
 }
 \examples{
 match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
-
 }
