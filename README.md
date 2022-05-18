@@ -1,5 +1,4 @@
-NVIcheckmate: Extension of checkmate with argument checking adapted for NVIverse
-================================================================================
+# NVIcheckmate: Extension of checkmate with argument checking adapted for NVIverse <img src="man/figures/NVIcheckmate_logo.png" align="right" height="138" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
@@ -9,8 +8,7 @@ NVIcheckmate: Extension of checkmate with argument checking adapted for NVIverse
 -   [Copyright and license](#copyright-and-license)
 -   [Contributing](#contributing)
 
-Overview
-========
+# Overview
 
 `NVIcheckmate` extends
 [`checkmate`](https://CRAN.R-project.org/package=checkmate) with
@@ -20,8 +18,8 @@ functions for argument checking that are adapted for NVIverse.
 tools to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI). The NVIverse consists of the following
 packages: NVIconfig, NVIdb, NVIpretty, NVIbatch, OKplan, OKcheck,
-NVIcheckmate, NVIpackager. See the vignette “Contribute to NVIcheckmate”
-for more information.
+NVIcheckmate, NVIpackager, NVIrpackages. See the vignette “Contribute to
+NVIcheckmate” for more information.
 
 The main purpose of `NVIcheckmate` is to provide checks and assertions
 for functions in `NVIverse` in the case that the checks and assertions
@@ -46,14 +44,13 @@ When and if functionality covered by `NVIcheckmate` are included in
 `checkmate` as available at Cran, the corresponding function will be
 depreciated and thereafter removed from `NVIcheckmate`.
 
-Installation
-============
+# Installation
 
 `NVIcheckmate` is available at
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIcheckmate` you will need:
 
--   R version &gt; 4.0.0
+-   R version > 4.0.0
 -   R package `remotes`
 -   Rtools 4.0
 
@@ -65,35 +62,34 @@ First install and attach the `remotes` package.
 To install (or update) the `NVIcheckmate` package, run the following
 code:
 
-    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate")
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
         upgrade = FALSE,
         build = TRUE,
         build_manual = TRUE)
 
-Usage
-=====
+# Usage
 
 The `NVIcheckmate` package needs to be attached.
 
-    library(NVIdb)
+    library(NVIcheckmate)
 
 `NVIcheckmate`extends `checkmate` with functions for argument checking
 that are adapted for NVIverse. NVIcheckmate is intended to be used
 together with `checkmate`.
 
-The list of available functions and datasets can be accessed by typing
+The full list of all available functions and datasets can be accessed by
+typing
 
-    help(package="NVIdb")
+    help(package = "NVIcheckmate")
 
 Please check the NEWS for information on new features, bug fixes and
 other changes.
 
-Copyright and license
-=====================
+# Copyright and license
 
 #### NVIcheckmate
 
-Copyright (c) 2021 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2022 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/LICENSE)
 for details.
@@ -111,8 +107,7 @@ of the copyright holders of `checkmate`.
 
 #### checkmate
 
-Copyright (c) 2019 Michael Lang
-(<a href="mailto:michellang@@gmail.com" class="email">michellang@@gmail.com</a>)  
+Copyright (c) 2019 Michael Lang (michellang@@gmail.com)  
 License: BSD 3-Clause
 
 #### Table 2. Functions and code imported from `checkmate`
@@ -220,16 +215,14 @@ License: BSD 3-Clause
 </tbody>
 </table>
 
-Contributing
-============
+# Contributing
 
 Contributions to develop `NVIcheckmate` is highly appreciated. There are
 several ways you can contribute to this project: ask a question, propose
 an idea, report a bug, improve the documentation, or contribute code.
 The vignette “Contribute to NVIcheckmate” gives more information.
 
-<!-- Code of conduct -->
-------------------------
+## <!-- Code of conduct -->
 
 Please note that the NVIcheckmate project is released with a
 [Contributor Code of
