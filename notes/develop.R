@@ -1,11 +1,10 @@
 # TEST, DOCUMENT AND BUILD NVIdb PACKAGE
 
 # SET UP ENVIRONMENT ----
-# rm(list = ls())    # Benyttes for å tømme R-environment ved behov
+# rm(list = ls())    # Use to empty R-environment if needed
 
 # Attach packages
 # library(devtools)
-# library(roxygen2)
 library(NVIpackager)
 # library(spelling)
 
@@ -17,8 +16,12 @@ pkg_path = usethis::proj_path()
 # create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
 
 # DOCUMENTATION AND STYLING ----
+# update_loge should be run if a logo has been created (or updated). Thereafter use "readme = TRUE"
+# update_logo(pkg = pkg, pkg_path = pkg_path)
+
 # Creates new help files
-# Should be run before git push when documentation for functions have been changed
+## Should be run before git push when documentation for functions have been changed
+## If new packages have been added to NVIverse (in NVIrpackages), use "contributing = TRUE" and "readme = TRUE".
 NVIpackager::document_NVIpkg(style = TRUE,
                              contributing = FALSE,
                              readme = FALSE,
