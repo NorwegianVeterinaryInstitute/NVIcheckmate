@@ -40,22 +40,40 @@
 #' @rdname match_arg
 #' @examples
 #' match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
-match_arg = function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.name = checkmate::vname(x), comment = NULL, add = NULL) {
+match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.name = checkmate::vname(x), comment = NULL, add = NULL) { 
   checkmate::assertCharacter(choices, min.len = 1L)
   checkmate::assertFlag(several.ok)
   checkmate::assertFlag(ignore.case)
-
+  
   if (several.ok) {
     if (identical(x, choices))
       return(x)
     checkmate::assertCharacter(x, min.len = 1L, .var.name = .var.name, add = add)
-    if (isTRUE(ignore.case)) {
-      xx = choices[pmatch(tolower(x), tolower(choices), nomatch = 0L, duplicates.ok = TRUE)]
-    } else {
-      xx = choices[pmatch(x, choices, nomatch = 0L, duplicates.ok = TRUE)]
+    xx <- paste0("^", x, "[[:print:]]")
+    y <- sapply(X = xx, FUN = grep, value = TRUE, ignore.case = ignore.case, x = choices)
+    if (class(y) == "list") {
+      # vlength <- lengths(y) 
+      yy <- x 
+      yy[which(lengths(y) == 1)] <- unname(unlist(y[which(lengths(y) == 1)]))
+      if (any(lengths(y) > 1)) {
+        comment <- paste(comment, "If arguments are abbreviated, they must still give unique arguments") 
+      } 
     }
-    if (length(xx) == 0) {x <- x} else {x <- xx}
-    assert_subset_character(x, choices, empty.ok = FALSE, .var.name = .var.name,
+    if ("matrix" %in% class(y) | "array" %in% class(y)) {
+      yy <- x 
+        comment <- paste(comment, "If arguments are abbreviated, they must still give unique arguments") 
+    }
+    if (class(y) == "character") {
+      yy <- y
+      }
+    
+    #    if (isTRUE(ignore.case)) {
+    #      xx = choices[pmatch(tolower(x), tolower(choices), nomatch = 0L, duplicates.ok = TRUE)]
+    #   } else {
+    #     xx = choices[pmatch(x, choices, nomatch = 0L, duplicates.ok = TRUE)]
+    #   }
+    #   if (length(xx) == 0) {x <- x} else {x <- xx}
+    assert_subset_character(x = y, choices, empty.ok = FALSE, .var.name = .var.name,
                             comment = comment,
                             add = add)
   } else {
