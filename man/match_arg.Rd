@@ -22,7 +22,7 @@ User provided argument to match.}
 Candidates to match \code{x} with.}
 
 \item{several.ok}{[logical(1)]\cr
-If \code{TRUE}, multiple matches are allowed, cf. \code{\link[base]{match.arg}}.}
+If \code{TRUE}, \code{x} should be allowed to have more than one element.}
 
 \item{ignore.case}{[\code{logical(1)}]\cr
 Case is ignored if \code{TRUE}. Default is \code{FALSE}.}
@@ -38,23 +38,27 @@ Extra information to be appended to the standard error message in assertions.}
 Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
-Subset of \code{choices}.
+Character vector with subset of \code{choices}.
 }
 \description{
 match.arg matches arguments against a table of candidate values as specified
-by choices. Matching is done using \code{\link[base]{pmatch}}, so arguments
-may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when doing
+by choices. Matching is done using \code{\link[base]{grep}}, and arguments
+may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when performing
 the matching.
 }
 \details{
 Partial Argument Matching
 
 This is an extensions to \code{\link[checkmate]{matchArg}} with support
-of \code{ignore.case} that is an extension of \code{\link[base]{match.arg}}
+for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an extension of \code{\link[base]{match.arg}}
 with support for \code{\link{AssertCollection}}.
 The behavior is very similar to \code{\link[base]{match.arg}}, except that
-\code{NULL} is not a valid value for \code{x}.
+\code{NULL} is not a valid value for \code{x}. In addition, it is required that all values for \code{x} match a value in \code{choices} and that each value in \code{x} matches only one value in \code{choices}.
 }
 \examples{
 match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
+match_arg(c("a", "Ban"), choices = c("Apple", "Banana"), several.ok = TRUE, ignore.case = TRUE)
+# Gives error as no unique match
+match_arg("Ap", choices = c("Apple", "Apricot"), several.ok = TRUE, ignore.case = FALSE)
+
 }
