@@ -5,6 +5,13 @@ library(checkmate)
 test_that("No error for match_arg", {
 
   expect_identical(
+    match_arg(x = "Orange",
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = FALSE,
+              ignore.case = FALSE),
+    "Orange")
+
+  expect_identical(
     match_arg(x = "app",
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = FALSE,
@@ -17,6 +24,13 @@ test_that("No error for match_arg", {
               several.ok = TRUE,
               ignore.case = TRUE),
     c("Apple", "Pear"))
+
+  expect_identical(
+    match_arg(x = c("app", "app"),
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = TRUE,
+              ignore.case = TRUE),
+    c("Apple", "Apple"))
 })
 
 
@@ -59,5 +73,20 @@ test_that("Make error for match_arg", {
     fixed = TRUE)
   # "Must be element of set {'Apple','Pear','Orange','Pineapple'} (case is ignored), but is 'Apples'")
 
+  expect_error(
+    match_arg(x = c("p"),
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = TRUE,
+              ignore.case = TRUE),
+    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but is {'p'}",
+    fixed = TRUE)
+
+  expect_error(
+    match_arg(x = c("Ap", "p"),
+              choices = c("Apple", "Apricot", "Pear", "Orange", "Pineapple"),
+              several.ok = TRUE,
+              ignore.case = TRUE),
+    regexp = "Must be a subset of {'Apple','Apricot','Pear','Orange','Pineapple'}, but is {'Ap','p'}",
+    fixed = TRUE)
   options(width = unlist(linewidth))
 })
