@@ -60,5 +60,4 @@ match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
 match_arg(c("a", "Ban"), choices = c("Apple", "Banana"), several.ok = TRUE, ignore.case = TRUE)
 # Gives error as no unique match
 match_arg("Ap", choices = c("Apple", "Apricot"), several.ok = TRUE, ignore.case = FALSE)
-
 }
