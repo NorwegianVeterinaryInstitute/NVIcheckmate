@@ -44,7 +44,6 @@
 #' match_arg(c("a", "Ban"), choices = c("Apple", "Banana"), several.ok = TRUE, ignore.case = TRUE)
 #' # Gives error as no unique match
 #' match_arg("Ap", choices = c("Apple", "Apricot"), several.ok = TRUE, ignore.case = FALSE)
-#'
 match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.name = checkmate::vname(x), comment = NULL, add = NULL) {
   checkmate::assertCharacter(choices, min.len = 1L)
   checkmate::assertFlag(several.ok)
@@ -54,27 +53,28 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
     if (identical(x, choices))
       return(x)
     checkmate::assertCharacter(x, min.len = 1L, .var.name = .var.name, add = add)
-    xx <- paste0("^", x, "[[:print:]]")
+    xx <- paste0("^", x, "[[:print:]]*")
     y <- sapply(X = xx, FUN = grep, value = TRUE, ignore.case = ignore.case, x = choices, simplify = TRUE)
-    if (class(y) == "list") {
+    if ("array" %in% class(y) | "matrix" %in% class(y)) {
       yy <- x
-      yy[which(lengths(y) == 1)] <- unname(unlist(y[which(lengths(y) == 1)]))
-      if (any(lengths(y) > 1)) {
-        comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
-      }
-    } else { # if class(y) not list
-      if ("array" %in% class(y) | "matrix" %in% class(y)) {
+      comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
+    } else { # if class(y) neither array nor matrix
+      if (class(y) == "list") {
         yy <- x
-        comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
+        yy[which(lengths(y) == 1)] <- unname(unlist(y[which(lengths(y) == 1)]))
+        if (any(lengths(y) > 1)) {
+          comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
+        }
       } else { # if class(y) neither array, matrix nor list
+
         if (class(y) == "character") {
           yy <- unname(y)
         }
       }
-      assert_subset_character(x = yy, choices, empty.ok = FALSE, .var.name = .var.name,
-                              comment = comment,
-                              add = add)
     }
+    assert_subset_character(x = yy, choices, empty.ok = FALSE, .var.name = .var.name,
+                            comment = comment,
+                            add = add)
   } else { # if several.ok = FALSE
     if (identical(x, choices))
       return(x[1L])
