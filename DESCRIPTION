@@ -30,7 +30,8 @@ LazyData: true
 Imports:
     checkmate,
     RODBC,
-    keyring
+    keyring,
+    NVIrpackages
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Suggests: 
@@ -42,7 +43,9 @@ Suggests:
     rstudioapi,
     testthat,
     NVIpackager
-Remotes: NorwegianVeterinaryInstitute/NVIpackager
+Remotes: 
+    NorwegianVeterinaryInstitute/NVIpackager,
+    NorwegianVeterinaryInstitute/NVIrpackages,
 Collate: 
     'assert.R'
     'makeAssertionFunction.R'
