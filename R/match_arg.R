@@ -42,8 +42,6 @@
 #' @examples
 #' match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
 #' match_arg(c("a", "Ban"), choices = c("Apple", "Banana"), several.ok = TRUE, ignore.case = TRUE)
-#' # Gives error as no unique match
-#' match_arg("Ap", choices = c("Apple", "Apricot"), several.ok = TRUE, ignore.case = FALSE)
 match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.name = checkmate::vname(x), comment = NULL, add = NULL) {
   checkmate::assertCharacter(choices, min.len = 1L)
   checkmate::assertFlag(several.ok)
@@ -55,38 +53,31 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
     checkmate::assertCharacter(x, min.len = 1L, .var.name = .var.name, add = add)
     xx <- paste0("^", x, "[[:print:]]*")
     y <- sapply(X = xx, FUN = grep, value = TRUE, ignore.case = ignore.case, x = choices, simplify = TRUE)
-    if ("array" %in% class(y) | "matrix" %in% class(y)) {
-      yy <- x
-      comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
-    } else { # if class(y) neither array nor matrix
-      if (class(y) == "list") {
+    class_y <- class(y)
+    if (length(class_y) == 1 & class_y[1] == "character") {
+      yy <- unname(y)
+    } else { # if class(y) not character
+      if (length(class_y) == 1 & class_y[1] == "list") {
         yy <- x
         yy[which(lengths(y) == 1)] <- unname(unlist(y[which(lengths(y) == 1)]))
         if (any(lengths(y) > 1)) {
           comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
         }
-      } else { # if class(y) neither array, matrix nor list
-
-        if (class(y) == "character") {
-          yy <- unname(y)
-        }
+      } else { # if class(y) neither character nor list (i.e. is array and/or matrix)
+        yy <- x
+        comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
       }
     }
     assert_subset_character(x = yy, choices, empty.ok = FALSE, .var.name = .var.name,
                             comment = comment,
                             add = add)
+
   } else { # if several.ok = FALSE
     if (identical(x, choices))
       return(x[1L])
     checkmate::assertCharacter(x, len = 1L, .var.name = .var.name, add = add)
     xx <- paste0("^", x, "[[:print:]]*")
     yy <- grep(pattern = xx, value = TRUE, ignore.case = ignore.case, x = choices)
-    # if (isTRUE(ignore.case)) {
-    #    xx = choices[pmatch(tolower(x), tolower(choices), nomatch = 0L, duplicates.ok = TRUE)]
-    #   } else {
-    #    xx = choices[pmatch(x, choices, nomatch = 0L, duplicates.ok = TRUE)]
-    #   }
-    # if (length(yy) == 1) {x <- y}
     if (length(yy) == 0) {
       yy <- x
     }
