@@ -42,5 +42,4 @@ Check if credentials are saved in the user profile for the service.
 }
 \examples{
 check_credentials(x = "PJS")
-
 }

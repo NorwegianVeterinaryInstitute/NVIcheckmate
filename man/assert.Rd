@@ -44,5 +44,4 @@ assert(checkmate::checkNull(x), checkmate::checkInteger(x, any.missing = FALSE))
 collection <- checkmate::makeAssertCollection()
 assert(checkmate::checkChoice(x, c("a", "b")), checkmate::checkDataFrame(x), add = collection)
 collection$getMessages()
-
 }

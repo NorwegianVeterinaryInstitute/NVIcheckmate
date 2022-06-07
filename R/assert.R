@@ -1,13 +1,13 @@
 # BSD 3-Clause License
-# 
+#
 # Copyright (c) 2019, Michel Lang
 # Copyright (c) 2020, Dénes Tóth
 # All rights reserved.
 #
-# The file has been imported from https://gihub.com/mllg/checkmate/R/ 
+# The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
 # - Square brackets in help text are escaped
-# 
+#
 #' Combine multiple checks into one assertion
 #'
 #' @description
@@ -25,8 +25,8 @@
 #'  \dQuote{or} or \dQuote{and} to combine the check functions with an OR
 #'  or AND, respectively.
 #' @template assert
-#' @return Throws an error (or pushes the error message to an 
-#'   \code{\link{AssertCollection}} if \code{add} is not \code{NULL}) 
+#' @return Throws an error (or pushes the error message to an
+#'   \code{\link{AssertCollection}} if \code{add} is not \code{NULL})
 #'   if the checks fail and invisibly returns \code{TRUE} otherwise.
 #' @export
 #' @examples
@@ -35,7 +35,6 @@
 #' collection <- checkmate::makeAssertCollection()
 #' assert(checkmate::checkChoice(x, c("a", "b")), checkmate::checkDataFrame(x), add = collection)
 #' collection$getMessages()
-#' 
 assert = function(..., combine = "or", .var.name = NULL, comment = NULL, add = NULL) {
   checkmate::assertChoice(combine, c("or", "and"))
   checkmate::assertClass(add, "AssertCollection", .var.name = "add", null.ok = TRUE)
@@ -73,7 +72,7 @@ assert = function(..., combine = "or", .var.name = NULL, comment = NULL, add = N
 }
 
 # Error handling in assert()
-# 
+#
 # Internal helper function to handle errors in assert().
 # @param res [character(1)}]\cr
 #   error message
@@ -81,8 +80,8 @@ assert = function(..., combine = "or", .var.name = NULL, comment = NULL, add = N
 #   Name(s) of the variable(s) whose assertion failed.
 # @param collection [\code{AssertCollection} | \code{NULL}]\cr
 #   See AssertCollection.
-# @return mstopOrPush() throws an exception by calling 
-#   mstop() if 'collection' is NULL, or 
+# @return mstopOrPush() throws an exception by calling
+#   mstop() if 'collection' is NULL, or
 #   pushes the error message to the collection otherwise.
 # @keywords internal
 mstopOrPush = function(res, v_name, collection = NULL) {

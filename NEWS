@@ -1,3 +1,17 @@
+NVIcheckmate 0.4.0 - (2022-06-07)
+
+New features:
+
+- match_arg performs partial matching of arguments and includes the argument ignore.case. 
+
+
+Other changes:
+
+  - improved readability of error messages for assert_choices_character and assert_subset_character.
+  
+  - Updated README and vignette Contribute to NVIcheckmate.
+  
+  
 NVIcheckmate 0.3.3 - (2021-11-04)
 
 Bug fixes:

@@ -1,0 +1,87 @@
+# TEST, DOCUMENT AND BUILD NVIdb PACKAGE
+
+# SET UP ENVIRONMENT ----
+# rm(list = ls())    # Use to empty R-environment if needed
+
+# Attach packages
+# library(devtools)
+library(NVIpackager)
+# library(spelling)
+
+# Global variables
+pkg <- stringi::stri_extract_last_words(usethis::proj_path())
+pkg_path = usethis::proj_path()
+# Rlibrary <- R.home()
+
+# create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
+
+# DOCUMENTATION AND STYLING ----
+# update_loge should be run if a logo has been created (or updated). Thereafter use "readme = TRUE"
+# update_logo(pkg = pkg, pkg_path = pkg_path)
+
+# Creates new help files
+## Should be run before git push when documentation for functions have been changed
+## If new packages have been added to NVIverse (in NVIrpackages), use "contributing = TRUE" and "readme = TRUE".
+NVIpackager::document_NVIpkg(style = TRUE,
+                             contributing = FALSE,
+                             readme = FALSE,
+                             manual = "update",
+                             scope = c("spaces", "line_breaks"))
+
+
+# spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
+
+
+# TEST PACKAGE ----
+# Run tests included in ./tests.
+devtools::test()
+
+# Test package coverage
+# DETACH PACKAGE 
+# The package must be detached to install it.
+if(pkg %in% (.packages())){
+  pkgname <- paste0("package:", pkg)
+  detach(pkgname, unload=TRUE, character.only = TRUE)
+}
+code_coverage <- covr::package_coverage(path = ".", group = "functions")
+print(x = code_coverage, group = "functions")
+
+# devtools::build_manual(pkg = "../NVIpackager", path = "./vignettes")
+
+# Build the package
+devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
+# Test built package.
+# Thereby, no problems with files in .Rbuildignore.
+# version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
+version <- packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
+
+devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
+
+# Extensive checking of package. Is done after build. Creates PDF-manual
+# system("R CMD check --ignore-vignettes ../NVIdb")
+
+
+# INSTALL PACKAGE ----
+
+NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
+
+# NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "PetterHopp")
+#
+# NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
+#
+# # # Install from source file in catalog "NVIverse"
+# utils::install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".tar.gz"),
+#                         repos = NULL,
+#                         type = "source")
+#
+# # Install from binary file in catalog "NVIverse"
+# install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".zip"),
+#                  repos = NULL,
+#                  type = "binary")
+
+# ATTACH PACKAGE ----
+utils::help(package = (pkg))
+
+library(package = pkg, character.only = TRUE)
+
+

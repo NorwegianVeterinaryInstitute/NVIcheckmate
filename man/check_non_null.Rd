@@ -36,11 +36,11 @@ If the check is not successful,
 Check whether two or more arguments that may replace each other both are NULL or NA.
 }
 \details{
-In some functions, one argument may replace another. The check is used to ensure that at least on of the arguments have a value. Specific checks for each argument should be used in addition.
+In some functions, one argument may replace another. The check is used to ensure that at
+least on of the arguments have a value. Specific checks for each argument should be used in addition.
 }
 \examples{
 data <- NULL
 nrows_in_data <- 56
 check_non_null(x = list(data, nrows_in_data))
-
 }

@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.3.3
-Date: 2021-11-04
+Version: 0.4.0
+Date: 2022-06-07
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -20,8 +20,8 @@ Authors@R:
            role = c("ctb"),
            email = "toth.denes@kogentum.hu",
            comment = c("Contributor to the assert-function in the package checkmate")))
-Description: Extension of checkmate with functions for argument checking that are 
-    adapted for NVIverse. NVIcheckmate is intended to be used together with checkmate.
+Description: Extends `checkmate` with functions for argument checking that are 
+    adapted for NVIverse. NVIcheckmate is intended to be used together with `checkmate`.
 URL: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate
 BugReports: https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/issues
 License: BSD_3_clause + file LICENSE
@@ -30,9 +30,10 @@ LazyData: true
 Imports:
     checkmate,
     RODBC,
-    keyring
+    keyring,
+    NVIrpackages
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Suggests: 
     devtools,
     knitr,
@@ -41,7 +42,10 @@ Suggests:
     roxygen2,
     rstudioapi,
     testthat,
-    withr
+    NVIpackager
+Remotes: 
+    NorwegianVeterinaryInstitute/NVIpackager,
+    NorwegianVeterinaryInstitute/NVIrpackages,
 Collate: 
     'assert.R'
     'makeAssertionFunction.R'
@@ -54,4 +58,5 @@ Collate:
     'check_package.R'
     'check_subset_character.R'
     'helper.R'
+    'match_arg.R'
 VignetteBuilder: knitr

@@ -3,16 +3,27 @@ title: "README"
 output: 
   md_document:
   variant: markdown_github
+
+params:
+  NVIpkg: "NVIcheckmate"
+  first_copyright_year: "2021"
 ---
 
 ```{r, include = FALSE}
+NVIpkg <- params$NVIpkg
+NVIpkg_inline <- paste0("`", NVIpkg, "`")
+logo_path <- ""
+if (file.exists(paste0("./man/figures/", NVIpkg, "_logo.png"))) {
+  logo_path <- paste0(' <img src="man/figures/', NVIpkg, '_logo.png" align="right" height="138" />')
+}
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
 
-NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
+`r paste0(NVIpkg, ": ", desc::desc_get_field(key = "Title"), logo_path)`  
 ================
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -24,26 +35,14 @@ NVIcheckmate: extension of checkmate with argument checking adapted for NVIverse
   - [Contributing](#contributing)
 
 # Overview
-`NVIcheckmate` is an extension of [`checkmate`](https://CRAN.R-project.org/package=checkmate) with additional functions for argument checking for use in NVIverse functions. `NVIverse` is a collection of R-packages with tools to facilitate data management and data reporting at the Norwegian Veterinary Institute (NVI). 
+`NVIcheckmate` extends [`checkmate`](https://CRAN.R-project.org/package=checkmate)
+with functions for argument checking that are adapted for NVIverse.
 
-####  Table 1. NVIverse packages
-```{r echo = FALSE, resuls = 'asis'}
-NVIverse <- as.data.frame(rbind(c("NVIconfig", "Private",
-                                  "Configuration information necessary for some NVIverse functions"),
-                                c("NVIdb", "Public",
-                                  "Tools to facilitate the use of NVI's databases"),
-                                c("NVIpretty",  "Public",
-                                  "Tools to make R-output pretty in accord with NVI's graphical profile"),
-                                c("NVIbatch",  "Public",
-                                  "Tools to facilitate the running of R-scripts in batch mode at NVI"),
-                                c("NVIcheckmate",  "Public",
-                                  "Extension of checkmate with argument checking adapted for NVIverse"),
-                                c("OKplan",  "Public",
-                                  "Tools to facilitate the planning of surveillance programmes for the NFSA"),
-                                c("OKcheck",  "Public",
-                                  "Tools to facilitate checking of data from national surveillance programmes")))
-colnames(NVIverse) <- c("Package", "Status", "Description")
-knitr::kable(x = NVIverse)
+```{r, include = FALSE}
+description <- desc::desc_get_field(key = "Description")
+```
+
+```{r child=system.file('templates', "README_NVIverse.Rmd", package = "NVIpackager")}
 ```
 
 The main purpose of `NVIcheckmate` is to provide checks and assertions for functions 
@@ -67,35 +66,25 @@ as available at Cran, the corresponding function will be depreciated and thereaf
 removed from `NVIcheckmate`. 
 
 # Installation
-`NVIcheckmate` is available at [GitHub](https://github.com/NorwegianVeterinaryInstitute). 
-To install `NVIcheckmate` you will need:
-
-- R version > 4.0.0
-- R package `devtools`
-- Rtools 4.0
-
-First install and attach the `devtools` package.  
-
-``` {r, eval = FALSE} 
-install.packages("devtools")
-library(devtools)
-```
-
-To install (or update) the `NVIcheckmate` package, run the following code:
-
-``` {r, eval = FALSE} 
-remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate", 
-	upgrade = FALSE, 
-	build = TRUE,
-	build_manual = TRUE)
+```{r child=system.file('templates', "README_installation.Rmd", package = "NVIpackager")}
 ```
 
 # Usage
-To come.
+```{r child=system.file('templates', "README_usage_attach.Rmd", package = "NVIpackager")}
+```
+
+`r paste0(NVIpkg_inline, 
+   "", 
+   sub(substr(description,1,1), tolower(substr(description,1,1)), description))`
+
+```{r child=system.file('templates', "README_usage_help.Rmd", package = "NVIpackager")}
+```
 
 # Copyright and license
 
 #### NVIcheckmate
+```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
+```
 Copyright (c) 2021 Norwegian Veterinary Institute  
 License: BSD 3-Clause  
   
@@ -173,13 +162,10 @@ knitr::kable(x = imports, col.names = c("Function", "Directory", "Description", 
 ```
 
 # Contributing
+```{r child=system.file('templates', "README_contributing.Rmd", package = "NVIpackager")}
+```
 
-Contributions to develop `NVIcheckmate` is highly appreciated. There are several 
-ways you can contribute to this project: ask a question, propose an idea, report 
-a bug, improve the documentation, or contribute code. The vignette 
-"Contribute to NVIcheckmate" gives more information.
-
+<!-- Code of conduct -->
 -----
-
-Please note that the NVIcheckmate project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By 
-contributing to this project, you agree to abide by its terms.
+```{r child=system.file('templates', "README_code_of_conduct.Rmd", package = "NVIpackager")}
+```
