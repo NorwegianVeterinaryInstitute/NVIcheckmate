@@ -25,6 +25,6 @@ test_that("Make error for assert_names", {
                  type = "named",
                  disjunct.from = c("Apple", "Pear", "Orange", "Banana"),
                  comment = "Please choose another name"),
-    regexp = "be disjunct from \\(Apple,Pear,Orange,Banana). Please choose another name.")
+    regexp = "be disjunct from \\{'Apple','Pear','Orange','Banana'},")
 
 })
