@@ -89,7 +89,7 @@ test_that("Make error for match_arg", {
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = FALSE),
-    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but is {'apple','pear'}",
+    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but has additional elements {'apple','pear'}",
     fixed = TRUE)
 
   expect_error(
@@ -97,7 +97,7 @@ test_that("Make error for match_arg", {
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = FALSE),
-    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but is {'ap','pe'}",
+    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but has additional elements {'ap','pe'}",
     fixed = TRUE)
 
   expect_error(
@@ -105,7 +105,7 @@ test_that("Make error for match_arg", {
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = TRUE),
-    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but is {'p'}",
+    regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but has additional elements {'p'}",
     fixed = TRUE)
 
   expect_error(
@@ -113,7 +113,7 @@ test_that("Make error for match_arg", {
               choices = c("Apple", "Apricot", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = TRUE),
-    regexp = "Must be a subset of {'Apple','Apricot','Pear','Orange','Pineapple'}, but is {'Ap','p'}",
+    regexp = "Must be a subset of {'Apple','Apricot','Pear','Orange','Pineapple'}, but has additional elements {'Ap','p'}",
     fixed = TRUE)
 
   expect_error(
@@ -121,7 +121,7 @@ test_that("Make error for match_arg", {
               choices = c("Apple", "Apricot", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = FALSE),
-    regexp = "Must be a subset of {'Apple','Apricot','Pear','Orange','Pineapple'}, but is {'Ap','p'}",
+    regexp = "Must be a subset of {'Apple','Apricot','Pear','Orange','Pineapple'}, but has additional elements {'Ap','p'}",
     fixed = TRUE)
   options(width = unlist(linewidth))
 })
