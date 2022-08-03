@@ -76,9 +76,14 @@ assert_character <- function(x, min.chars = NULL, pattern = NULL, fixed = NULL,
   if (missing(x))
     stop(sprintf("argument \"%s\" is missing, with no default",
                  .var.name))
-  res = checkmate::checkCharacter(x, min.chars, pattern, fixed, ignore.case,
-                                  any.missing, all.missing, len, min.len, max.len, unique,
-                                  sorted, names, null.ok)
+  res = checkmate::checkCharacter(x = x,
+                                  min.chars = min.chars,
+                                  pattern = pattern, fixed = fixed, ignore.case = ignore.case,
+                                  any.missing = any.missing, all.missing = all.missing,
+                                  len = len, min.len = min.len, max.len = max.len,
+                                  unique = unique, sorted = sorted, names = names,
+                                  null.ok = null.ok)
+
   if (!isTRUE(res) & !is.null(comment)) {
     res = paste0(res, ". ", comment)
   }
