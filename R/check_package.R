@@ -28,9 +28,9 @@ check_package <- function(x, version = NULL, type = "installed") {
   checks <- checkmate::makeAssertCollection()
 
   # Perform checks
-  checkmate::assert_character(x, len = 1, min.char = 2, add = checks)
-  checkmate::assert_character(version, len = 1, null.ok = TRUE, add = checks)
-  checkmate::assert_choice(type, choices = c("attached", "installed"), add = checks)
+  checkmate::assert_character(x = x, len = 1, min.char = 2, add = checks)
+  checkmate::assert_character(x = version, len = 1, null.ok = TRUE, add = checks)
+  checkmate::assert_choice(x = type, choices = c("attached", "installed"), add = checks)
 
   # Report check-results
   checkmate::reportAssertions(checks)
