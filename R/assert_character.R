@@ -42,6 +42,12 @@
 #'  Default is \dQuote{any} which performs no check at all.
 #'  Note that you can use \code{\link{checkSubset}} to check for a specific set of names.
 #'
+#' @param n.chars \[\code{integer(1)}\]\cr
+#'  Exact number of characters for each element of \code{x}.
+#' @param min.chars \[\code{integer(1)}\]\cr
+#'  Minimum number of characters for each element of \code{x}.
+#' @param max.chars \[\code{integer(1)}\]\cr
+#'  Maximum number of characters for each element of \code{x}.
 #' @param pattern \[\code{character(1L)}\]\cr
 #'  Regular expression as used in \code{\link[base:grep]{grepl}}.
 #'  All non-missing elements of \code{x} must comply to this pattern.
@@ -51,8 +57,6 @@
 #'  All non-missing elements of \code{x} must contain this substring.
 #' @param ignore.case \[\code{logical(1)}\]\cr
 #'  See \code{\link[base:grep]{grepl}}. Default is \code{FALSE}.
-#' @param min.chars \[\code{integer(1)}\]\cr
-#'  Minimum number of characters for each element of \code{x}.
 #' @template sorted
 #' @template null.ok
 #' @template assert
@@ -67,7 +71,7 @@
 
 #' @include makeAssertionFunction.R
 # assert_character = makeAssertionFunction(checkmate::check_character())
-assert_character <- function(x, min.chars = NULL, pattern = NULL, fixed = NULL,
+assert_character <- function(x, n.chars = NULL, min.chars = NULL, max.chars = NULL, pattern = NULL, fixed = NULL,
                               ignore.case = FALSE, any.missing = TRUE, all.missing = TRUE,
                               len = NULL, min.len = NULL, max.len = NULL, unique = FALSE,
                               sorted = FALSE, names = NULL, null.ok = FALSE, .var.name = checkmate::vname(x),
@@ -77,7 +81,7 @@ assert_character <- function(x, min.chars = NULL, pattern = NULL, fixed = NULL,
     stop(sprintf("argument \"%s\" is missing, with no default",
                  .var.name))
   res = checkmate::checkCharacter(x = x,
-                                  min.chars = min.chars,
+                                  n.chars = n.chars, min.chars = min.chars, max.chars = max.chars,
                                   pattern = pattern, fixed = fixed, ignore.case = ignore.case,
                                   any.missing = any.missing, all.missing = all.missing,
                                   len = len, min.len = min.len, max.len = max.len,
