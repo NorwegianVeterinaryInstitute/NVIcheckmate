@@ -36,10 +36,10 @@
 #' assert(checkmate::checkChoice(x, c("a", "b")), checkmate::checkDataFrame(x), add = collection)
 #' collection$getMessages()
 assert = function(..., combine = "or", .var.name = NULL, comment = NULL, add = NULL) {
-  checkmate::assertChoice(combine, c("or", "and"))
-  checkmate::assertClass(add, "AssertCollection", .var.name = "add", null.ok = TRUE)
+  checkmate::assertChoice(x = combine, choices = c("or", "and"))
+  checkmate::assertClass(x = add, classes = "AssertCollection", .var.name = "add", null.ok = TRUE)
   dots = match.call(expand.dots = FALSE)$...
-  checkmate::assertCharacter(.var.name, null.ok = TRUE, min.len = 1L, max.len = length(dots))
+  checkmate::assertCharacter(x = .var.name, null.ok = TRUE, min.len = 1L, max.len = length(dots))
   env = parent.frame()
   if (combine == "or") {
     msgs = character(length(dots))

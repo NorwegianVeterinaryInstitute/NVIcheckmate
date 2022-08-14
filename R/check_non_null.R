@@ -16,7 +16,7 @@ check_non_null <- function(x) {
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # Perform checks
-  checkmate::assert_list(x, min.len = 2, null.ok = TRUE, add = checks)
+  checkmate::assert_list(x = x, min.len = 2, null.ok = TRUE, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 

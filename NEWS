@@ -1,8 +1,20 @@
+NVIcheckmate 0.5.0 - (2022-08-14)
+
+New features:
+
+  - assert_character includes the arguments n.char and max.char
+
+
+Other changes:
+
+  - NVIcheckmate is adapted to and requires checkmate >= 2.1.0
+  
+  
 NVIcheckmate 0.4.0 - (2022-06-07)
 
 New features:
 
-- match_arg performs partial matching of arguments and includes the argument ignore.case. 
+  - match_arg performs partial matching of arguments and includes the argument ignore.case. 
 
 
 Other changes:

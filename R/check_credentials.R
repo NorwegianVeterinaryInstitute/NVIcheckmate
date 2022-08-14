@@ -12,7 +12,7 @@ check_credentials <- function(x) {
   # Object to store check-results
   checks <- checkmate::makeAssertCollection()
   # Perform checks
-  checkmate::assert_character(x, len = 1, add = checks)
+  checkmate::assert_character(x = x, len = 1, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
 

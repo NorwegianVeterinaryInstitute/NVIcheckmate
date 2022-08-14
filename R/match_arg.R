@@ -43,14 +43,14 @@
 #' match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
 #' match_arg(c("a", "Ban"), choices = c("Apple", "Banana"), several.ok = TRUE, ignore.case = TRUE)
 match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.name = checkmate::vname(x), comment = NULL, add = NULL) {
-  checkmate::assertCharacter(choices, min.len = 1L)
-  checkmate::assertFlag(several.ok)
-  checkmate::assertFlag(ignore.case)
+  checkmate::assertCharacter(x = choices, min.len = 1L)
+  checkmate::assertFlag(x = several.ok)
+  checkmate::assertFlag(x = ignore.case)
 
   if (several.ok) {
     if (identical(x, choices))
       return(x)
-    checkmate::assertCharacter(x, min.len = 1L, .var.name = .var.name, add = add)
+    checkmate::assertCharacter(x = x, min.len = 1L, .var.name = .var.name, add = add)
     xx <- paste0("^", x, "[[:print:]]*")
     y <- sapply(X = xx, FUN = grep, value = TRUE, ignore.case = ignore.case, x = choices, simplify = TRUE)
     class_y <- class(y)
@@ -68,14 +68,14 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
         comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
       }
     }
-    assert_subset_character(x = yy, choices, empty.ok = FALSE, .var.name = .var.name,
+    assert_subset_character(x = yy, choices = choices, empty.ok = FALSE, .var.name = .var.name,
                             comment = comment,
                             add = add)
 
   } else { # if several.ok = FALSE
     if (identical(x, choices))
       return(x[1L])
-    checkmate::assertCharacter(x, len = 1L, .var.name = .var.name, add = add)
+    checkmate::assertCharacter(x = x, len = 1L, .var.name = .var.name, add = add)
     xx <- paste0("^", x, "[[:print:]]*")
     yy <- grep(pattern = xx, value = TRUE, ignore.case = ignore.case, x = choices)
     if (length(yy) == 0) {
@@ -85,7 +85,7 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
       yy <- x
       comment <- paste(comment, "Abbreviated arguments can only be matched to one single value among the possible arguments")
     }
-    assert_choice_character(x = yy, choices, .var.name = .var.name,
+    assert_choice_character(x = yy, choices = choices, .var.name = .var.name,
                             comment = comment,
                             add = add)
   }
