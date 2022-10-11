@@ -31,7 +31,8 @@ Imports:
     checkmate (>= 2.1.0),
     RODBC,
     keyring,
-    NVIrpackages
+    NVIrpackages,
+    R.rsp
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
 Suggests: 
@@ -60,4 +61,4 @@ Collate:
     'check_subset_character.R'
     'helper.R'
     'match_arg.R'
-VignetteBuilder: knitr
+VignetteBuilder: knitr, R.rsp
