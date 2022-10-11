@@ -50,6 +50,7 @@ Collate:
     'assert.R'
     'makeAssertionFunction.R'
     'assert_character.R'
+    'assert_disjunct.R'
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
