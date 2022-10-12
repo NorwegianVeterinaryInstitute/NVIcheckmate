@@ -1,10 +1,11 @@
-#' @title Check if an object is an element of a given set ignoring case
+#' @title Check if an object is an element of a given set
 #' @description Check if an object is an element of a given set in
-#'     the object name. The function is based on code/{checkmate::check_choice},
+#'     the object name. The function is based on \code{checkmate::check_choice},
 #'     but includes the argument \code{ignore.case}.
-#' @details The object must be of type character. The check is intended for functions were using
-#'     camelCase may make the argument easier to remember. Therefore, the input to the function is
-#'     ignoring case.
+#' @details The object must be of type character. The check is intended 
+#'     for functions were using camelCase may make the argument easier 
+#'     to remember. Therefore, the function will ignore case if 
+#'     \code{ignore.case = TRUE}.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
 #' @templateVar fn choice_character
