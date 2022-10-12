@@ -7,12 +7,12 @@ Bug fixes:
   
 New features:
 
-  - assert_disjunct with the argument comment have been included
+  - assert_disjunct with the argument "comment =" have been included.
 
 
 Other changes:
 
-  - 
+  - included the NVIcheckmate reference manual in vignettes as pdf-file.
   
   
 NVIcheckmate 0.5.0 - (2022-08-14)
