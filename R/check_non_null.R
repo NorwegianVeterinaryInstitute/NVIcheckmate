@@ -1,5 +1,5 @@
 #' @title Check if two or more arguments are NULL or NA
-#' @description Check whether two or more arguments that may replace each other both are NULL or NA.
+#' @description Check whether two or more arguments that may replace each other are NULL or NA.
 #' @details In some functions, one argument may replace another. The check is used to ensure that at
 #'     least on of the arguments have a value. Specific checks for each argument should be used in addition.
 #' @templateVar fn non_null
@@ -23,7 +23,8 @@ check_non_null <- function(x) {
   # PERFORM CHECK ----
   res <- FALSE
   for (i in c(1:length(x))) {
-    if (class(x[[i]]) != "NULL") {res <- TRUE}
+    # if (class(x[[i]]) != "NULL") {res <- TRUE}
+    if (!inherits(x[[i]], what = "NULL")) {res <- TRUE}
     # if (!is.null(x[[i]][1])) {
     #   if (!is.na(x[[i]][1])) {res <- TRUE}
     # }

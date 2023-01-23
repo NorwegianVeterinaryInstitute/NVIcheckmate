@@ -30,12 +30,16 @@ Throws an error (or pushes the error message to an
 if the checks fail and invisibly returns \code{TRUE} otherwise.
 }
 \description{
-You can call this function with an arbitrary number of of \code{check*}
-functions, i.e. functions provided by this package or your own functions which
-return \code{TRUE} on success and the error message as \code{character(1)} otherwise.
+You can call this function with an arbitrary number of of
+\code{check*} functions, i.e. functions provided by the packages
+\code{checkmate}, \code{NVIcheckmate} or your own functions which
+return \code{TRUE} on success and the error message as
+\code{character(1)} otherwise.
+}
+\details{
 The resulting assertion is successful, if \code{combine} is
-\dQuote{or} (default) and at least one check evaluates to \code{TRUE} or
-\code{combine} is \dQuote{and} and all checks evaluate to \code{TRUE}.
+\dQuote{or} (default) and at least one check evaluates to \code{TRUE}
+or \code{combine} is \dQuote{and} and all checks evaluate to \code{TRUE}.
 Otherwise, \code{assert} throws an informative error message.
 }
 \examples{

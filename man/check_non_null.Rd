@@ -33,7 +33,7 @@ If the check is not successful,
 \code{check_non_null} returns a string with the error message.
 }
 \description{
-Check whether two or more arguments that may replace each other both are NULL or NA.
+Check whether two or more arguments that may replace each other are NULL or NA.
 }
 \details{
 In some functions, one argument may replace another. The check is used to ensure that at

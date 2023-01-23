@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.5.0
-Date: 2022-08-14
+Version: 0.6.0
+Date: 2023-01-23
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",
@@ -29,11 +29,12 @@ Encoding: UTF-8
 LazyData: true
 Imports:
     checkmate (>= 2.1.0),
+    R.rsp,
     RODBC,
     keyring,
     NVIrpackages
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Suggests: 
     devtools,
     knitr,
@@ -50,6 +51,8 @@ Collate:
     'assert.R'
     'makeAssertionFunction.R'
     'assert_character.R'
+    'assert_disjunct.R'
+    'assert_integer.R'
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
@@ -59,4 +62,4 @@ Collate:
     'check_subset_character.R'
     'helper.R'
     'match_arg.R'
-VignetteBuilder: knitr
+VignetteBuilder: knitr, R.rsp
