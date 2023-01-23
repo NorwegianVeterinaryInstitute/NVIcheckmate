@@ -23,7 +23,8 @@ check_non_null <- function(x) {
   # PERFORM CHECK ----
   res <- FALSE
   for (i in c(1:length(x))) {
-    if (class(x[[i]]) != "NULL") {res <- TRUE}
+    # if (class(x[[i]]) != "NULL") {res <- TRUE}
+    if (!inherits(x[[i]], what = "NULL")) {res <- TRUE}
     # if (!is.null(x[[i]][1])) {
     #   if (!is.na(x[[i]][1])) {res <- TRUE}
     # }
