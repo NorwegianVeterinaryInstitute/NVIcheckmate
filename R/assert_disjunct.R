@@ -1,7 +1,7 @@
 # BSD 3-Clause License
 #
 # Copyright (c) 2019, Michel Lang
-# Copyright (c) 2022, Norwegian Veterinary Institute
+# Copyright (c) 2023, Norwegian Veterinary Institute
 # All rights reserved.
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
@@ -11,7 +11,7 @@
 # - Corrected to names in @templateVar
 # - Corrected to disjunct.from in @param disjunct.from
 # - Wrote a short version of @return in stead of using template
-# - Use @rdname assert_names
+# - Use @rdname assert_disjunct
 # - generate the assert-function using
 #    NVIcheckmate::makeAssertionFunction to include argument comment.
 #
