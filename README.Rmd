@@ -85,9 +85,7 @@ removed from `NVIcheckmate`.
 #### NVIcheckmate
 ```{r child=system.file('templates', "README_copyright_and_license.Rmd", package = "NVIpackager")}
 ```
-Copyright (c) 2021 Norwegian Veterinary Institute  
-License: BSD 3-Clause  
-  
+
 Functions and code from `checkmate` have been imported into `NVIcheckmate`. For some of 
 them, the code have been partly modified. An overwiew of the functional modifications are 
 given in Table 2. In addition, some technical changes like escaping character, changing 
@@ -95,70 +93,86 @@ links and correcting typos have been performed. The modifications are listed in 
 source files. Code from `checkmate` are the copyright of the copyright holders of `checkmate`.
   
 #### checkmate
-Copyright (c) 2019 Michael Lang (michellang@@gmail.com)  
+Copyright (c) 2019 - 2022 Michael Lang (michellang@@gmail.com)  
 License: BSD 3-Clause  
   
 #### Table 2. Functions and code imported from `checkmate`
 
 ```{r echo = FALSE, results = 'asis'}
-imports <- as.data.frame(rbind( c("assert.R", 
+imports <- as.data.frame(rbind(c("assert.R",
                                  "./R",
                                   "Combines multiple checks into one assertion",
-                                 "None. Imported as is from checkmate 2.1.0 at Github to include argument 'add'"),
-                                c("mstopOrPush",  
+                                 "Includes the argument 'comment'"),
+                                c("mstopOrPush",
                                   "./R",
                                   "Internal function. Located in file assert.R",
                                   "None"),
-                                c("mstop",  
+                                c("mstop",
                                   "./R",
                                   "Internal function. Located in file helper.R",
                                   "None"),
-                               c("makeAssertFunction.R", 
+                               c("makeAssertFunction.R",
                                  "./R",
                                  "Creates an assertion function from a check function",
                                  "Adds the argument 'comment' when creating an assertion function"),
-                               c("assert_names", 
-                                 "./R",
-                                 "Perform various checks on character vectors, usually names",
-                                 "Based on check_names and includes the argument 'comment'"),
-                               c("assert_character", 
+                               c("assert_character",
                                  "./R",
                                  "Check if an argument is a vector of type character",
-                                 "Based on check_character and includes the argument 'comment'"),
-                               c("assert.R",  
+                                 "Based on checkCharacter and includes the argument 'comment'"),
+                               c("assert_disjunct",
+                                 "./R",
+                                 "Check if an argument is a vector of type character",
+                                 "Based on checkDisjunct and includes the argument 'comment'"),
+                               c("assert_integer",
+                                 "./R",
+                                 "Check if an argument is a vector of type character",
+                                 "Based on checkInteger and includes the argument 'comment'"),
+                               c("assert_names",
+                                 "./R",
+                                 "Perform various checks on character vectors, usually names",
+                                 "Based on checkNames and includes the argument 'comment'"),
+                               c("assert.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("checker.R",  
+                                c("bounds.R",
+                                  "./man-roxygen",
+                                  "help template",
+                                  "None"),
+                                c("checker.R",
                                   "./man-roxygen",
                                   "help template",
                                   "Only included information on check_- and assert_-functions, the rest were removed"),
-                                c("fmatch.R",  
+                                c("fmatch.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("makeFunction.R",  
+                                c("makeFunction.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("na-handling.R",  
+                                c("na-handling.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("null.ok.R",  
+                                c("null.ok.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("sorted.R",  
+                                c("sorted.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None"),
-                                c("x.R",  
+                                c("typed.missing.R",
+                                  "./man-roxygen",
+                                  "help template",
+                                  "None"),
+                                c("x.R",
                                   "./man-roxygen",
                                   "help template",
                                   "None")))
 colnames(imports) <- c("Function", "Directory", "Description", "Modification")
-knitr::kable(x = imports, col.names = c("Function", "Directory", "Description", "Functional modifications")) 
+knitr::kable(x = imports, col.names = c("Function", "Directory", "Description", "Functional modifications"))
 ```
 
 # Contributing
