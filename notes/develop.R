@@ -1,33 +1,44 @@
-# TEST, DOCUMENT AND BUILD NVIdb PACKAGE
+# CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
+
+# Update this file with the template in NVIpackager
+# NVIpackager::update_develop()
 
 # SET UP ENVIRONMENT ----
-# rm(list = ls())    # Use to empty R-environment if needed
+# rm(list = ls())    # Use this to empty the environment
 
 # Attach packages
-# library(devtools)
 library(NVIpackager)
 # library(spelling)
 
 # Global variables
-pkg <- stringi::stri_extract_last_words(usethis::proj_path())
 pkg_path = usethis::proj_path()
-# Rlibrary <- R.home()
+pkg <- stringi::stri_extract_last_words(pkg_path)
 
-# create_NVIpkg_skeleton(license_keyword = "CC BY 4.0")
+
+# CREATE PACKAGE SKELETON ----
+# create_NVIpkg_skeleton(license_keyword = "BSD_3_clause") # BSD_3_clause # CC BY 4.0
+
+# INCREASE PACKAGE VERSION IN DESCRIPTION AND NEWS ----
+# NVIpackager::increase_NVIpkg_version(pkg = pkg,
+#                                   pkg_path = pkg_path,
+#                                   type = "develop",
+#                                   document = FALSE)
 
 # DOCUMENTATION AND STYLING ----
-# update_loge should be run if a logo has been created (or updated). Thereafter use "readme = TRUE"
+# update_logo should be run if a logo has been created (or updated). Thereafter run "document_NVIpkg" with "readme = TRUE".
 # update_logo(pkg = pkg, pkg_path = pkg_path)
 
 # Creates new help files
-## Should be run before git push when documentation for functions have been changed
-## If new packages have been added to NVIverse (in NVIrpackages), use "contributing = TRUE" and "readme = TRUE".
-NVIpackager::document_NVIpkg(style = TRUE,
+# Should be run before git push when documentation for functions have been changed
+NVIpackager::document_NVIpkg(pkg = pkg,
+                             pkg_path = pkg_path,
+                             style = TRUE,
                              contributing = FALSE,
                              readme = FALSE,
                              manual = "update",
                              scope = c("spaces", "line_breaks"))
-
+# filename <- "xxxx.R"
+# styler::style_file(path = file.path(pkg_path, "R", filename), scope = I(c("spaces")))
 
 # spelling::spell_check_package(vignettes = TRUE, use_wordlist = TRUE)
 
@@ -37,34 +48,27 @@ NVIpackager::document_NVIpkg(style = TRUE,
 devtools::test()
 
 # Test package coverage
-# DETACH PACKAGE 
 # The package must be detached to install it.
 if(pkg %in% (.packages())){
   pkgname <- paste0("package:", pkg)
   detach(pkgname, unload=TRUE, character.only = TRUE)
 }
+# Test and print package coverage
 code_coverage <- covr::package_coverage(path = ".", group = "functions")
 print(x = code_coverage, group = "functions")
 
-# devtools::build_manual(pkg = "../NVIpackager", path = "./vignettes")
-
-# Build the package
-devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
-# Test built package.
+# Build the package and thereafter check
 # Thereby, no problems with files in .Rbuildignore.
-# version <- packageVersion(pkg, lib.loc = paste0(getwd(),"/.."))
-version <- packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
-
+devtools::build(binary = FALSE, manual = TRUE, vignettes = TRUE)
+version <- utils::packageVersion(pkg, lib.loc = paste0(pkg_path,"/.."))
+# Test built package
 devtools::check_built(path = paste0("../", pkg, "_", version, ".tar.gz"), args = c("--no-tests"), manual = TRUE)
-
-# Extensive checking of package. Is done after build. Creates PDF-manual
-# system("R CMD check --ignore-vignettes ../NVIdb")
 
 
 # INSTALL PACKAGE ----
-
+# From local version
 NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
-
+# From GitHub
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "PetterHopp")
 #
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
