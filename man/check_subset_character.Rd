@@ -3,7 +3,7 @@
 \name{check_subset_character}
 \alias{check_subset_character}
 \alias{assert_subset_character}
-\title{Check if an argument is a subset of a given set ignoring case}
+\title{Check if an argument is a subset of a given set}
 \usage{
 check_subset_character(
   x,
@@ -65,13 +65,14 @@ If the check is not successful,
 }
 \description{
 Check if an object is a subset of a given set in
-the object name. The function is based on code/{checkmate::check_subset},
+the object name. The function is based on \code{checkmate::check_subset},
 but includes the argument \code{ignore.case}.
 }
 \details{
-The object must be of type character. The check is intended for functions were using
-camelCase may make the argument easier to remember. Therefore, the input to the function is
-ignoring case.
+The object must be of type character. The check is intended
+for functions were using camelCase may make the argument easier
+to remember. Therefore, the function will ignore case if
+\code{ignore.case = TRUE}.
 }
 \examples{
 # returns TRUE

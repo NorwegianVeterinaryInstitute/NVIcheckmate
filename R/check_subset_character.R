@@ -2,9 +2,9 @@
 #' @description Check if an object is a subset of a given set in
 #'     the object name. The function is based on \code{checkmate::check_subset},
 #'     but includes the argument \code{ignore.case}.
-#' @details The object must be of type character. The check is intended 
-#'     for functions were using camelCase may make the argument easier 
-#'     to remember. Therefore, the function will ignore case if 
+#' @details The object must be of type character. The check is intended
+#'     for functions were using camelCase may make the argument easier
+#'     to remember. Therefore, the function will ignore case if
 #'     \code{ignore.case = TRUE}.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
