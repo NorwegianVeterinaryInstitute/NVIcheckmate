@@ -7,36 +7,40 @@ Bug fixes:
   
 New features:
 
-  - assert_disjunct with the argument "comment =" have been included.
+  - `assert_disjunct` with the argument `comment` have been included.
+
+  - `assert_integer` with the argument `comment` have been included.
 
 
 Other changes:
 
   - included the NVIcheckmate reference manual in vignettes as pdf-file.
   
+  - updated README and corrected installation instruction.
+  
   
 NVIcheckmate 0.5.0 - (2022-08-14)
 
 New features:
 
-  - assert_character includes the arguments n.char and max.char
+  - `assert_character` includes the arguments `n.char` and `max.char`.
 
 
 Other changes:
 
-  - NVIcheckmate is adapted to and requires checkmate >= 2.1.0
+  - NVIcheckmate is adapted to and requires `checkmate` >= 2.1.0
   
   
 NVIcheckmate 0.4.0 - (2022-06-07)
 
 New features:
 
-  - match_arg performs partial matching of arguments and includes the argument ignore.case. 
+  - `match_arg` performs partial matching of arguments and includes the argument `ignore.case`. 
 
 
 Other changes:
 
-  - improved readability of error messages for assert_choices_character and assert_subset_character.
+  - improved readability of error messages for `assert_choices_character` and `assert_subset_character`.
   
   - Updated README and vignette Contribute to NVIcheckmate.
   
@@ -45,42 +49,42 @@ NVIcheckmate 0.3.3 - (2021-11-04)
 
 Bug fixes:
 
-  - assert_choices_character and assert_subset_character now accepts argument ignore.case = FALSE.
+  - `assert_choices_character` and `assert_subset_character` now accepts argument `ignore.case` = "FALSE".
   
   
 NVIcheckmate 0.3.2 - (2021-09-28)
 
 Bug fixes:
 
-  - check_non_null don't give a warning when input is a vector or data frame. Only check for class == NULL.
+  - `check_non_null` don't give a warning when input is a vector or data frame. Only check for `class` == NULL.
   
   
 NVIcheckmate 0.3.1 - (2021-09-27)
 
 Bug fixes:
 
-  - input to check_non_missing and assert_non_missing check corrected to list, not vector.
+  - input to `check_non_missing` and `assert_non_missing` check corrected to list, not vector.
   
   
 NVIcheckmate 0.3.0 - (2021-09-16)
 
 New features:
 
-  - check_non_missing and assert_non_missing check if at least one of two or more arguments are non_missing.
+  - `check_non_missing` and `assert_non_missing` check if at least one of two or more arguments are non_missing.
   
   
 NVIcheckmate 0.2.0 - (2021-09-05)
 
 New features:
 
-  - assert now includes the argument 'comment'.
+  - `assert` now includes the argument `comment`.
   
-  - assert_character with the argument 'comment'
+  - `assert_character` with the argument `comment`.
   
   
 Other changes:
 
-  - The order of arguments in assertion functions is changed so that 'comment' is placed just before 'add'.
+  - The order of arguments in assertion functions is changed so that `comment` is placed just before `add`.
 
 
 NVIcheckmate 0.1.0 - (2021-08-11)
@@ -89,18 +93,18 @@ First release:
 
 Extension of checkmate with argument checking adapted for NVIverse
 
-  - check_package and assert_packagechecks if a package is installed/attached.
+  - `check_package` and `assert_package` checks if a package is installed/attached.
   
-  - check_credentials and assert_credentials checks if credentials (username and password) for specified services are saved in the users profile.
+  - `check_credentials` and `assert_credentials` checks if credentials (username and password) for specified services are saved in the users profile.
   
-  - check_odbc_channel and assert_odbc_channel checks if an object is an open odbc channel.
+  - `check_odbc_channel` and `assert_odbc_channel` checks if an object is an open odbc channel.
   
-  - check_choices_character is a wrapper around checkmate::check_choices with the argument: ignore.case.
+  - `check_choices_character` is a wrapper around `checkmate::check_choices` with the argument: `ignore.case`.
   
-  - assert_choices_character is a wrapper around checkmate::assert_choices with the arguments: ignore.case and comment.
+  - `assert_choices_character` is a wrapper around `checkmate::assert_choices` with the arguments: `ignore.case` and `comment`.
   
-  - check_subset_character is a wrapper around checkmate::check_subset with the argument: ignore.case.
+  - `check_subset_character` is a wrapper around `checkmate::check_subset` with the argument: `ignore.case`.
   
-  - assert_subset_character is a wrapper around checkmate::assert_subset with the arguments: ignore.case and comment.
+  - `assert_subset_character` is a wrapper around `checkmate::assert_subset` with the arguments: `ignore.case` and `comment`.
   
-  - assert_names is a modification of checkmate::assert_names with the argument: comment.
+  - `assert_names` is a modification of `checkmate::assert_names` with the argument: `comment`.
