@@ -34,7 +34,7 @@ Imports:
     keyring,
     NVIrpackages
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Suggests: 
     devtools,
     knitr,
@@ -52,6 +52,7 @@ Collate:
     'makeAssertionFunction.R'
     'assert_character.R'
     'assert_disjunct.R'
+    'assert_integer.R'
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
