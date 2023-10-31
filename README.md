@@ -79,13 +79,31 @@ The `NVIcheckmate` package needs to be attached.
 that are adapted for NVIverse. NVIcheckmate is intended to be used
 together with `checkmate`.
 
+#### Further documentation
+
+##### Help
+
 The full list of all available functions and datasets can be accessed by
 typing
 
     help(package = "NVIcheckmate")
 
-Please check the NEWS for information on new features, bug fixes and
-other changes.
+##### Vignettes
+
+Consult the vignettes for task-oriented help.
+
+    vignette(package = "NVIcheckmate")
+
+Vignettes in package `NVIcheckmate`:
+
+-   Contribute to NVIcheckmate (html)  
+-   NVIcheckmate reference manual (pdf)
+
+##### NEWS
+
+Please check the
+[NEWS](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/NEWS)
+for information on new features, bug fixes and other changes.
 
 # Copyright and license
 
