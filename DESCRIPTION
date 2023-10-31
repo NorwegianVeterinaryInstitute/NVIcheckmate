@@ -55,6 +55,7 @@ Collate:
     'assert_character.R'
     'assert_disjunct.R'
     'assert_integer.R'
+    'assert_integerish.R'
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
@@ -63,5 +64,6 @@ Collate:
     'check_package.R'
     'check_subset_character.R'
     'helper.R'
+    'ignore_unused_imports.R'
     'match_arg.R'
 VignetteBuilder: knitr, R.rsp
