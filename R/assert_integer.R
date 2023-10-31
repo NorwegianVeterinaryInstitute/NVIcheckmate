@@ -9,7 +9,6 @@
 # - Escaped square brackets in help text
 # - Included @details
 # - Corrected to names in @templateVar
-# - Corrected to disjunct.from in @param disjunct.from
 # - Wrote a short version of @return in stead of using template
 # - Use @rdname assert_integer
 # - generate the assert-function using
