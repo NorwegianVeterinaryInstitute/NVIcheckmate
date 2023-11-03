@@ -25,10 +25,10 @@ assert_integerish(
 )
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 Object to check.}
 
-\item{tol}{[double(1)]\cr
+\item{tol}{[\code{double(1)}]\cr
 Numerical tolerance used to check whether a double or complex can be
 converted. Default is \code{sqrt(.Machine$double.eps)}.}
 
