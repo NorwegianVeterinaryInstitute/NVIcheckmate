@@ -16,7 +16,7 @@ assert_odbc_channel(
 )
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 Object to check.}
 
 \item{dbservice}{[character(1)]\cr

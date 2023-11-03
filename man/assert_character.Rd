@@ -27,7 +27,7 @@ assert_character(
 )
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 Object to check.}
 
 \item{n.chars}{[\code{integer(1)}]\cr
