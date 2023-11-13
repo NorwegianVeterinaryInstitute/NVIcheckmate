@@ -28,9 +28,18 @@
 #'
 check_odbc_channel <- function(x, dbservice = NULL, dbinterface = "odbc") {
   # ARGUMENT CHECKING
+  # Object to store check-results
+  checks <- checkmate::makeAssertCollection()
+
+  # dbinterface
+  checkmate::assert_choice(dbinterface, choices = c("odbc", "RODBC", "RPostgreSQL"), add = checks)
+
+  # Report check-results
+  checkmate::reportAssertions(checks)
+
   # CHECK IF OPEN CHANNEL
   res <- FALSE
-  if (dbinterface %in% c("odbc", "postgresql")) {
+  if (dbinterface %in% c("odbc", "RPostgreSQL")) {
     if (DBI::dbIsValid(x)) {res <- TRUE }
   }
   if (dbinterface %in% c("RODBC")) {
