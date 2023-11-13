@@ -5,7 +5,7 @@ New features:
 
   - created `assert_integerish` with the argument `comment`.
   
-  - `check_odbc_channel` and `assert_odbc_channel` now accept the argument dbinterface with the values c("odbc", "RODBC", "PostgreSql").
+  - `check_odbc_channel` and `assert_odbc_channel` now accept the argument dbinterface with the possible values c("odbc", "RODBC", "RPostgreSQL").
 
 
 Bug fixes:
