@@ -3,7 +3,9 @@ NVIcheckmate 0.6.0.9000 - (2023-##-##)
 
 New features:
 
-  - `assert_integerish` with the argument `comment` have been included.
+  - created `assert_integerish` with the argument `comment`.
+  
+  - `check_odbc_channel` and `assert_odbc_channel` now accept the argument dbinterface with the values c("odbc", "RODBC", "PostgreSql").
 
 
 Bug fixes:
