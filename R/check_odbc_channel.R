@@ -36,7 +36,7 @@ check_odbc_channel <- function(x, dbservice = NULL, dbinterface = "odbc") {
   if (dbinterface %in% c("RODBC")) {
     if (RODBC:::odbcValidChannel(x)) {res <- TRUE }
   }
-  if (isFalse(res)) {
+  if (isFALSE(res)) {
     if (!is.null(dbservice)) {dbservice <- paste("for", dbservice)}
     res <- paste(deparse(substitute(x)),
                  "is not an open odbc channel",
