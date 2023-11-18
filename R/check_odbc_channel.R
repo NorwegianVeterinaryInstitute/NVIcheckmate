@@ -33,14 +33,26 @@ check_odbc_channel <- function(x, dbservice = NULL, dbinterface = "odbc") {
 
   # dbinterface
   checkmate::assert_choice(dbinterface, choices = c("odbc", "RODBC", "RPostgreSQL"), add = checks)
+  if (dbinterface %in% c("RPostgreSQL", "RODBC")) {
+    assert_package(x = dbinterface,
+                   comment = paste0("You need to install the package '",
+                                    dbinterface,
+                                    "' to be able to create an odbc channel for '",
+                                    dbinterface,
+                                    "'"))
+  }
+
 
   # Report check-results
   checkmate::reportAssertions(checks)
 
   # CHECK IF OPEN CHANNEL
   res <- FALSE
-  if (dbinterface %in% c("odbc", "RPostgreSQL")) {
+  if (dbinterface %in% c("odbc")) {
     if (DBI::dbIsValid(x)) {res <- TRUE }
+  }
+  if (dbinterface %in% c("RPostgreSQL")) {
+    if (RPostgreSQL::isPostgresqlIdCurrent(x)) {res <- TRUE }
   }
   if (dbinterface %in% c("RODBC")) {
     if (RODBC:::odbcValidChannel(x)) {res <- TRUE }
