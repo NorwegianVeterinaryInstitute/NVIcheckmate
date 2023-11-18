@@ -28,10 +28,10 @@ License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Imports:
     checkmate (>= 2.1.0),
+    DBI,
     knitr,
     R.rsp,
     rmarkdown,
-    RODBC,
     keyring,
     NVIrpackages
 Roxygen: list(markdown = TRUE)
@@ -43,6 +43,8 @@ Suggests:
     findInFiles,
     remotes,
     roxygen2,
+    RPostgreSQL,
+    RODBC,
     rstudioapi,
     testthat,
     NVIpackager
