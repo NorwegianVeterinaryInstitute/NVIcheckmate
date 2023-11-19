@@ -13,18 +13,16 @@ test_that("check_odbc_channel for package RODBC", {
   RODBC::odbcClose(odbc_connection)
 })
 
-# test_that("check_odbc_channel for package odbc", {
-#   # skip if package not installed
-#   skip_if_not(isTRUE(check_package("odbc")))
-#   # skip if credentials for PJS is lacking
-#   skip_if_not(isTRUE(check_credentials("PJS")))
-# #
-# #   odbc_connection <- login("PJS", dbinterface = "odbc")
-# #   odbc_connection <- login_PJS(dbinterface = "odbc")
-#   odbc_connection <- login_by_credentials_PJS(dbinterface = "odbc")
-#   expect_true(check_odbc_channel(odbc_connection, dbinterface = "odbc"))
-#   DBI::dbDisconnect(odbc_connection)
-# })
+test_that("check_odbc_channel for package odbc", {
+  # skip if package not installed
+  skip_if_not(isTRUE(check_package("odbc")))
+  # skip if credentials for PJS is lacking
+  skip_if_not(isTRUE(check_credentials("PJS")))
+
+  odbc_connection <- login("PJS", dbinterface = "odbc")
+  expect_true(check_odbc_channel(odbc_connection, dbinterface = "odbc"))
+  DBI::dbDisconnect(odbc_connection)
+})
 
 test_that("check_odbc_channel for package RPostgreSQL", {
   # skip if package not installed
