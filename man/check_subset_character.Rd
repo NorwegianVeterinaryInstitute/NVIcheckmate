@@ -25,7 +25,7 @@ assert_subset_character(
 )
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 Object to check.}
 
 \item{choices}{[\code{character}]\cr

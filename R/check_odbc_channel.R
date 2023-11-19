@@ -1,13 +1,18 @@
 #' @title Check if an object is an open ODBC-channel
 #' @description Check if an object is an open ODBC-channel.
-#' @details The check uses \code{RODBC:::odbcValidChannel} to check if the argument is an open ODBC-channel.
-#'     Be aware that this function is an internal \code{RODBC}-function and may change within that package without warning.
+#' @details The check uses \code{RODBC:::odbcValidChannel} to check
+#'     if the argument is an open ODBC-channel. Be aware that this
+#'     function is an internal \code{RODBC}-function and may change
+#'     within that package without warning.
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #'
 #' @templateVar fn odbc_channel
 #' @template x
 #' @param dbservice \[character(1)\]\cr
 #'     The database the channel should be connect to.
+#' @param dbinterface \[character(1)\]\cr
+#'     The R-package that is used for interface towards the data
+#'     base. Defaults to \code{NULL}.
 #' @template checker
 #'
 #' @export
@@ -21,14 +26,45 @@
 #' check_odbc_channel(x = "journal_rapp", dbservice = "PJS")
 #' }
 #'
-check_odbc_channel <- function(x, dbservice = NULL) {
-  if (!RODBC:::odbcValidChannel(x)) {
+check_odbc_channel <- function(x, dbservice = NULL, dbinterface = "odbc") {
+  # ARGUMENT CHECKING
+  # Object to store check-results
+  checks <- checkmate::makeAssertCollection()
+
+  # dbinterface
+  checkmate::assert_choice(dbinterface, choices = c("odbc", "RODBC", "RPostgreSQL"), add = checks)
+  if (dbinterface %in% c("RPostgreSQL", "RODBC")) {
+    assert_package(x = dbinterface,
+                   comment = paste0("You need to install the package '",
+                                    dbinterface,
+                                    "' to be able to create an odbc channel for '",
+                                    dbinterface,
+                                    "'"))
+  }
+
+
+  # Report check-results
+  checkmate::reportAssertions(checks)
+
+  # CHECK IF OPEN CHANNEL
+  res <- FALSE
+  if (dbinterface %in% c("odbc")) {
+    if (DBI::dbIsValid(x)) {res <- TRUE }
+  }
+  if (dbinterface %in% c("RPostgreSQL")) {
+    if (RPostgreSQL::isPostgresqlIdCurrent(x)) {res <- TRUE }
+  }
+  if (dbinterface %in% c("RODBC")) {
+    if (RODBC:::odbcValidChannel(x)) {res <- TRUE }
+  }
+  if (isFALSE(res)) {
+    if (!is.null(dbservice)) {dbservice <- paste("for", dbservice)}
     res <- paste(deparse(substitute(x)),
-                  "is not an open RODBC channel")
-    if (!is.null(dbservice)) {res <- paste(res, "for", dbservice)}
-} else {
-  res <- TRUE
-}
+                 "is not an open odbc channel",
+                 dbservice,
+                 "when using package",
+                 dbinterface)
+  }
   return(res)
 }
 

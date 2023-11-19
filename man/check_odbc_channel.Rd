@@ -5,22 +5,27 @@
 \alias{assert_odbc_channel}
 \title{Check if an object is an open ODBC-channel}
 \usage{
-check_odbc_channel(x, dbservice = NULL)
+check_odbc_channel(x, dbservice = NULL, dbinterface = "odbc")
 
 assert_odbc_channel(
   x,
   dbservice = NULL,
+  dbinterface = "odbc",
   .var.name = checkmate::vname(x),
   comment = NULL,
   add = NULL
 )
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 Object to check.}
 
 \item{dbservice}{[character(1)]\cr
 The database the channel should be connect to.}
+
+\item{dbinterface}{[character(1)]\cr
+The R-package that is used for interface towards the data
+base. Defaults to \code{NULL}.}
 
 \item{.var.name}{[\code{character(1)}]\cr
 Name of the checked object to print in error messages. Defaults to
@@ -45,8 +50,10 @@ If the check is not successful,
 Check if an object is an open ODBC-channel.
 }
 \details{
-The check uses \code{RODBC:::odbcValidChannel} to check if the argument is an open ODBC-channel.
-Be aware that this function is an internal \code{RODBC}-function and may change within that package without warning.
+The check uses \code{RODBC:::odbcValidChannel} to check
+if the argument is an open ODBC-channel. Be aware that this
+function is an internal \code{RODBC}-function and may change
+within that package without warning.
 }
 \examples{
 \dontrun{

@@ -1,10 +1,15 @@
+NVIcheckmate 0.7.0 - (2023-11-19)
+----------------------------------------
+
+New features:
+
+  - created `assert_integerish` with the argument `comment`.
+  
+  - `check_odbc_channel` and `assert_odbc_channel` now accept the argument dbinterface with the possible values c("odbc", "RODBC", "RPostgreSQL").
+
+
 NVIcheckmate 0.6.0 - (2023-01-23)
 
-Bug fixes:
-
-  - 
-  
-  
 New features:
 
   - `assert_disjunct` with the argument `comment` have been included.
