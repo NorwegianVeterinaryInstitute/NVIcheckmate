@@ -6,7 +6,7 @@
 # Copyright (c) 2022, Norwegian Veterinary Institute
 # All rights reserved.
 #
-# The file has been imported from 
+# The file has been imported from
 #    https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fgihub.com%2fmllg%2fcheckmate%2fR%2f&umid=5711e6e8-6122-4eba-99ce-c61fbc457186&auth=004f5606958fa2bf5d6199a524a3177448fdaa2d-13efb903a571b4c22cdde09383725f7bdd4c9fa8
 # Modifications
 # - Escaped square brackets in help text.
@@ -14,7 +14,7 @@
 # - Use @rdname match_arg.
 # - Rewritten to use \code{\link[base]{grep}} for partial matching instead of \code{\link[base]{pmatch}}.
 # - Rewritten to include argument ignore.case.
-# - Rewritten to include argument comment. Therefore, assert-functions from NVIcheckmate with 
+# - Rewritten to include argument comment. Therefore, assert-functions from NVIcheckmate with
 #     argument comment are used.
 #
 #' @title Argument Verification Using Partial Matching
@@ -24,12 +24,12 @@
 #'     may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when performing
 #'     the matching.
 #' @details This is an extensions to \code{\link[checkmate]{matchArg}} with support
-#'     for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an 
+#'     for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
 #'     extension of \code{\link[base]{match.arg}}
 #'     with support for \code{\link{AssertCollection}}.
 #'     The behavior is very similar to \code{\link[base]{match.arg}}, except that
-#'     \code{NULL} is not a valid value for \code{x}. In addition, it is required that all 
-#'     values for \code{x} match a value in \code{choices} and that each value in \code{x} 
+#'     \code{NULL} is not a valid value for \code{x}. In addition, it is required that all
+#'     values for \code{x} match a value in \code{choices} and that each value in \code{x}
 #'     matches only one value in \code{choices}.
 #'
 #' @param x \[character\]\cr
@@ -66,13 +66,13 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
         yy <- x
         yy[which(lengths(y) == 1)] <- unname(unlist(y[which(lengths(y) == 1)]))
         if (any(lengths(y) > 1)) {
-          comment <- paste(comment, 
+          comment <- paste(comment,
                            "Abbreviated arguments can only be matched to one single",
                            "value among the possible arguments")
         }
       } else { # if class(y) neither character nor list (i.e. is array and/or matrix)
         yy <- x
-        comment <- paste(comment, 
+        comment <- paste(comment,
                          "Abbreviated arguments can only be matched to one single",
                          "value among the possible arguments")
       }
@@ -92,7 +92,7 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
     }
     if (length(yy) > 1) {
       yy <- x
-      comment <- paste(comment, 
+      comment <- paste(comment,
                        "Abbreviated arguments can only be matched to one single",
                        "value among the possible arguments")
     }
