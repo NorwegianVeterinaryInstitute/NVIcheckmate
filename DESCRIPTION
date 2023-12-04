@@ -29,11 +29,7 @@ Encoding: UTF-8
 Imports:
     checkmate (>= 2.1.0),
     DBI,
-    knitr,
-    R.rsp,
-    rmarkdown,
-    keyring,
-    NVIrpackages
+    keyring
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Suggests: 
@@ -41,13 +37,17 @@ Suggests:
     desc,
     devtools,
     findInFiles,
+    knitr,
+    R.rsp,
     remotes,
+    rmarkdown,
     roxygen2,
     RPostgreSQL,
     RODBC,
     rstudioapi,
     testthat,
-    NVIpackager
+    NVIpackager,
+    NVIrpackages
 Remotes: 
     NorwegianVeterinaryInstitute/NVIpackager,
     NorwegianVeterinaryInstitute/NVIrpackages,
