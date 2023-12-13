@@ -1,7 +1,7 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.7.0.9000
-Date: 2023-##-##
+Version: 0.7.1
+Date: 2023-12-13
 Authors@R: 
     c(person(given = "Petter",
            family = "Hopp",

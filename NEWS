@@ -1,26 +1,15 @@
-NVIcheckmate 0.7.0.9000 - (2023-##-##)
+NVIcheckmate 0.7.1 - (2023-12-13)
 ----------------------------------------
-
-New features:
-
--
-
-
 Bug fixes:
 
--
+- now `match_arg` issues an error on all occasions when `several.ok` = `FALSE` and lenght(x) > 1.
 
 
 Other changes:
 
--
-
-
-BREAKING CHANGES:
-
--
-
-
+  - updated README with improved installation instruction.
+  
+  
 NVIcheckmate 0.7.0 - (2023-11-19)
 ----------------------------------------
 
