@@ -82,9 +82,9 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
                             add = add)
 
   } else { # if several.ok = FALSE
+    checkmate::assertCharacter(x = x, len = 1L, .var.name = .var.name, add = add)
     if (identical(x, choices))
       return(x[1L])
-    checkmate::assertCharacter(x = x, len = 1L, .var.name = .var.name, add = add)
     xx <- paste0("^", x, "[[:print:]]*")
     yy <- grep(pattern = xx, value = TRUE, ignore.case = ignore.case, x = choices)
     if (length(yy) == 0) {
