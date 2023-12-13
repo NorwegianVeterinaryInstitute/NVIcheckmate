@@ -38,7 +38,7 @@ test_that("No error for match_arg", {
               several.ok = TRUE,
               ignore.case = FALSE),
     c("Apple", "Pear", "Orange", "Pineapple"))
-  
+
   expect_identical(
     match_arg(x = c("app", "pea"),
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
