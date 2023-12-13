@@ -54,15 +54,28 @@ depreciated and thereafter removed from `NVIcheckmate`.
 
 -   R version > 4.0.0
 -   R package `remotes`
--   Rtools 4.0 or Rtools 4.2 depending on R version
+-   Rtools version 4.0, 4.2 or 4.3 depending on R version
 
 First install and attach the `remotes` package.
 
     install.packages("remotes")
     library(remotes)
 
-To install (or update) the `NVIcheckmate` package, run the following
-code:
+To install (or update) the `NVIcheckmate` package without vignettes, run
+the following code:
+
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
+        upgrade = FALSE,
+        build = TRUE,
+        build_vignettes = FALSE)
+
+To install (or update) the `NVIcheckmate` package with vignettes, you
+will need to first install some additional R-packages needed for
+creating the vignettes. Check README below in the section
+[Vignettes](#vignettes) to see which vignettes are available. To install
+the package with the vignettes, first install the packages: `knitr`,
+`rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are
+missing. Then run the following code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
         upgrade = FALSE,

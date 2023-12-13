@@ -1,12 +1,19 @@
 library(NVIcheckmate)
 library(testthat)
-library(checkmate)
+# library(checkmate)
 
 test_that("No error for match_arg", {
 
   expect_identical(
     match_arg(x = "Orange",
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = FALSE,
+              ignore.case = FALSE),
+    "Orange")
+
+  expect_identical(
+    match_arg(x = "Orange",
+              choices = c("Orange"),
               several.ok = FALSE,
               ignore.case = FALSE),
     "Orange")
@@ -24,6 +31,13 @@ test_that("No error for match_arg", {
               several.ok = FALSE,
               ignore.case = TRUE),
     "Apple")
+
+  expect_identical(
+    match_arg(x = c("Apple", "Pear", "Orange", "Pineapple"),
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = TRUE,
+              ignore.case = FALSE),
+    c("Apple", "Pear", "Orange", "Pineapple"))
 
   expect_identical(
     match_arg(x = c("app", "pea"),
@@ -53,13 +67,14 @@ test_that("No error for match_arg", {
               ignore.case = TRUE),
     c("Apple", "Apple", "Pear"))
 
+
   expect_identical(
     match_arg(x = c("app", "app"),
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
               ignore.case = TRUE),
     c("Apple", "Apple"))
-})
+  })
 
 
 
@@ -90,6 +105,14 @@ test_that("Make error for match_arg", {
               several.ok = TRUE,
               ignore.case = FALSE),
     regexp = "Must be a subset of {'Apple','Pear','Orange','Pineapple'}, but has additional elements {'apple','pear'}",
+    fixed = TRUE)
+
+  expect_error(
+    match_arg(x = c("Apple", "Pear", "Orange", "Pineapple"),
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = FALSE,
+              ignore.case = TRUE),
+    regexp = "Must have length 1, but has length 4",
     fixed = TRUE)
 
   expect_error(
