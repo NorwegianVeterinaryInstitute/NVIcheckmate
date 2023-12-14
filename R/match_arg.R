@@ -83,6 +83,7 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
 
   } else { # if several.ok = FALSE
     checkmate::assertCharacter(x = x, len = 1L, .var.name = .var.name, add = add)
+    if (length(x) == 1) {
     if (identical(x, choices))
       return(x[1L])
     xx <- paste0("^", x, "[[:print:]]*")
@@ -99,6 +100,7 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
     assert_choice_character(x = yy, choices = choices, .var.name = .var.name,
                             comment = comment,
                             add = add)
+    }
   }
   return(yy)
 }
