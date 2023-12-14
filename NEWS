@@ -114,9 +114,7 @@ Other changes:
 
 NVIcheckmate 0.1.0 - (2021-08-11)
 
-First release:
-
-Extension of checkmate with argument checking adapted for NVIverse
+First release: Extension of checkmate with argument checking adapted for NVIverse
 
   - `check_package` and `assert_package` checks if a package is installed/attached.
   
