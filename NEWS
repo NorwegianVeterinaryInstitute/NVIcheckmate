@@ -3,7 +3,7 @@ NVIcheckmate 0.7.2 - (2023-12-14)
 
 Bug fixes:
 
-- Removed warning when `several.ok` = `FALSE` and lenght(x) > 1.
+- Removed warning in `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
 
 
 NVIcheckmate 0.7.1 - (2023-12-13)
