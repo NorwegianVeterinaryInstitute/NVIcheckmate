@@ -25,8 +25,8 @@ test_that("Make error for check_package", {
                regexp = "The package 'nopackage' is not installed")
 
   expect_identical(check_package(x = "checkmate", version = "9.1.0"),
-               paste0("The package 'checkmate' version '", 
-                     checkmate_version, 
+               paste0("The package 'checkmate' version '",
+                     checkmate_version,
                      "' is installed, while version '9.1.0' is required."))
 
   expect_error(assert_package(x = "checkmate", version = "9.0.0"),
