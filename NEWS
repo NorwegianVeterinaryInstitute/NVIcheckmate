@@ -1,3 +1,11 @@
+NVIcheckmate 0.7.2 - (2023-12-14)
+----------------------------------------
+
+Bug fixes:
+
+- Removed warning in `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
+
+
 NVIcheckmate 0.7.1 - (2023-12-13)
 ----------------------------------------
 Bug fixes:
@@ -106,9 +114,7 @@ Other changes:
 
 NVIcheckmate 0.1.0 - (2021-08-11)
 
-First release:
-
-Extension of checkmate with argument checking adapted for NVIverse
+First release: Extension of checkmate with argument checking adapted for NVIverse
 
   - `check_package` and `assert_package` checks if a package is installed/attached.
   

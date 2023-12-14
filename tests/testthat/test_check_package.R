@@ -3,6 +3,8 @@ library(testthat)
 # library(checkmate)
 context("check_package")
 
+checkmate_version <- as.character(utils::packageVersion("checkmate"))
+
 test_that("No error for check_package", {
 
   expect_identical(check_package(x = "checkmate"),
@@ -11,7 +13,7 @@ test_that("No error for check_package", {
   expect_identical(assert_package(x = "checkmate"),
                    "checkmate")
 
-  expect_identical(check_package(x = "checkmate", version = "2.0.0"),
+  expect_identical(check_package(x = "checkmate", version = checkmate_version),
                    TRUE)
 })
 
@@ -23,7 +25,9 @@ test_that("Make error for check_package", {
                regexp = "The package 'nopackage' is not installed")
 
   expect_identical(check_package(x = "checkmate", version = "9.1.0"),
-               "The package 'checkmate' version '2.1.0' is installed, while version '9.1.0' is required.")
+               paste0("The package 'checkmate' version '",
+                     checkmate_version,
+                     "' is installed, while version '9.1.0' is required."))
 
   expect_error(assert_package(x = "checkmate", version = "9.0.0"),
                regexp = "is installed, while version '9.0.0' is required.")

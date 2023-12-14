@@ -116,6 +116,14 @@ test_that("Make error for match_arg", {
     fixed = TRUE)
 
   expect_error(
+    match_arg(x = c("Apple", "Pear", "Pineapple"),
+              choices = c("Apple", "Pear", "Orange", "Pineapple"),
+              several.ok = FALSE,
+              ignore.case = TRUE),
+    regexp = "Must have length 1, but has length 3",
+    fixed = TRUE)
+
+  expect_error(
     match_arg(x = c("ap", "pe"),
               choices = c("Apple", "Pear", "Orange", "Pineapple"),
               several.ok = TRUE,
