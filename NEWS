@@ -3,22 +3,9 @@ NVIcheckmate 0.7.2.9000 - (2023-##-##)
 
 New features: 
 
-- To come.
-
-
 Bug fixes:
 
-- To come.
-
-
-Other changes:
-
-- To come.
-
-
-BREAKING CHANGES:
-
-- To come.
+- corrected error message for `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
 
 
 NVIcheckmate 0.7.2 - (2023-12-14)
