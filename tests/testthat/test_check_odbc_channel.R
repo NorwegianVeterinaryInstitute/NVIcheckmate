@@ -35,19 +35,19 @@ test_that("check_odbc_channel for package RPostgreSQL", {
   DBI::dbDisconnect(odbc_connection)
 })
 
-# test_that("Errors or warnings for login", {
-#   linewidth <- options("width")
-#   options(width = 80)
-#
-# expect_error(login("PHS"),
-#              regexpr = "Variable 'dbservice': Must be element of")
-# expect_warning(login(dbservice = "PJS",
-#                      dbdriver = "x",
-#                      db = "y",
-#                      dbserver = "z",
-#                      dbport = "x",
-#                      dbprotocol = "y",
-#                      dbinterface = NULL),
-#                regexpr = "ODBC connection failed")
-# options(width = unlist(linewidth))
-# })
+test_that("Errors or warnings for login", {
+  linewidth <- options("width")
+  options(width = 80)
+
+expect_error(login("PHS"),
+             regexp = "Variable 'dbservice': Must be element of")
+expect_warning(login(dbservice = "PJS",
+                     dbdriver = "x",
+                     db = "y",
+                     dbserver = "z",
+                     dbport = "x",
+                     dbprotocol = "y",
+                     dbinterface = NULL),
+               regexp = "ODBC connection failed")
+options(width = unlist(linewidth))
+})
