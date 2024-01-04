@@ -53,10 +53,17 @@ This is an extensions to \code{\link[checkmate]{matchArg}} with support
 for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
 extension of \code{\link[base]{match.arg}}
 with support for \code{\link{AssertCollection}}.
-The behavior is very similar to \code{\link[base]{match.arg}}, except that
-\code{NULL} is not a valid value for \code{x}. In addition, it is required that all
-values for \code{x} match a value in \code{choices} and that each value in \code{x}
-matches only one value in \code{choices}.
+The behavior is very similar to \code{\link[base]{match.arg}}, with a few
+exceptions:
+\itemize{
+\item \code{NULL} is not a valid value for \code{x}.
+\item When \code{several.ok} = \code{TRUE}, it is required that all
+values for \code{x} match a value in \code{choices} and that
+each value in \code{x} matches only one value in \code{choices}.
+\item When \code{several.ok} = \code{FALSE}, it is required that
+\code{length(x)} == 1 and that \code{x} matches one and only one
+value in \code{choices}.
+}
 }
 \examples{
 match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)
