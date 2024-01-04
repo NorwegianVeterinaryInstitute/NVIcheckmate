@@ -18,7 +18,6 @@
 #     argument comment are used.
 #
 #' @title Argument Verification Using Partial Matching
-#'
 #' @description match.arg matches arguments against a table of candidate values as specified
 #'     by choices. Matching is done using \code{\link[base]{grep}}, and arguments
 #'     may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when performing
@@ -27,10 +26,15 @@
 #'     for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
 #'     extension of \code{\link[base]{match.arg}}
 #'     with support for \code{\link{AssertCollection}}.
-#'     The behavior is very similar to \code{\link[base]{match.arg}}, except that
-#'     \code{NULL} is not a valid value for \code{x}. In addition, it is required that all
-#'     values for \code{x} match a value in \code{choices} and that each value in \code{x}
-#'     matches only one value in \code{choices}.
+#'     The behavior is very similar to \code{\link[base]{match.arg}}, with a few
+#'     exceptions:
+#' * \code{NULL} is not a valid value for \code{x}.
+#' * When \code{several.ok} = \code{TRUE}, it is required that all
+#'     values for \code{x} match a value in \code{choices} and that
+#'     each value in \code{x} matches only one value in \code{choices}.
+#' * When \code{several.ok} = \code{FALSE}, it is required that
+#'     \code{length(x)} == 1 and that \code{x} matches one and only one
+#'     value in \code{choices}.
 #'
 #' @param x \[character\]\cr
 #'  User provided argument to match.
@@ -84,23 +88,25 @@ match_arg <- function(x, choices, several.ok = FALSE, ignore.case = FALSE, .var.
   } else { # if several.ok = FALSE
     checkmate::assertCharacter(x = x, len = 1L, .var.name = .var.name, add = add)
     if (length(x) == 1) {
-    if (identical(x, choices))
-      return(x[1L])
-    xx <- paste0("^", x, "[[:print:]]*")
-    yy <- grep(pattern = xx, value = TRUE, ignore.case = ignore.case, x = choices)
-    if (length(yy) == 0) {
-      yy <- x
-    }
-    if (length(yy) > 1) {
-      yy <- x
-      comment <- paste(comment,
-                       "Abbreviated arguments can only be matched to one single",
-                       "value among the possible arguments")
-    }
-    assert_choice_character(x = yy, choices = choices, .var.name = .var.name,
-                            comment = comment,
-                            add = add)
+      if (identical(x, choices))
+        return(x[1L])
+      xx <- paste0("^", x, "[[:print:]]*")
+      yy <- grep(pattern = xx, value = TRUE, ignore.case = ignore.case, x = choices)
+      if (length(yy) == 0) {
+        yy <- x
+      }
+      if (length(yy) > 1) {
+        yy <- x
+        comment <- paste(comment,
+                         "Abbreviated arguments can only be matched to one single",
+                         "value among the possible arguments")
+      }
+      assert_choice_character(x = yy, choices = choices, .var.name = .var.name,
+                              comment = comment,
+                              add = add)
     }
   }
+  # removes error if yy hasn't been generated due to erroneous input.
+  if (!exists("yy")) {yy <- NULL}
   return(yy)
 }
