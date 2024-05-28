@@ -3,7 +3,7 @@ NVIcheckmate 0.7.3.9000 - (2024-##-##)
 
 New features:
 
--
+- Created `assert_data_frame` with the argument `comment`.
 
 
 Bug fixes:
