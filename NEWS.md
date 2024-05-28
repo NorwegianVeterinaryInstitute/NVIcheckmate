@@ -1,151 +1,148 @@
-NVIcheckmate 0.7.3.9000 - (2024-##-##)
-----------------------------------------
+# NVIcheckmate 0.7.3.9001 - (2024-##-##)
 
-New features:
+## New features:
 
--
-
-
-Bug fixes:
-
--
+- Created `assert_data_frame` with the argument `comment`.
 
 
-Other changes:
+## Bug fixes:
 
 -
 
 
-BREAKING CHANGES:
+## Other changes:
 
 -
 
 
-NVIcheckmate 0.7.3 - (2024-01-04)
-----------------------------------------
+## BREAKING CHANGES:
 
-Bug fixes:
-
-- corrected error message in `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
+-
 
 
-NVIcheckmate 0.7.2 - (2023-12-14)
-----------------------------------------
+# NVIcheckmate 0.7.3 - (2024-01-04)
 
-Bug fixes:
+## Bug fixes:
+
+- Corrected error message in `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
+
+
+# NVIcheckmate 0.7.2 - (2023-12-14)
+
+## Bug fixes:
 
 - Removed warning in `match_arg` when `several.ok` = `FALSE` and lenght(x) > 1.
 
 
-NVIcheckmate 0.7.1 - (2023-12-13)
-----------------------------------------
-Bug fixes:
+# NVIcheckmate 0.7.1 - (2023-12-13)
+## Bug fixes:
 
-- now `match_arg` issues an error on all occasions when `several.ok` = `FALSE` and lenght(x) > 1.
+- Now `match_arg` issues an error on all occasions when `several.ok` = `FALSE` and lenght(x) > 1.
 
 
-Other changes:
+## Other changes:
 
-  - updated README with improved installation instruction.
+  - Updated README with improved installation instruction.
   
   
-NVIcheckmate 0.7.0 - (2023-11-19)
-----------------------------------------
+# NVIcheckmate 0.7.0 - (2023-11-19)
 
-New features:
+## New features:
 
-  - created `assert_integerish` with the argument `comment`.
+  - Created `assert_integerish` with the argument `comment`.
   
   - `check_odbc_channel` and `assert_odbc_channel` now accept the argument dbinterface with the possible values c("odbc", "RODBC", "RPostgreSQL").
 
 
-NVIcheckmate 0.6.0 - (2023-01-23)
+# NVIcheckmate 0.6.0 - (2023-01-23)
 
-New features:
+## New features:
 
   - `assert_disjunct` with the argument `comment` have been included.
 
   - `assert_integer` with the argument `comment` have been included.
 
 
-Other changes:
+## Other changes:
 
-  - included the NVIcheckmate reference manual in vignettes as pdf-file.
+  - Included the NVIcheckmate reference manual in vignettes as pdf-file.
   
-  - updated README and corrected installation instruction.
+  - Updated README and corrected installation instruction.
   
   
-NVIcheckmate 0.5.0 - (2022-08-14)
+# NVIcheckmate 0.5.0 - (2022-08-14)
 
-New features:
+## New features:
 
   - `assert_character` includes the arguments `n.char` and `max.char`.
 
 
-Other changes:
+## Other changes:
 
   - NVIcheckmate is adapted to and requires `checkmate` >= 2.1.0
   
   
-NVIcheckmate 0.4.0 - (2022-06-07)
+# NVIcheckmate 0.4.0 - (2022-06-07)
 
-New features:
+## New features:
 
   - `match_arg` performs partial matching of arguments and includes the argument `ignore.case`. 
 
 
-Other changes:
+## Other changes:
 
-  - improved readability of error messages for `assert_choices_character` and `assert_subset_character`.
+  - Improved readability of error messages for `assert_choices_character` and `assert_subset_character`.
   
   - Updated README and vignette Contribute to NVIcheckmate.
   
   
-NVIcheckmate 0.3.3 - (2021-11-04)
+# NVIcheckmate 0.3.3 - (2021-11-04)
 
-Bug fixes:
+## Bug fixes:
 
   - `assert_choices_character` and `assert_subset_character` now accepts argument `ignore.case` = "FALSE".
   
   
-NVIcheckmate 0.3.2 - (2021-09-28)
+# NVIcheckmate 0.3.2 - (2021-09-28)
 
-Bug fixes:
+## Bug fixes:
 
   - `check_non_null` don't give a warning when input is a vector or data frame. Only check for `class` == NULL.
   
   
-NVIcheckmate 0.3.1 - (2021-09-27)
+# NVIcheckmate 0.3.1 - (2021-09-27)
 
-Bug fixes:
+## Bug fixes:
 
-  - input to `check_non_missing` and `assert_non_missing` check corrected to list, not vector.
+  - Input to `check_non_missing` and `assert_non_missing` check corrected to list, not vector.
   
   
-NVIcheckmate 0.3.0 - (2021-09-16)
+# NVIcheckmate 0.3.0 - (2021-09-16)
 
-New features:
+## New features:
 
   - `check_non_missing` and `assert_non_missing` check if at least one of two or more arguments are non_missing.
   
   
-NVIcheckmate 0.2.0 - (2021-09-05)
+# NVIcheckmate 0.2.0 - (2021-09-05)
 
-New features:
+## New features:
 
   - `assert` now includes the argument `comment`.
   
   - `assert_character` with the argument `comment`.
   
   
-Other changes:
+## Other changes:
 
   - The order of arguments in assertion functions is changed so that `comment` is placed just before `add`.
 
 
-NVIcheckmate 0.1.0 - (2021-08-11)
+# NVIcheckmate 0.1.0 - (2021-08-11)
 
-First release: Extension of checkmate with argument checking adapted for NVIverse
+## First release: 
+
+Extension of checkmate with argument checking adapted for NVIverse
 
   - `check_package` and `assert_package` checks if a package is installed/attached.
   
