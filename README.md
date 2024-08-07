@@ -197,6 +197,13 @@ character</td>
 argument ‘comment’</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">assert_data_frame</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Check if an argument is a data frame</td>
+<td style="text-align: left;">Based on check_data_frame and includes the
+argument ‘comment’</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">assert_disjunct</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -204,7 +211,7 @@ character</td>
 <td style="text-align: left;">Based on checkDisjunct and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">assert_integer</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -212,7 +219,7 @@ integer</td>
 <td style="text-align: left;">Based on checkInteger and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">assert_integerish</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -220,7 +227,7 @@ intergish</td>
 <td style="text-align: left;">Based on checkIntegerish and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">assert_names</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Perform various checks on character
@@ -228,62 +235,62 @@ vectors, usually names</td>
 <td style="text-align: left;">Based on checkNames and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">bounds.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">checker.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">Only included information on check_- and
 assert_-functions, the rest were removed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">makeFunction.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">na-handling.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">null.ok.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sorted.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">typed.missing.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
