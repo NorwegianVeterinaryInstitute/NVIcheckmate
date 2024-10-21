@@ -52,6 +52,7 @@ Remotes:
     NorwegianVeterinaryInstitute/NVIpackager,
     NorwegianVeterinaryInstitute/NVIrpackages,
 Collate: 
+    'NVIcheckmate-package.R'
     'assert.R'
     'makeAssertionFunction.R'
     'assert_character.R'
