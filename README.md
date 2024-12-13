@@ -17,9 +17,9 @@ functions for argument checking that are adapted for NVIverse.
 `NVIcheckmate` is part of `NVIverse`, a collection of R-packages with
 tools to facilitate data management and data reporting at the Norwegian
 Veterinary Institute (NVI). The `NVIverse` consists of the following
-packages: `NVIconfig`, `NVIdb`, `NVIspatial`, `NVIpretty`, `NVIbatch`,
-`OKplan`, `OKcheck`, `NVIcheckmate`, `NVIpackager`, `NVIrpackages`. See
-[Contribute to
+packages: `NVIconfig`, `NVIdb`, `NVIpjsr`, `NVIspatial`, `NVIpretty`,
+`NVIbatch`, `OKplan`, `OKcheck`, `NVIcheckmate`, `NVIpackager`,
+`NVIrpackages`. See [Contribute to
 NVIcheckmate](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/CONTRIBUTING.md)
 for more information.
 
@@ -52,9 +52,9 @@ depreciated and thereafter removed from `NVIcheckmate`.
 [GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
 `NVIcheckmate` you will need:
 
--   R version > 4.0.0
+-   R version &gt; 4.1.0
 -   R package `remotes`
--   Rtools version 4.0, 4.2 or 4.3 depending on R version
+-   Rtools version 4.0, 4.2, 4.3 or 4.4 depending on R version
 
 First install and attach the `remotes` package.
 
@@ -70,12 +70,13 @@ the following code:
         build_vignettes = FALSE)
 
 To install (or update) the `NVIcheckmate` package with vignettes, you
-will need to first install some additional R-packages needed for
-creating the vignettes. Check README below in the section
-[Vignettes](#vignettes) to see which vignettes are available. To install
-the package with the vignettes, first install the packages: `knitr`,
-`rmarkdown`, `R.rsp`, and `NVIrpackages` (from GitHub) if they are
-missing. Then run the following code:
+will need to first install some additional R-packages needed to build
+the vignettes. Check README below in the section [Vignettes](#vignettes)
+to see which vignettes are available. To install the package with the
+vignettes, first install the packages: `knitr`, `rmarkdown`, `R.rsp`,
+and `NVIrpackages` (from GitHub) if they are missing. If you don’t use
+R-studio, you will also need to install Pandoc. Then run the following
+code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
         upgrade = FALSE,
@@ -122,7 +123,7 @@ for information on new features, bug fixes and other changes.
 
 #### NVIcheckmate
 
-Copyright (c) 2021 - 2023 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2024 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/LICENSE)
 for details.
@@ -161,112 +162,135 @@ License: BSD 3-Clause
 <tr class="odd">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Combines multiple checks into one assertion</td>
+<td style="text-align: left;">Combines multiple checks into one
+assertion</td>
 <td style="text-align: left;">Includes the argument ‘comment’</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">mstopOrPush</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function. Located in file assert.R</td>
+<td style="text-align: left;">Internal function. Located in file
+assert.R</td>
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">mstop</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Internal function. Located in file helper.R</td>
+<td style="text-align: left;">Internal function. Located in file
+helper.R</td>
 <td style="text-align: left;">None</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">makeAssertFunction.R</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Creates an assertion function from a check function</td>
-<td style="text-align: left;">Adds the argument ‘comment’ when creating an assertion function</td>
+<td style="text-align: left;">Creates an assertion function from a check
+function</td>
+<td style="text-align: left;">Adds the argument ‘comment’ when creating
+an assertion function</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">assert_character</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Check if an argument is a vector of type character</td>
-<td style="text-align: left;">Based on checkCharacter and includes the argument ‘comment’</td>
+<td style="text-align: left;">Check if an argument is a vector of type
+character</td>
+<td style="text-align: left;">Based on checkCharacter and includes the
+argument ‘comment’</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">assert_data_frame</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Check if an argument is a data frame</td>
+<td style="text-align: left;">Based on check_data_frame and includes the
+argument ‘comment’</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">assert_disjunct</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Check if an argument is a vector of type character</td>
-<td style="text-align: left;">Based on checkDisjunct and includes the argument ‘comment’</td>
+<td style="text-align: left;">Check if an argument is a vector of type
+character</td>
+<td style="text-align: left;">Based on checkDisjunct and includes the
+argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">assert_integer</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Check if an argument is a vector of type integer</td>
-<td style="text-align: left;">Based on checkInteger and includes the argument ‘comment’</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">assert_integerish</td>
-<td style="text-align: left;">./R</td>
-<td style="text-align: left;">Check if an argument is a vector of type intergish</td>
-<td style="text-align: left;">Based on checkIntegerish and includes the argument ‘comment’</td>
+<td style="text-align: left;">Check if an argument is a vector of type
+integer</td>
+<td style="text-align: left;">Based on checkInteger and includes the
+argument ‘comment’</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">assert_names</td>
+<td style="text-align: left;">assert_integerish</td>
 <td style="text-align: left;">./R</td>
-<td style="text-align: left;">Perform various checks on character vectors, usually names</td>
-<td style="text-align: left;">Based on checkNames and includes the argument ‘comment’</td>
+<td style="text-align: left;">Check if an argument is a vector of type
+intergish</td>
+<td style="text-align: left;">Based on checkIntegerish and includes the
+argument ‘comment’</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">assert_names</td>
+<td style="text-align: left;">./R</td>
+<td style="text-align: left;">Perform various checks on character
+vectors, usually names</td>
+<td style="text-align: left;">Based on checkNames and includes the
+argument ‘comment’</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">bounds.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">checker.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
-<td style="text-align: left;">Only included information on check_- and assert_-functions, the rest were removed</td>
+<td style="text-align: left;">Only included information on check_- and
+assert_-functions, the rest were removed</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">makeFunction.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">na-handling.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">null.ok.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sorted.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">typed.missing.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
