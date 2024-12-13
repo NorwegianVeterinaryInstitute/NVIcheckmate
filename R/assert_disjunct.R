@@ -24,7 +24,7 @@
 #'
 #' @templateVar fn disjunct
 #' @template x
-#' @param y \[atomic\]\cr
+#' @param y [atomic]\cr
 #'     Other set.
 #' @template fmatch
 #' @template assert

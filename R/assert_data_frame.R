@@ -25,7 +25,7 @@
 #'
 #' @templateVar fn Integer
 #' @template x
-#' @param types \[\code{character}\]\cr
+#' @param types [\code{character}]\cr
 #' Character vector of class names. Each list element must inherit
 #'     from at least one of the provided types. The types “logical”,
 #'     “integer”, “integerish”, “double”, “numeric”, “complex”,
@@ -34,30 +34,30 @@
 #'     “null” are supported. For other types inherits is used as a
 #'     fallback to check x's inheritance. Defaults to character(0)
 #'     (no check).
-#' @param any.missing \[\code{logical(1)}\]\cr
+#' @param any.missing [\code{logical(1)}]\cr
 #' Are vectors with missing values allowed? Default is \code{TRUE}.
-#' @param all.missing \[\code{logical(1)}\]\cr
+#' @param all.missing [\code{logical(1)}]\cr
 #' Are vectors with no non-missing values allowed? Default is \code{TRUE}.
 #'     Note that empty vectors do not have non-missing values.
-#' @param min.rows \[\code{integer(1)}\]\cr
+#' @param min.rows [\code{integer(1)}]\cr
 #' Minimum number of rows.
-#' @param max.rows \[\code{integer(1)}\]\cr
+#' @param max.rows [\code{integer(1)}]\cr
 #' Maximum number of rows.
-#' @param min.cols \[\code{integer(1)}\]\cr
+#' @param min.cols [\code{integer(1)}]\cr
 #' Minimum number of columns.
-#' @param max.cols \[\code{integer(1)}\]\cr
+#' @param max.cols [\code{integer(1)}]\cr
 #' Maximum number of columns.
-#' @param nrows \[\code{integer(1)}\]\cr
+#' @param nrows [\code{integer(1)}]\cr
 #' Exact number of rows.
-#' @param ncols \[\code{integer(1)}\]\cr
+#' @param ncols [\code{integer(1)}]\cr
 #' Exact number of columns.
-#' @param row.names \[\code{character(1)}\]\cr
+#' @param row.names [\code{character(1)}]\cr
 #' Check for row names. Default is “NULL” (no check). See
 #'     \ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
 #'     for possible values. Note that you can use
 #'     \ifelse{html}{\code{\link[checkmate:check_subset]{checkmate::check_subset}}}{\code{checkmate::check_subset}}
 #'     to check for a specific set of names.
-#' @param col.names \[\code{character(1)}\]\cr
+#' @param col.names [\code{character(1)}]\cr
 #' Check for column names. Default is “NULL” (no check). See
 #'     \ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
 #'     for possible values. Note that you can use

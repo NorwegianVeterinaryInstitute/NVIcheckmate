@@ -21,9 +21,9 @@
 #'     or \code{combine} is \dQuote{and} and all checks evaluate to \code{TRUE}.
 #'     Otherwise, \code{assert} throws an informative error message.
 #'
-#' @param ... \[any\]\cr
+#' @param ... [any]\cr
 #'  List of calls to check functions.
-#' @param combine \[\code{character(1)}\]\cr
+#' @param combine [\code{character(1)}]\cr
 #'  \dQuote{or} or \dQuote{and} to combine the check functions with an OR
 #'  or AND, respectively.
 #' @template assert
