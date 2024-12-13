@@ -1,23 +1,8 @@
-# NVIcheckmate 0.7.3.9001 - (2024-##-##)
+# NVIcheckmate 0.8.0 - (2024-12-13)
 
 ## New features:
 
 - Created `assert_data_frame` with the argument `comment`.
-
-
-## Bug fixes:
-
--
-
-
-## Other changes:
-
--
-
-
-## BREAKING CHANGES:
-
--
 
 
 # NVIcheckmate 0.7.3 - (2024-01-04)
