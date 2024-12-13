@@ -7,5 +7,5 @@
 # Modifications
 # - Square brackets are escaped
 #' 
-#' @param x \[\code{any}\]\cr
+#' @param x [\code{any}]\cr
 #'  Object to check.
