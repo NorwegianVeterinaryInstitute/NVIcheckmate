@@ -1,3 +1,25 @@
+# NVIcheckmate 0.8.0.9000 - (2024-##-##)
+
+## New features:
+
+-
+
+
+## Bug fixes:
+
+-
+
+
+## Other changes:
+
+-
+
+
+## BREAKING CHANGES:
+
+-
+
+
 # NVIcheckmate 0.8.0 - (2024-12-13)
 
 ## New features:
