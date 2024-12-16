@@ -4,8 +4,7 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
-# Modifications
-# - Square brackets are escaped. 
+# Modifications 
 # - Removed reference to any other function than \code{assert_<%= fn %>} and
 #   \code{check_<%= fn %>}. 
 #' 

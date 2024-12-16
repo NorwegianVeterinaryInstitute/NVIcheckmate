@@ -131,10 +131,10 @@ for details.
 Functions and code from `checkmate` have been imported into
 `NVIcheckmate`. For some of them, the code have been partly modified. An
 overwiew of the functional modifications are given in Table 2. In
-addition, some technical changes like escaping character, changing links
-and correcting typos have been performed. The modifications are listed
-in the respective source files. Code from `checkmate` are the copyright
-of the copyright holders of `checkmate`.
+addition, some technical changes like changing links and correcting
+typos have been performed. The modifications are listed in the
+respective source files. Code from `checkmate` are the copyright of the
+copyright holders of `checkmate`.
 
 #### checkmate
 

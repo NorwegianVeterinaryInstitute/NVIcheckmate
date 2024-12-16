@@ -5,10 +5,9 @@
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
 # Modifications
-# - Square brackets are escaped
 # - Link to fmatch is removed
 #' 
-#' @param fmatch \[\code{logical(1)}\]\cr
+#' @param fmatch [\code{logical(1)}]\cr
 #'     Use the set operations implemented in \code{fmatch} in package \pkg{fastmatch}.
 #'     If \pkg{fastmatch} is not installed, this silently falls back to \code{\link[base]{match}}.
 #'     \code{fastmatch::fmatch} modifies \code{y} by reference:

@@ -15,13 +15,13 @@ match_arg(
 )
 }
 \arguments{
-\item{x}{[character]\cr
+\item{x}{[\code{character}]\cr
 User provided argument to match.}
 
-\item{choices}{[character()]\cr
+\item{choices}{[\code{character}]\cr
 Candidates to match \code{x} with.}
 
-\item{several.ok}{[logical(1)]\cr
+\item{several.ok}{[\code{logical(1)}]\cr
 If \code{TRUE}, \code{x} should be allowed to have more than one element.}
 
 \item{ignore.case}{[\code{logical(1)}]\cr
@@ -42,28 +42,26 @@ Character vector with subset of \code{choices}.
 }
 \description{
 match.arg matches arguments against a table of candidate values as specified
-by choices. Matching is done using \code{\link[base]{grep}}, and arguments
-may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when performing
-the matching.
+    by choices. Matching is done using \code{\link[base]{grep}}, and arguments
+    may be abbreviated. If \code{ignore.case = TRUE}, case is ignored when performing
+    the matching.
 }
 \details{
 Partial Argument Matching
 
 This is an extensions to \code{\link[checkmate]{matchArg}} with support
-for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
-extension of \code{\link[base]{match.arg}}
-with support for \code{\link{AssertCollection}}.
-The behavior is very similar to \code{\link[base]{match.arg}}, with a few
-exceptions:
-\itemize{
-\item \code{NULL} is not a valid value for \code{x}.
-\item When \code{several.ok} = \code{TRUE}, it is required that all
-values for \code{x} match a value in \code{choices} and that
-each value in \code{x} matches only one value in \code{choices}.
-\item When \code{several.ok} = \code{FALSE}, it is required that
-\code{length(x)} == 1 and that \code{x} matches one and only one
-value in \code{choices}.
-}
+    for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
+    extension of \code{\link[base]{match.arg}}
+    with support for \code{\link{AssertCollection}}.
+    The behavior is very similar to \code{\link[base]{match.arg}}, with a few
+    exceptions:
+* \code{NULL} is not a valid value for \code{x}.
+* When \code{several.ok} = \code{TRUE}, it is required that all
+    values for \code{x} match a value in \code{choices} and that
+    each value in \code{x} matches only one value in \code{choices}.
+* When \code{several.ok} = \code{FALSE}, it is required that
+    \code{length(x)} == 1 and that \code{x} matches one and only one
+    value in \code{choices}.
 }
 \examples{
 match_arg("a", choices = c("Apple", "Banana"), ignore.case = TRUE)

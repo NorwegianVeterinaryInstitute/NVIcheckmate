@@ -3,7 +3,7 @@
 #' @details In some functions, one argument may replace another. The check is used to ensure that at
 #'     least on of the arguments have a value. Specific checks for each argument should be used in addition.
 #' @templateVar fn non_null
-#' @param x \[any\]\cr
+#' @param x [\code{any}]\cr
 #'  List with objects to check.
 #' @template checker
 #' @export

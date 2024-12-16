@@ -6,27 +6,23 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
-# - Escaped square brackets in help text
 # - Included information on source and functional changes in @description.
 # - Included @details
 # - Removed use.namespace from help and function
 # - Included argument comment in created assert-functions.
 #
 #' @title Turn a Check into an Assertion
-#'
 #' @description \code{makeAssertionFunction} can be used to automatically create
 #'     an assertion function based on a check function (see example). This is a
 #'     modification of \code{checkmate::makeAssertionFunction} that includes the
 #'     argument comment in the assertion function.
-#'
 #' @details The code is imported from \code{checkmate}. The modifications in the
 #'     code is marked. The argument use.namespace is deleted as
 #'     \code{checkmate::makeAssertion} and \code{checkmate::vname} always should
 #'     be used.
-#'
 #' @template makeFunction
 #  @template use.namespace  # Removed argument use.namespace as checkmate:makeAssertion should always be used
-#' @param coerce \[\code{logical(1)}\]\cr
+#' @param coerce [\code{logical(1)}]\cr
 #'  If \code{TRUE}, injects some lines of code to convert numeric values to integer after an successful assertion.
 #'  Currently used in \code{\link{assertCount}}, \code{\link{assertInt}} and \code{\link{assertIntegerish}}.
 #' @export

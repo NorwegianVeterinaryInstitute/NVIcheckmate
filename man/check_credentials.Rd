@@ -30,12 +30,12 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_credentials} return \code{x} invisibly, whereas
-\code{check_credentials} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_credentials} throws an error message and
-\code{check_credentials} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_credentials} return \code{x} invisibly, whereas
+ \code{check_credentials} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_credentials} throws an error message and 
+ \code{check_credentials} returns a string with the error message.
 }
 \description{
 Check if credentials are saved in the user profile for the service.
