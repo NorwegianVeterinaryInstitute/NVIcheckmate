@@ -1,4 +1,4 @@
-# NVIcheckmate 0.8.0.9000 - (2024-##-##)
+# NVIcheckmate 0.8.0.9001 - (2024-##-##)
 
 ## New features:
 
