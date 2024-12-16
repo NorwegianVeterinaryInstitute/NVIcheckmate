@@ -12,7 +12,7 @@
 
 ## Other changes:
 
--
+- Standardised help for several functions.
 
 
 ## BREAKING CHANGES:
