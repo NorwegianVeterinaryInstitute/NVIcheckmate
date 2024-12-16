@@ -15,13 +15,13 @@ match_arg(
 )
 }
 \arguments{
-\item{x}{[character]\cr
+\item{x}{[\code{character}]\cr
 User provided argument to match.}
 
-\item{choices}{[character]\cr
+\item{choices}{[\code{character}]\cr
 Candidates to match \code{x} with.}
 
-\item{several.ok}{[logical(1)]\cr
+\item{several.ok}{[\code{logical(1)}]\cr
 If \code{TRUE}, \code{x} should be allowed to have more than one element.}
 
 \item{ignore.case}{[\code{logical(1)}]\cr

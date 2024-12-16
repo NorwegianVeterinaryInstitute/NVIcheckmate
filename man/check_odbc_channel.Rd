@@ -20,10 +20,10 @@ assert_odbc_channel(
 \item{x}{[\code{any}]\cr
 Object to check.}
 
-\item{dbservice}{[character(1)]\cr
+\item{dbservice}{[\code{character(1)}]\cr
 The database the channel should be connect to.}
 
-\item{dbinterface}{[character(1)]\cr
+\item{dbinterface}{[\code{character(1)}]\cr
 The R-package that is used for interface towards the data
 base. Defaults to \code{NULL}.}
 

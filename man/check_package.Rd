@@ -20,10 +20,10 @@ assert_package(
 \item{x}{[\code{any}]\cr
 Object to check.}
 
-\item{version}{[character(1)]\cr
+\item{version}{[\code{character(1)}]\cr
 The required version of the installed package. May be \code{NULL}.}
 
-\item{type}{[character(1)]\cr
+\item{type}{[\code{character(1)}]\cr
 Type of formal check(s) to perform on the package.
 \describe{
 \item{installed:}{Checks if \code{x} is installed.}

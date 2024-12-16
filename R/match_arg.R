@@ -35,11 +35,11 @@
 #'     \code{length(x)} == 1 and that \code{x} matches one and only one
 #'     value in \code{choices}.
 #'
-#' @param x [character]\cr
+#' @param x [\code{character}]\cr
 #'  User provided argument to match.
-#' @param choices [character]\cr
+#' @param choices [\code{character}]\cr
 #'  Candidates to match \code{x} with.
-#' @param several.ok [logical(1)]\cr
+#' @param several.ok [\code{logical(1)}]\cr
 #'  If \code{TRUE}, \code{x} should be allowed to have more than one element.
 #' @param ignore.case [\code{logical(1)}]\cr
 #'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
