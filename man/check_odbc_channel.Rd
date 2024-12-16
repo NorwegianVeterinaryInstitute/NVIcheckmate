@@ -39,21 +39,21 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_odbc_channel} return \code{x} invisibly, whereas
-\code{check_odbc_channel} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_odbc_channel} throws an error message and
-\code{check_odbc_channel} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_odbc_channel} return \code{x} invisibly, whereas
+ \code{check_odbc_channel} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_odbc_channel} throws an error message and 
+ \code{check_odbc_channel} returns a string with the error message.
 }
 \description{
 Check if an object is an open ODBC-channel.
 }
 \details{
 The check uses \code{RODBC:::odbcValidChannel} to check
-if the argument is an open ODBC-channel. Be aware that this
-function is an internal \code{RODBC}-function and may change
-within that package without warning.
+    if the argument is an open ODBC-channel. Be aware that this
+    function is an internal \code{RODBC}-function and may change
+    within that package without warning.
 }
 \examples{
 \dontrun{

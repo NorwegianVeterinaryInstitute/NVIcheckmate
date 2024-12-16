@@ -29,8 +29,8 @@ Type of formal check(s) to perform on the names.
 \item{named:}{Checks \code{x} for regular names which excludes names to be \code{NA} or empty (\code{""}).}
 \item{unique:}{Performs checks like with \dQuote{named} and additionally tests for non-duplicated names.}
 \item{strict:}{Performs checks like with \dQuote{unique} and additionally fails for names with UTF-8 characters
-and names which do not comply to R's variable name restrictions. As regular expression, this is
-\dQuote{^[.]\emph{[a-zA-Z]+[a-zA-Z0-9._]}$}.}
+    and names which do not comply to R's variable name restrictions. As regular expression, this is
+    \dQuote{^\[.\]*\[a-zA-Z\]+\[a-zA-Z0-9._\]*$}.}
 \item{ids:}{Same as \dQuote{strict}, but does not enforce uniqueness.}
 }
 Note that for zero-length \code{x}, all these name checks evaluate to \code{TRUE}.}
@@ -69,15 +69,15 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 If the check is successful, the function
-\code{assert_names} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_names} throws an error message.
+ \code{assert_names} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_names} throws an error message.
 }
 \description{
 Performs assertions with various checks on character vectors, usually names.
 }
 \details{
 The assertions are based on \code{checkmate::checkNames}. \code{NVIcheckmate::assert_names}
-differs from \code{checkmate::assert_names} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_names} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 }

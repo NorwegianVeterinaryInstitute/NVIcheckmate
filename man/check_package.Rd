@@ -42,16 +42,16 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_package} return \code{x} invisibly, whereas
-\code{check_package} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_package} throws an error message and
-\code{check_package} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_package} return \code{x} invisibly, whereas
+ \code{check_package} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_package} throws an error message and 
+ \code{check_package} returns a string with the error message.
 }
 \description{
 Check if a package is installed and if it is installed, check if the version is equal
-to or higher than the required version or check if a package is attached.
+    to or higher than the required version or check if a package is attached.
 }
 \examples{
 # returns TRUE i.e. no error message

@@ -10,7 +10,7 @@ check_non_null(x)
 assert_non_null(x, .var.name = checkmate::vname(x), comment = NULL, add = NULL)
 }
 \arguments{
-\item{x}{[any]\cr
+\item{x}{[\code{any}]\cr
 List with objects to check.}
 
 \item{.var.name}{[\code{character(1)}]\cr
@@ -25,19 +25,19 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_non_null} return \code{x} invisibly, whereas
-\code{check_non_null} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_non_null} throws an error message and
-\code{check_non_null} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_non_null} return \code{x} invisibly, whereas
+ \code{check_non_null} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_non_null} throws an error message and 
+ \code{check_non_null} returns a string with the error message.
 }
 \description{
 Check whether two or more arguments that may replace each other are NULL or NA.
 }
 \details{
 In some functions, one argument may replace another. The check is used to ensure that at
-least on of the arguments have a value. Specific checks for each argument should be used in addition.
+    least on of the arguments have a value. Specific checks for each argument should be used in addition.
 }
 \examples{
 data <- NULL

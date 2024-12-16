@@ -56,23 +56,23 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_choice_character} return \code{x} invisibly, whereas
-\code{check_choice_character} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_choice_character} throws an error message and
-\code{check_choice_character} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_choice_character} return \code{x} invisibly, whereas
+ \code{check_choice_character} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_choice_character} throws an error message and 
+ \code{check_choice_character} returns a string with the error message.
 }
 \description{
 Check if an object is an element of a given set in
-the object name. The function is based on \code{checkmate::check_choice},
-but includes the argument \code{ignore.case}.
+    the object name. The function is based on \code{checkmate::check_choice},
+    but includes the argument \code{ignore.case}.
 }
 \details{
 The object must be of type character. The check is intended
-for functions were using camelCase may make the argument easier
-to remember. Therefore, the function will ignore case if
-\code{ignore.case = TRUE}.
+    for functions were using camelCase may make the argument easier
+    to remember. Therefore, the function will ignore case if
+    \code{ignore.case = TRUE}.
 }
 \examples{
 # returns TRUE
