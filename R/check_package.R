@@ -4,15 +4,14 @@
 #'
 #' @templateVar fn package
 #' @template x
-#' @param version \[character(1)\]\cr
+#' @param version [character(1)]\cr
 #'     The required version of the installed package. May be \code{NULL}.
-#' @param type \[character(1)\]\cr
+#' @param type [character(1)]\cr
 #'  Type of formal check(s) to perform on the package.
 #'  \describe{
 #'  \item{installed:}{Checks if \code{x} is installed.}
 #'  \item{attached:}{Checks if \code{x} is attached.}
 #'  }
-
 #' @template checker
 #' @export
 #' @examples

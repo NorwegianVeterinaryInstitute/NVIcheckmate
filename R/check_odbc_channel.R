@@ -8,9 +8,9 @@
 #'
 #' @templateVar fn odbc_channel
 #' @template x
-#' @param dbservice \[character(1)\]\cr
+#' @param dbservice [character(1)]\cr
 #'     The database the channel should be connect to.
-#' @param dbinterface \[character(1)\]\cr
+#' @param dbinterface [character(1)]\cr
 #'     The R-package that is used for interface towards the data
 #'     base. Defaults to \code{NULL}.
 #' @template checker

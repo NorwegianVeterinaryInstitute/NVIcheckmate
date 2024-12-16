@@ -10,10 +10,10 @@
 #'
 #' @templateVar fn choice_character
 #' @template x
-#' @param choices \[\code{character}\]\cr
+#' @param choices [\code{character}]\cr
 #'    Set of possible values.
 #' @template null.ok
-#' @param ignore.case \[\code{logical(1)}\]\cr
+#' @param ignore.case [\code{logical(1)}]\cr
 #'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
 #' @template fmatch
 #' @template checker
