@@ -5,8 +5,6 @@
 # All rights reserved.
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
-# Modifications
-# - Square brackets in help text are escaped
 #
 #' Combine multiple checks into one assertion
 #'

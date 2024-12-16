@@ -6,7 +6,6 @@
 #
 # The file has been imported from https://github.com/mllg/checkmate/
 # Modifications
-# - Escaped square brackets in help text
 # - Included @details
 # - Corrected to names in @templateVar
 # - Wrote a short version of @return in stead of using template

@@ -4,8 +4,6 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
-# Modifications
-# - Square brackets are escaped
 #' 
 #' @param typed.missing [\code{logical(1)}]\cr
 #'  If set to \code{FALSE} (default), all types of missing values (\code{NA}, \code{NA_integer_},

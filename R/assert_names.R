@@ -6,7 +6,6 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
-# - Escaped square brackets in help text
 # - Included @details
 # - Corrected to names in @templateVar
 # - Corrected to disjunct.from in @param disjunct.from

@@ -5,7 +5,6 @@
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
 # Modifications
-# - Square brackets are escaped
 # - Includes argument comment
 #' 
 #' @param .var.name [\code{character(1)}]\cr

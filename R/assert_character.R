@@ -6,7 +6,6 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
-# - Escaped square brackets in help text
 # - Included @details
 # - Wrote a short version of @return in stead of using template
 # - Use @rdname assert_character

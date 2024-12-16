@@ -4,8 +4,6 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
-# Modifications
-# - Square brackets are escaped
 #' 
 #' @param check.fun [\code{function}]
 #'  Function which checks the input. Must return \code{TRUE} on success and a string with the error message otherwise.

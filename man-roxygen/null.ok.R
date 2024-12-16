@@ -4,8 +4,6 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
-# Modifications
-# - Square brackets are escaped
 #' 
 #' @param null.ok [\code{logical(1)}]\cr
 #'  If set to \code{TRUE}, \code{x} may also be \code{NULL}.

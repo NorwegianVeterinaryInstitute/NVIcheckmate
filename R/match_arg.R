@@ -9,7 +9,6 @@
 # The file has been imported from
 #    https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fgihub.com%2fmllg%2fcheckmate%2fR%2f&umid=5711e6e8-6122-4eba-99ce-c61fbc457186&auth=004f5606958fa2bf5d6199a524a3177448fdaa2d-13efb903a571b4c22cdde09383725f7bdd4c9fa8
 # Modifications
-# - Escaped square brackets in help text.
 # - Included @details.
 # - Use @rdname match_arg.
 # - Rewritten to use \code{\link[base]{grep}} for partial matching instead of \code{\link[base]{pmatch}}.
@@ -36,13 +35,13 @@
 #'     \code{length(x)} == 1 and that \code{x} matches one and only one
 #'     value in \code{choices}.
 #'
-#' @param x \[character\]\cr
+#' @param x [character]\cr
 #'  User provided argument to match.
-#' @param choices \[character()\]\cr
+#' @param choices [character]\cr
 #'  Candidates to match \code{x} with.
-#' @param several.ok \[logical(1)\]\cr
+#' @param several.ok [logical(1)]\cr
 #'  If \code{TRUE}, \code{x} should be allowed to have more than one element.
-#' @param ignore.case \[\code{logical(1)}\]\cr
+#' @param ignore.case [\code{logical(1)}]\cr
 #'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
 #' @template assert
 #' @return Character vector with subset of \code{choices}.
