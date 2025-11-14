@@ -1,5 +1,5 @@
 # CREATE, DOCUMENT, TEST AND INSTALL THE PACKAGE
-# develop.r v2024-05-24
+# develop.r v2025-11-10
 # NVIpackager::update_develop() # Update this file from template in NVIpackager
 
 # SET UP R ENVIRONMENT ----
@@ -14,13 +14,13 @@ pkg_path = usethis::proj_path()
 pkg <- tail(strsplit(normalizePath(pkg_path, winslash = "/"), split = "/")[[1]], 1)
 
 # CREATE PACKAGE SKELETON ----
-# create_NVIpkg_skeleton(license_keyword = "BSD_3_clause") # BSD_3_clause # CC BY 4.0
+# create_NVIpkg_skeleton(license_keyword = "Apache-2.0") # Apache-2.0, BSD_3_clause # CC BY 4.0
 
 # INCREASE PACKAGE VERSION IN DESCRIPTION AND NEWS ----
 # NVIpackager::increase_NVIpkg_version(pkg = pkg,
-#                                   pkg_path = pkg_path,
-#                                   type = "develop",
-#                                   document = FALSE)
+#                                      pkg_path = pkg_path,
+#                                      type = "develop",
+#                                      document = FALSE)
 
 # UPDATE LICENSE WITH COPYRIGHT YEAR ----
 # NVIpackager::update_license(pkg = pkg,
@@ -74,7 +74,8 @@ NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "local")
 # NVIpackager::install_NVIpkg(pkg = pkg, pkg_path = pkg_path, rsource = "github", username = "NorwegianVeterinaryInstitute")
 #
 # # # Install from source file in catalog "NVIverse"
-# utils::install.packages(pkgs = paste0(NVIconfig:::path_NVI["NVIverse"], "/", pkg, "/Arkiv/", pkg, "_", version, ".tar.gz"),
+# utils::install.packages(pkgs = file.path(NVIconfig:::path_NVI["NVIverse"], pkg, "Releases",
+#                                          paste0(pkg, "_", version, ".tar.gz")),
 #                         repos = NULL,
 #                         type = "source")
 #
@@ -89,8 +90,9 @@ library(package = pkg, character.only = TRUE)
 
 # MANUAL CHECK OF SCRIPTS ----
 # Search for string
-txt <- "\\.data\\$"   # \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
-files_with_pattern <- findInFiles::findInFiles(ext = "R", pattern = txt, output = "tibble")
+library(findInFiles)
+txt <- "submit"   # submit, \\.data\\$, dplyr, stringi, %>%, [æøåÆØÅ]
+files_with_pattern <- findInFiles::findInFiles(extensions = c("R", "Rmd"), pattern = txt, output = "tibble")
 files_with_pattern <- findInFiles::FIF2dataframe(files_with_pattern)
 package <- rep(pkg, dim(files_with_pattern)[1])
 files_with_pattern <- cbind(package, files_with_pattern)
