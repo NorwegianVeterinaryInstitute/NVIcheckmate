@@ -10,12 +10,12 @@
 #'
 #' @templateVar fn subset_character
 #' @template x
-#' @param choices \[\code{character}\]\cr
+#' @param choices [\code{character}]\cr
 #'    Set of possible values. May be empty.
-#' @param empty.ok \[\code{logical(1)}\]\cr
+#' @param empty.ok [\code{logical(1)}]\cr
 #'    Treat zero-length \code{x} as subset of any set \code{choices} (this includes \code{NULL})?
 #'    Default is \code{TRUE}.
-#' @param ignore.case \[\code{logical(1)}\]\cr
+#' @param ignore.case [\code{logical(1)}]\cr
 #'    Case is ignored if \code{TRUE}. Default is \code{FALSE}.
 #' @template fmatch
 #' @template checker

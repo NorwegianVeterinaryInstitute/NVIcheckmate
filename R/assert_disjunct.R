@@ -6,7 +6,6 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
-# - Escaped square brackets in help text
 # - Included @details
 # - Corrected to names in @templateVar
 # - Corrected to disjunct.from in @param disjunct.from
@@ -24,7 +23,7 @@
 #'
 #' @templateVar fn disjunct
 #' @template x
-#' @param y \[atomic\]\cr
+#' @param y [atomic]\cr
 #'     Other set.
 #' @template fmatch
 #' @template assert

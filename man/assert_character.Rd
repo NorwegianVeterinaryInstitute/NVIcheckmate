@@ -94,17 +94,17 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 If the check is successful, the function
-\code{assert_character} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_character} throws an error message.
+ \code{assert_character} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_character} throws an error message.
 }
 \description{
 Performs assertions if an argument is a vector of type character.
 }
 \details{
 The assertions are based on \code{checkmate::checkCharacter}. \code{NVIcheckmate::assert_character}
-differs from \code{checkmate::assert_character} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_character} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 
 This function does not distinguish between
 \code{NA}, \code{NA_integer_}, \code{NA_real_}, \code{NA_complex_}

@@ -38,15 +38,15 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 If the check is successful, the function
-\code{assert_disjunct} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_disjunct} throws an error message.
+ \code{assert_disjunct} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_disjunct} throws an error message.
 }
 \description{
 Check if an argument is disjunct from a given set.
 }
 \details{
 The assertions are based on \code{checkmate::checkDisjunct}. \code{NVIcheckmate::assert_disjunct}
-differs from \code{checkmate::assert_disjunct} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_disjunct} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 }

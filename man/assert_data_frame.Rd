@@ -29,20 +29,20 @@ Object to check.}
 
 \item{types}{[\code{character}]\cr
 Character vector of class names. Each list element must inherit
-from at least one of the provided types. The types “logical”,
-“integer”, “integerish”, “double”, “numeric”, “complex”,
-“character”, “factor”, “atomic”, “vector” “atomicvector”,
-“array”, “matrix”, “list”, “function”, “environment” and
-“null” are supported. For other types inherits is used as a
-fallback to check x's inheritance. Defaults to character(0)
-(no check).}
+    from at least one of the provided types. The types “logical”,
+    “integer”, “integerish”, “double”, “numeric”, “complex”,
+    “character”, “factor”, “atomic”, “vector” “atomicvector”,
+    “array”, “matrix”, “list”, “function”, “environment” and
+    “null” are supported. For other types inherits is used as a
+    fallback to check x's inheritance. Defaults to character(0)
+    (no check).}
 
 \item{any.missing}{[\code{logical(1)}]\cr
 Are vectors with missing values allowed? Default is \code{TRUE}.}
 
 \item{all.missing}{[\code{logical(1)}]\cr
 Are vectors with no non-missing values allowed? Default is \code{TRUE}.
-Note that empty vectors do not have non-missing values.}
+    Note that empty vectors do not have non-missing values.}
 
 \item{min.rows}{[\code{integer(1)}]\cr
 Minimum number of rows.}
@@ -64,17 +64,17 @@ Exact number of columns.}
 
 \item{row.names}{[\code{character(1)}]\cr
 Check for row names. Default is “NULL” (no check). See
-\ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
-for possible values. Note that you can use
-\ifelse{html}{\code{\link[checkmate:check_subset]{checkmate::check_subset}}}{\code{checkmate::check_subset}}
-to check for a specific set of names.}
+    \ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
+    for possible values. Note that you can use
+    \ifelse{html}{\code{\link[checkmate:check_subset]{checkmate::check_subset}}}{\code{checkmate::check_subset}}
+    to check for a specific set of names.}
 
 \item{col.names}{[\code{character(1)}]\cr
 Check for column names. Default is “NULL” (no check). See
-\ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
-for possible values. Note that you can use
-\ifelse{html}{\code{\link[checkmate:check_subset]{checkmate::check_subset}}}{\code{checkmate::check_subset}}
-to test for a specific set of names.}
+    \ifelse{html}{\code{\link[checkmate:check_named]{checkmate::check_named}}}{\code{checkmate::check_named}}
+    for possible values. Note that you can use
+    \ifelse{html}{\code{\link[checkmate:check_subset]{checkmate::check_subset}}}{\code{checkmate::check_subset}}
+    to test for a specific set of names.}
 
 \item{null.ok}{[\code{logical(1)}]\cr
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.
@@ -92,28 +92,28 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_Integer} return \code{x} invisibly, whereas
-\code{check_Integer} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_Integer} throws an error message and
-\code{check_Integer} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_Integer} return \code{x} invisibly, whereas
+ \code{check_Integer} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_Integer} throws an error message and 
+ \code{check_Integer} returns a string with the error message.
 
 If the check is successful, the function
-\code{assert_data_frame} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_data_frame} throws an error message.
+ \code{assert_data_frame} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_data_frame} throws an error message.
 }
 \description{
 Check if an argument is vector of type data frame.
 }
 \details{
 The assertions are based on
-\ifelse{html}{\code{\link[checkmate:check_data_frame]{checkmate::check_data_frame}}}{\code{checkmate::check_data_frame}}.
-\code{NVIcheckmate::assert_data_frame} differs from
-\ifelse{html}{\code{\link[checkmate:check_data_frame]{checkmate::assert_data_frame}}}{\code{checkmate::assert_data_frame}}
-in including the argument \code{comment}. The help
-is updated to reflect the changes.
+    \ifelse{html}{\code{\link[checkmate:check_data_frame]{checkmate::check_data_frame}}}{\code{checkmate::check_data_frame}}.
+    \code{NVIcheckmate::assert_data_frame} differs from
+    \ifelse{html}{\code{\link[checkmate:check_data_frame]{checkmate::assert_data_frame}}}{\code{checkmate::assert_data_frame}}
+    in including the argument \code{comment}. The help
+    is updated to reflect the changes.
 
 This function does not distinguish between
 \code{NA}, \code{NA_integer_}, \code{NA_real_}, \code{NA_complex_}

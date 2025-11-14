@@ -82,25 +82,25 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_Integer} return \code{x} invisibly, whereas
-\code{check_Integer} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_Integer} throws an error message and
-\code{check_Integer} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_Integer} return \code{x} invisibly, whereas
+ \code{check_Integer} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_Integer} throws an error message and 
+ \code{check_Integer} returns a string with the error message.
 
 If the check is successful, the function
-\code{assert_integer} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_integer} throws an error message.
+ \code{assert_integer} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_integer} throws an error message.
 }
 \description{
 Check if an argument is vector of type integer.
 }
 \details{
 The assertions are based on \code{checkmate::checkInteger}. \code{NVIcheckmate::assert_integer}
-differs from \code{checkmate::assert_integer} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_integer} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 
 This function does not distinguish between
 \code{NA}, \code{NA_integer_}, \code{NA_real_}, \code{NA_complex_}
