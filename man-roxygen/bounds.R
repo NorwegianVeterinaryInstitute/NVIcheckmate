@@ -5,9 +5,9 @@
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
 # Modifications
-# - Square brackets are escaped
+# - none
 #' 
-#' @param lower \[\code{numeric(1)}\]\cr
+#' @param lower [\code{numeric(1)}]\cr
 #'  Lower value all elements of \code{x} must be greater than or equal to.
-#' @param upper \[\code{numeric(1)}\]\cr
+#' @param upper [\code{numeric(1)}]\cr
 #'  Upper value all elements of \code{x} must be lower than or equal to.
