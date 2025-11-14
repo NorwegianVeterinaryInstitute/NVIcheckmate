@@ -48,37 +48,66 @@ depreciated and thereafter removed from `NVIcheckmate`.
 
 # Installation
 
-`NVIcheckmate` is available at
-[GitHub](https://github.com/NorwegianVeterinaryInstitute). To install
-`NVIcheckmate` you will need:
+`NVIcheckmate` is available in package manager for workbench and at
+[GitHub](https://github.com/NorwegianVeterinaryInstitute). If needed,
+you can install the development version from the dev-branch at the
+GitHub repo, see below.
+
+#### Workbench
+
+To install `NVIcheckmate` on workbench, run the following code:
+
+    install.packages("NVIcheckmate")
+
+If you need changes that only are available in the development version,
+please make contact to the developers so that a new release can be
+published on Workbench.
+
+#### At personal computer
+
+You may install the package with or without vignettes. Although it will
+be easier to install without vignettes, it is recommended to install
+with vignettes for all `NVIverse` packages except
+`c("NVIrpackages", "NVIconfig")`.
+
+To install `NVIcheckmate` you will need:
 
 -   R version &gt; 4.1.0
 -   R package `remotes`
--   Rtools version 4.0, 4.2, 4.3 or 4.4 depending on R version
+-   Rtools version 4.0, 4.2, 4.3, 4.4 or 4.5 depending on R version
 
 First install and attach the `remotes` package.
 
     install.packages("remotes")
     library(remotes)
 
-To install (or update) the `NVIcheckmate` package without vignettes, run
-the following code:
+To install (or update) `NVIcheckmate` without vignettes, run the
+following code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = FALSE)
 
-To install (or update) the `NVIcheckmate` package with vignettes, you
-will need to first install some additional R-packages needed to build
-the vignettes. Check README below in the section [Vignettes](#vignettes)
-to see which vignettes are available. To install the package with the
-vignettes, first install the packages: `knitr`, `rmarkdown`, `R.rsp`,
-and `NVIrpackages` (from GitHub) if they are missing. If you don’t use
+To install (or update) `NVIcheckmate` with vignettes, you will need to
+first install some additional R-packages needed to build the vignettes.
+Check README below in the section [Vignettes](#vignettes) to see which
+vignettes are available. To install the package with the vignettes,
+first install the packages: `knitr`, `rmarkdown`, `R.rsp`, and
+`NVIrpackages` (from GitHub) if they are missing. If you don’t use
 R-studio, you will also need to install Pandoc. Then run the following
 code:
 
     remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
+        upgrade = FALSE,
+        build = TRUE,
+        build_vignettes = TRUE)
+
+To install (or update) the development version (dev-branch) of
+`NVIcheckmate` (with vignettes), run the following code:
+
+    remotes::install_github("NorwegianVeterinaryInstitute/NVIcheckmate",
+        ref = "dev",
         upgrade = FALSE,
         build = TRUE,
         build_vignettes = TRUE)
@@ -123,7 +152,7 @@ for information on new features, bug fixes and other changes.
 
 #### NVIcheckmate
 
-Copyright (c) 2021 - 2024 Norwegian Veterinary Institute.  
+Copyright (c) 2021 - 2025 Norwegian Veterinary Institute.  
 Licensed under the BSD\_3\_clause License. See
 [License](https://github.com/NorwegianVeterinaryInstitute/NVIcheckmate/blob/main/LICENSE)
 for details.
@@ -131,10 +160,10 @@ for details.
 Functions and code from `checkmate` have been imported into
 `NVIcheckmate`. For some of them, the code have been partly modified. An
 overwiew of the functional modifications are given in Table 2. In
-addition, some technical changes like escaping character, changing links
-and correcting typos have been performed. The modifications are listed
-in the respective source files. Code from `checkmate` are the copyright
-of the copyright holders of `checkmate`.
+addition, some technical changes like changing links and correcting
+typos have been performed. The modifications are listed in the
+respective source files. Code from `checkmate` are the copyright of the
+copyright holders of `checkmate`.
 
 #### checkmate
 
@@ -151,7 +180,7 @@ License: BSD 3-Clause
 <col style="width: 46%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th style="text-align: left;">Function</th>
 <th style="text-align: left;">Directory</th>
 <th style="text-align: left;">Description</th>
@@ -159,28 +188,28 @@ License: BSD 3-Clause
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Combines multiple checks into one
 assertion</td>
 <td style="text-align: left;">Includes the argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">mstopOrPush</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Internal function. Located in file
 assert.R</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">mstop</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Internal function. Located in file
 helper.R</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">makeAssertFunction.R</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Creates an assertion function from a check
@@ -188,7 +217,7 @@ function</td>
 <td style="text-align: left;">Adds the argument ‘comment’ when creating
 an assertion function</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">assert_character</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -196,14 +225,14 @@ character</td>
 <td style="text-align: left;">Based on checkCharacter and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">assert_data_frame</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a data frame</td>
 <td style="text-align: left;">Based on check_data_frame and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">assert_disjunct</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -211,7 +240,7 @@ character</td>
 <td style="text-align: left;">Based on checkDisjunct and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">assert_integer</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -219,7 +248,7 @@ integer</td>
 <td style="text-align: left;">Based on checkInteger and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">assert_integerish</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Check if an argument is a vector of type
@@ -227,7 +256,7 @@ intergish</td>
 <td style="text-align: left;">Based on checkIntegerish and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">assert_names</td>
 <td style="text-align: left;">./R</td>
 <td style="text-align: left;">Perform various checks on character
@@ -235,62 +264,62 @@ vectors, usually names</td>
 <td style="text-align: left;">Based on checkNames and includes the
 argument ‘comment’</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">assert.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">bounds.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">checker.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">Only included information on check_- and
 assert_-functions, the rest were removed</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">fmatch.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">makeFunction.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">na-handling.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">null.ok.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">sorted.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="odd">
+<tr>
 <td style="text-align: left;">typed.missing.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
 <td style="text-align: left;">None</td>
 </tr>
-<tr class="even">
+<tr>
 <td style="text-align: left;">x.R</td>
 <td style="text-align: left;">./man-roxygen</td>
 <td style="text-align: left;">help template</td>
