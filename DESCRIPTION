@@ -1,6 +1,6 @@
 Package: NVIcheckmate
 Title: Extension of checkmate with argument checking adapted for NVIverse
-Version: 0.7.3.9001
+Version: 0.8.0.9001
 Date: 2024-##-##
 Authors@R: 
     c(person(given = "Petter",
@@ -30,8 +30,8 @@ Imports:
     checkmate (>= 2.1.0),
     DBI,
     keyring
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+Roxygen: list(markdown = FALSE)
+RoxygenNote: 7.3.3
 Suggests: 
     covr,
     desc,
@@ -52,6 +52,7 @@ Remotes:
     NorwegianVeterinaryInstitute/NVIpackager,
     NorwegianVeterinaryInstitute/NVIrpackages,
 Collate: 
+    'NVIcheckmate-package.R'
     'assert.R'
     'makeAssertionFunction.R'
     'assert_character.R'
