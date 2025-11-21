@@ -23,8 +23,10 @@
 #' @template makeFunction
 #  @template use.namespace  # Removed argument use.namespace as checkmate:makeAssertion should always be used
 #' @param coerce [\code{logical(1)}]\cr
-#'  If \code{TRUE}, injects some lines of code to convert numeric values to integer after an successful assertion.
-#'  Currently used in \code{\link{assertCount}}, \code{\link{assertInt}} and \code{\link{assertIntegerish}}.
+#' If \code{TRUE}, injects some lines of code to convert numeric values to integer after an successful assertion.
+#'     Currently used in \code{\link[checkmate:assertCount]{assert_count}},
+#'     \code{\link[checkmate:assertInt]{assert_int}} and
+#'     \code{\link[checkmate:assertIntegerish]{assert_integerish}}.
 #' @export
 
 # Removed argument use.namespace as checkmate:makeAssertion should always be used

@@ -24,7 +24,7 @@
 #' @details This is an extensions to \code{\link[checkmate]{matchArg}} with support
 #'     for \code{ignore.case} and \code{comment}. \code{\link[checkmate]{matchArg}} is an
 #'     extension of \code{\link[base]{match.arg}}
-#'     with support for \code{\link{AssertCollection}}.
+#'     with support for \code{\link[checkmate:AssertCollection]{AssertCollection}}.
 #'     The behavior is very similar to \code{\link[base]{match.arg}}, with a few
 #'     exceptions:
 #' * \code{NULL} is not a valid value for \code{x}.

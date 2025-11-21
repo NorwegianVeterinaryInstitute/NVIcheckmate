@@ -22,7 +22,9 @@ Useful if \code{check.fun} is just a simple wrapper.}
 
 \item{coerce}{[\code{logical(1)}]\cr
 If \code{TRUE}, injects some lines of code to convert numeric values to integer after an successful assertion.
-Currently used in \code{\link{assertCount}}, \code{\link{assertInt}} and \code{\link{assertIntegerish}}.}
+    Currently used in \code{\link[checkmate:assertCount]{assert_count}},
+    \code{\link[checkmate:assertInt]{assert_int}} and
+    \code{\link[checkmate:assertIntegerish]{assert_integerish}}.}
 
 \item{env}{[\code{environment}]
 The environment of the created function. Default is the \code{parent.frame}, see \code{\link[base]{sys.parent}}.}

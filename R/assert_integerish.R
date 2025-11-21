@@ -41,9 +41,9 @@
 #'     Must all values be unique? Default is \code{FALSE}.
 #' @template sorted
 #' @param names [\code{character(1)}]\cr
-#'     Check for names. See \code{\link{checkNamed}} for possible values.
+#'     Check for names. See \code{\link[checkmate:checkNamed]{check_named}} for possible values.
 #'     Default is \dQuote{any} which performs no check at all.
-#'     Note that you can use \code{\link{checkSubset}} to check for a specific set of names.
+#'     Note that you can use \code{\link[checkmate:checkSubset]{check_subset}} to check for a specific set of names.
 #' @template typed.missing
 #' @template null.ok
 #' @template checker
