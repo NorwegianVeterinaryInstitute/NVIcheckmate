@@ -3,11 +3,20 @@
 \name{check_duplicate_rows}
 \alias{check_duplicate_rows}
 \alias{assert_duplicate_rows}
+\alias{warn_duplicate_rows}
 \title{Check if data has duplicate rows}
 \usage{
 check_duplicate_rows(x, group_var)
 
 assert_duplicate_rows(
+  x,
+  group_var,
+  .var.name = checkmate::vname(x),
+  comment = NULL,
+  add = NULL
+)
+
+warn_duplicate_rows(
   x,
   group_var,
   .var.name = checkmate::vname(x),

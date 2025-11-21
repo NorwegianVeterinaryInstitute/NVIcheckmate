@@ -73,3 +73,9 @@ check_duplicate_rows <- function(x, group_var) {
 #' @template assert
 #' @rdname check_duplicate_rows
 assert_duplicate_rows = makeAssertionFunction(check_duplicate_rows)
+
+#' @export
+#' @include makeWarningFunction.R
+#' @template assert
+#' @rdname check_duplicate_rows
+warn_duplicate_rows = makeWarningFunction(check_duplicate_rows)
