@@ -63,6 +63,7 @@ Collate:
     'assert_names.R'
     'check_choice_character.R'
     'check_credentials.R'
+    'makeWarningFunction.R'
     'check_duplicate_rows.R'
     'check_non_null.R'
     'check_odbc_channel.R'
