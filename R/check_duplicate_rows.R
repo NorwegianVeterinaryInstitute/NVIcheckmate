@@ -60,7 +60,7 @@ check_duplicate_rows <- function(x, group_var) {
     res <- paste0("The data: '", df_name,
                    "' has at least ",
                    nrow(duplicate_rows),
-                   " unique combinations of the group variables '",
+                   " unique combinations of the group variable(s) '",
                    paste(group_var, collapse = ', '), "' ",
                   " with more than one row per group variable compination")
   }
