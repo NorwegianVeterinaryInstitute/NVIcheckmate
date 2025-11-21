@@ -6,9 +6,14 @@
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
 # - Commented out all functions except mstop
+# - Created mwarn to create warning messages after mstop
 #
 mstop = function(msg, ..., call. = NULL) {
   stop(simpleError(sprintf(msg, ...), call.))
+}
+
+mwarn = function(msg, ..., call. = NULL) {
+  warning(simpleWarning(sprintf(msg, ...), call.))
 }
 
 # "%and%" = function(lhs, rhs) {
