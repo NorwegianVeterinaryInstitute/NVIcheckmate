@@ -42,11 +42,6 @@ If \code{TRUE}, injects some lines of code to convert numeric values to integer 
 
 \item{env}{[\code{environment}]
 The environment of the created function. Default is the \code{parent.frame}, see \code{\link[base]{sys.parent}}.}
-
-\item{collection}{[\code{\link[checkmate:AssertCollection]{AssertCollection}}]\cr
-If an \code{\link[checkmate:AssertCollection]{AssertCollection}} is provided, the error message is stored
-in it. If \code{NULL}, an exception is raised if \code{res} is not
-\code{TRUE}.}
 }
 \value{
 \code{makeAssertion} invisibly returns the checked object if the check was successful,

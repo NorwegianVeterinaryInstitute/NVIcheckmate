@@ -6,10 +6,12 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
+# - Rewritten to produce warning instead of assertion
 # - Included information on source and functional changes in @description.
 # - Included @details
 # - Removed use.namespace from help and function
-# - Included argument comment in created assert-functions.
+# - Removed collection from help and function
+# - Included argument comment in created warn-functions.
 #
 #' @title Turn a Check into an Assertion
 #' @description \code{makeAssertionFunction} can be used to automatically create
@@ -27,10 +29,6 @@
 #' @param var.name [\code{character(1)}]\cr
 #'  The custom name for \code{x} as passed to any \code{assert*} function.
 #'  Defaults to a heuristic name lookup.
-#' @param collection [\code{\link[checkmate:AssertCollection]{AssertCollection}}]\cr
-#'  If an \code{\link[checkmate:AssertCollection]{AssertCollection}} is provided, the error message is stored
-#'  in it. If \code{NULL}, an exception is raised if \code{res} is not
-#'  \code{TRUE}.
 #' @return \code{makeAssertion} invisibly returns the checked object if the check was successful,
 #'  and an exception is raised (or its message stored in the collection) otherwise.
 #'  \code{makeAssertionFunction} returns a \code{function}.
