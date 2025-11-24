@@ -26,7 +26,7 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Throws an error (or pushes the error message to an
-  \code{\link{AssertCollection}} if \code{add} is not \code{NULL})
+  \code{\link[checkmate:AssertCollection]{AssertCollection}} if \code{add} is not \code{NULL})
   if the checks fail and invisibly returns \code{TRUE} otherwise.
 }
 \description{

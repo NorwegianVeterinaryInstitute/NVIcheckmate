@@ -37,9 +37,9 @@
 #' @param unique [\code{logical(1)}]\cr
 #'  Must all values be unique? Default is \code{FALSE}.
 #' @param names [\code{character(1)}]\cr
-#'  Check for names. See \code{\link{checkNamed}} for possible values.
+#'  Check for names. See \code{\link[checkmate:checkNamed]{check_named}} for possible values.
 #'  Default is \dQuote{any} which performs no check at all.
-#'  Note that you can use \code{\link{checkSubset}} to check for a specific set of names.
+#'  Note that you can use \code{\link[checkmate:checkSubset]{check_subset}} to check for a specific set of names.
 #'
 #' @param n.chars [\code{integer(1)}]\cr
 #'  Exact number of characters for each element of \code{x}.

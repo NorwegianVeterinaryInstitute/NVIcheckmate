@@ -2,7 +2,9 @@
 
 ## New features:
 
--
+- Created `check_duplicate_rows`, `assert_duplicate_rows`, and `warn_duplicate_rows`.
+
+- Created `makeWarningFunction` and `makeWarning`.
 
 
 ## Bug fixes:

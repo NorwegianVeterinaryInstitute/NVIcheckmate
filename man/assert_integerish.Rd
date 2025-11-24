@@ -61,9 +61,9 @@ Must all values be unique? Default is \code{FALSE}.}
 Elements must be sorted in ascending order. Missing values are ignored.}
 
 \item{names}{[\code{character(1)}]\cr
-Check for names. See \code{\link{checkNamed}} for possible values.
+Check for names. See \code{\link[checkmate:checkNamed]{check_named}} for possible values.
 Default is \dQuote{any} which performs no check at all.
-Note that you can use \code{\link{checkSubset}} to check for a specific set of names.}
+Note that you can use \code{\link[checkmate:checkSubset]{check_subset}} to check for a specific set of names.}
 
 \item{typed.missing}{[\code{logical(1)}]\cr
 If set to \code{FALSE} (default), all types of missing values (\code{NA}, \code{NA_integer_},

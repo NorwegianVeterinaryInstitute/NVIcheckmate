@@ -4,6 +4,8 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
+# Modifications
+# - none
 #' 
 #' @param x [\code{any}]\cr
 #'  Object to check.

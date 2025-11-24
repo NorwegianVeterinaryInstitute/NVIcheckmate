@@ -4,6 +4,8 @@
 # All rights reserved.
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
+# Modifications
+# - none
 #' 
 #' @param lower [\code{numeric(1)}]\cr
 #'  Lower value all elements of \code{x} must be greater than or equal to.
