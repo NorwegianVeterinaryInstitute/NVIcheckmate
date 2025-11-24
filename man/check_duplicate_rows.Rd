@@ -46,10 +46,11 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 Depending on the function prefix:\cr
  If the check is successful, the function 
  \code{assert_duplicate_rows} return \code{x} invisibly, whereas
- \code{check_duplicate_rows} return \code{TRUE}.\cr
+ \code{warn_duplicate_rows} and \code{check_duplicate_rows} return \code{TRUE}.\cr
  If the check is not successful, 
- \code{assert_duplicate_rows} throws an error message and 
- \code{check_duplicate_rows} returns a string with the error message.
+ \code{assert_duplicate_rows} throws an error message, 
+ \code{warn_duplicate_rows} throws a warning message, and 
+ \code{check_duplicate_rows} returns a string with the error/warning message.
 }
 \description{
 Check if data has duplicate rows for one or more group variables.
@@ -58,12 +59,12 @@ Check if data has duplicate rows for one or more group variables.
 Used the check that the group variables can be a unique identifyer
     of rows in the data. The data can be data.frame, tibble or data.table.
 
-The function is mainly intended to be used to check data in scripts
-    transforming data. In particular, it is intended for use routine scripts
-    preparing data to avoid that there are more than one row for group
-    variables that should be unique, for example in data with
-    "prodnr8" properties where "prodnr8" is expected to by an unique id. This
-    can be important to avoid problems in for example joins/mergings.
+The \code{warn_duplicate_rows} is mainly intended to be used to check data in
+    routine scripts transforming data, but in a way that produce
+    a warning instead of an error to avoid that the script stop running. In
+    particular, it is intended to check data after steps where id's may have
+    been duplicated. This can be important to avoid problems with
+    joins/mergings in consecutive steps.
 }
 \examples{
 \dontrun{

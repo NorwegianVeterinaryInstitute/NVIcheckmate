@@ -3,18 +3,18 @@
 #' @details Used the check that the group variables can be a unique identifyer
 #'     of rows in the data. The data can be data.frame, tibble or data.table.
 #'
-#' The function is mainly intended to be used to check data in scripts
-#'     transforming data. In particular, it is intended for use routine scripts
-#'     preparing data to avoid that there are more than one row for group
-#'     variables that should be unique, for example in data with
-#'     "prodnr8" properties where "prodnr8" is expected to by an unique id. This
-#'     can be important to avoid problems in for example joins/mergings.
+#' The \code{warn_duplicate_rows} is mainly intended to be used to check data in
+#'     routine scripts transforming data, but in a way that produce
+#'     a warning instead of an error to avoid that the script stop running. In
+#'     particular, it is intended to check data after steps where id's may have
+#'     been duplicated. This can be important to avoid problems with
+#'     joins/mergings in consecutive steps.
 #' @templateVar fn duplicate_rows
 #' @template x
 #' @param group_var [\code{character}]\cr
 #' The variables in the data that should constitute an unique id. Defaults to
 #'     \code{NULL}.
-#' @template checker
+#' @template checker_with_warn
 #' @author Petter Hopp Petter.Hopp@@vetinst.no
 #' @export
 #' @examples
