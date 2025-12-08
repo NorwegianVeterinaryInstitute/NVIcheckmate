@@ -1,8 +1,6 @@
-# NVIcheckmate 0.9.0 - (2025-12-08)
+# NVIcheckmate 0.8.1 - (2025-12-08)
 
 ## New features:
-
-- Created `check_duplicate_rows`, `assert_duplicate_rows`, and `warn_duplicate_rows`.
 
 - Created `makeWarningFunction` and `makeWarning`.
 
