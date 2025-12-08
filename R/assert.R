@@ -5,8 +5,6 @@
 # All rights reserved.
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
-# Modifications
-# - Square brackets in help text are escaped
 #
 #' Combine multiple checks into one assertion
 #'
@@ -21,14 +19,14 @@
 #'     or \code{combine} is \dQuote{and} and all checks evaluate to \code{TRUE}.
 #'     Otherwise, \code{assert} throws an informative error message.
 #'
-#' @param ... \[any\]\cr
+#' @param ... [any]\cr
 #'  List of calls to check functions.
-#' @param combine \[\code{character(1)}\]\cr
+#' @param combine [\code{character(1)}]\cr
 #'  \dQuote{or} or \dQuote{and} to combine the check functions with an OR
 #'  or AND, respectively.
 #' @template assert
 #' @return Throws an error (or pushes the error message to an
-#'   \code{\link{AssertCollection}} if \code{add} is not \code{NULL})
+#'   \code{\link[checkmate:AssertCollection]{AssertCollection}} if \code{add} is not \code{NULL})
 #'   if the checks fail and invisibly returns \code{TRUE} otherwise.
 #' @export
 #' @examples

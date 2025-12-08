@@ -8,7 +8,7 @@ test_that("check_odbc_channel for package RODBC", {
   # skip if credentials for PJS is lacking
   skip_if_not(isTRUE(check_credentials("PJS")))
 
-  odbc_connection <- login_PJS(dbinterface = "RODBC")
+  odbc_connection <- login(dbservice = "PJS", dbinterface = "RODBC")
   expect_true(check_odbc_channel(odbc_connection, dbinterface = "RODBC"))
   RODBC::odbcClose(odbc_connection)
 })

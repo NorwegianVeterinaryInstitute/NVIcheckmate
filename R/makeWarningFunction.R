@@ -6,10 +6,12 @@
 #
 # The file has been imported from https://gihub.com/mllg/checkmate/R/
 # Modifications
+# - Rewritten to produce warning instead of assertion
 # - Included information on source and functional changes in @description.
 # - Included @details
 # - Removed use.namespace from help and function
-# - Included argument comment in created assert-functions.
+# - Removed collection from help and function
+# - Included argument comment in created warn-functions.
 #
 #' @title Turn a Check into an Assertion
 #' @description \code{makeAssertionFunction} can be used to automatically create
@@ -20,6 +22,49 @@
 #'     code is marked. The argument use.namespace is deleted as
 #'     \code{checkmate::makeAssertion} and \code{checkmate::vname} always should
 #'     be used.
+#' @template x
+#' @param res [\code{TRUE} | \code{character(1)}]\cr
+#'  The result of a check function: \code{TRUE} for successful checks,
+#'  and an error message as string otherwise.
+#' @param var.name [\code{character(1)}]\cr
+#'  The custom name for \code{x} as passed to any \code{assert*} function.
+#'  Defaults to a heuristic name lookup.
+#' @return \code{makeAssertion} invisibly returns the checked object if the check was successful,
+#'  and an exception is raised (or its message stored in the collection) otherwise.
+#'  \code{makeAssertionFunction} returns a \code{function}.
+#' @export
+
+#' @examples
+#' \dontrun{
+#' # Simple custom check function
+#' checkFalse = function(x) if (!identical(x, FALSE)) "Must be FALSE" else TRUE
+#'
+#' # Create the respective assert function
+#' assertFalse = function(x, .var.name = vname(x), add = NULL) {
+#'   res = checkFalse(x)
+#'   makeAssertion(x, res, .var.name, add)
+#' }
+#'
+#' # Alternative: Automatically create such a function
+#' assertFalse = makeAssertionFunction(checkFalse)
+#' print(assertFalse)
+#' }
+#'
+makeWarning = function(x, res, var.name) {
+# makeWarning = function(x, res, var.name, collection) {
+  if (!isTRUE(res)) {
+    checkmate::assert_string(var.name, .var.name = ".var.name")
+
+    # if (is.null(collection)) {
+      mwarn("Assertion on '%s' failed: %s.", var.name, res, call. = sys.call(-2L))
+    # }
+    # checkmate::assert_class(collection, "AssertCollection", .var.name = "add")
+    # collection$push(sprintf("Variable '%s': %s.", var.name, res))
+  }
+  return(invisible(x))
+}
+
+#' @rdname makeWarning
 #' @template makeFunction
 #  @template use.namespace  # Removed argument use.namespace as checkmate:makeAssertion should always be used
 #' @param coerce [\code{logical(1)}]\cr
@@ -28,10 +73,9 @@
 #'     \code{\link[checkmate:assertInt]{assert_int}} and
 #'     \code{\link[checkmate:assertIntegerish]{assert_integerish}}.
 #' @export
-
-# Removed argument use.namespace as checkmate:makeAssertion should always be used
+#'
+makeWarningFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = parent.frame()) {
 # makeAssertionFunction = function(check.fun, c.fun = NULL, use.namespace = TRUE, coerce = FALSE, env = parent.frame()) {
-makeAssertionFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = parent.frame()) {
   fun.name = if (is.character(check.fun)) check.fun else deparse(substitute(check.fun))
   check.fun = match.fun(check.fun)
   check.args = fun.args = formals(args(check.fun))
@@ -58,12 +102,13 @@ makeAssertionFunction = function(check.fun, c.fun = NULL, coerce = FALSE, env = 
   # if (use.namespace) {
   fun.args = c(fun.args, list(.var.name = bquote(checkmate::vname(.(as.name(x.name)))), comment = NULL, add = NULL))
   body = paste0(body, "; if (!isTRUE(res) & !is.null(comment)) {res = paste0(res, '. ', comment) }")
-  body = paste0(body, "; checkmate::makeAssertion")
+  body = paste0(body, "; makeWarning")
   # } else {
   #   fun.args = c(fun.args, list(.var.name = bquote(vname(.(as.name(x.name)))), add = NULL))
   #   body = paste0(body, "; makeAssertion")
   # }
-  body = paste0(body, sprintf("(%s, res, .var.name, add)", x.name))
+  body = paste0(body, sprintf("(%s, res, .var.name)", x.name))
+  # body = paste0(body, sprintf("(%s, res, .var.name, add)", x.name))
 
   if (coerce) {
     body = paste0(body, "; if (isTRUE(coerce) && is.double(x)) x = setNames(as.integer(round(x, 0L)), names(x)); invisible(x)")

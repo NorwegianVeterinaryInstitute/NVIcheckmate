@@ -5,7 +5,7 @@
 # 
 # The file has been imported from https://gihub.com/mllg/checkmate/man-roxygen/ 
 # Modifications
-# - Square brackets are escaped
+# - none
 #' 
-#' @param x \[\code{any}\]\cr
+#' @param x [\code{any}]\cr
 #'  Object to check.

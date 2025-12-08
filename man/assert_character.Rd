@@ -74,9 +74,9 @@ Must all values be unique? Default is \code{FALSE}.}
 Elements must be sorted in ascending order. Missing values are ignored.}
 
 \item{names}{[\code{character(1)}]\cr
-Check for names. See \code{\link{checkNamed}} for possible values.
+Check for names. See \code{\link[checkmate:checkNamed]{check_named}} for possible values.
 Default is \dQuote{any} which performs no check at all.
-Note that you can use \code{\link{checkSubset}} to check for a specific set of names.}
+Note that you can use \code{\link[checkmate:checkSubset]{check_subset}} to check for a specific set of names.}
 
 \item{null.ok}{[\code{logical(1)}]\cr
 If set to \code{TRUE}, \code{x} may also be \code{NULL}.
@@ -94,17 +94,17 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 If the check is successful, the function
-\code{assert_character} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_character} throws an error message.
+ \code{assert_character} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_character} throws an error message.
 }
 \description{
 Performs assertions if an argument is a vector of type character.
 }
 \details{
 The assertions are based on \code{checkmate::checkCharacter}. \code{NVIcheckmate::assert_character}
-differs from \code{checkmate::assert_character} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_character} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 
 This function does not distinguish between
 \code{NA}, \code{NA_integer_}, \code{NA_real_}, \code{NA_complex_}

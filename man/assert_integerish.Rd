@@ -61,9 +61,9 @@ Must all values be unique? Default is \code{FALSE}.}
 Elements must be sorted in ascending order. Missing values are ignored.}
 
 \item{names}{[\code{character(1)}]\cr
-Check for names. See \code{\link{checkNamed}} for possible values.
+Check for names. See \code{\link[checkmate:checkNamed]{check_named}} for possible values.
 Default is \dQuote{any} which performs no check at all.
-Note that you can use \code{\link{checkSubset}} to check for a specific set of names.}
+Note that you can use \code{\link[checkmate:checkSubset]{check_subset}} to check for a specific set of names.}
 
 \item{typed.missing}{[\code{logical(1)}]\cr
 If set to \code{FALSE} (default), all types of missing values (\code{NA}, \code{NA_integer_},
@@ -87,25 +87,25 @@ Collection to store assertions. See \code{\link[checkmate]{AssertCollection}}.}
 }
 \value{
 Depending on the function prefix:\cr
-If the check is successful, the function
-\code{assert_Integerish} return \code{x} invisibly, whereas
-\code{check_Integerish} return \code{TRUE}.\cr
-If the check is not successful,
-\code{assert_Integerish} throws an error message and
-\code{check_Integerish} returns a string with the error message.
+ If the check is successful, the function 
+ \code{assert_Integerish} return \code{x} invisibly, whereas
+ \code{check_Integerish} return \code{TRUE}.\cr
+ If the check is not successful, 
+ \code{assert_Integerish} throws an error message and 
+ \code{check_Integerish} returns a string with the error message.
 
 If the check is successful, the function
-\code{assert_integerish} return \code{x} invisibly.\cr
-If the check is not successful,
-\code{assert_integerish} throws an error message.
+ \code{assert_integerish} return \code{x} invisibly.\cr
+ If the check is not successful,
+ \code{assert_integerish} throws an error message.
 }
 \description{
 Check if an argument is vector of type integer.
 }
 \details{
 The assertions are based on \code{checkmate::checkIntegerish}. \code{NVIcheckmate::assert_integerish}
-differs from \code{checkmate::assert_integerish} in including the argument \code{comment = }. The help
-is updated to reflect the changes.
+    differs from \code{checkmate::assert_integerish} in including the argument \code{comment = }. The help
+    is updated to reflect the changes.
 
 This function does not distinguish between
 \code{NA}, \code{NA_integer_}, \code{NA_real_}, \code{NA_complex_}
