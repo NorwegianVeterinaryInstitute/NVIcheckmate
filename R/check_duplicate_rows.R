@@ -62,7 +62,7 @@ check_duplicate_rows <- function(x, group_var) {
                    nrow(duplicate_rows),
                    " unique combinations of the group variable(s) '",
                    paste(group_var, collapse = ', '), "' ",
-                  " with more than one row per group variable compination")
+                  " with more than one row per group variable combination")
   }
   return(res)
 }
