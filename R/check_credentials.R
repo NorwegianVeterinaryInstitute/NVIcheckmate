@@ -15,7 +15,7 @@ check_credentials <- function(x) {
   checkmate::assert_character(x = x, len = 1, add = checks)
   # Report check-results
   checkmate::reportAssertions(checks)
-  
+
   # PERFORM CHECK
   if (Sys.info()["sysname"] == "Windows") {
     if (!is.element(tolower(x), tolower(keyring::key_list()[, 1]))) {
@@ -27,7 +27,7 @@ check_credentials <- function(x) {
       res <- TRUE
     }
   }
-  
+
   if (Sys.info()["sysname"] == "Linux") {
     env_variables <- Sys.getenv()
     if (!any(grepl(paste0(x, ":"), names(env_variables), ignore.case = TRUE) == TRUE)) {
@@ -40,7 +40,7 @@ check_credentials <- function(x) {
       res <- TRUE
     }
   }
-  
+
   return(res)
 }
 

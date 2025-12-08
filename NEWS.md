@@ -1,4 +1,4 @@
-# NVIcheckmate 0.8.0.9001 - (2024-##-##)
+# NVIcheckmate 0.9.0 - (2025-12-08)
 
 ## New features:
 
@@ -7,19 +7,9 @@
 - Created `makeWarningFunction` and `makeWarning`.
 
 
-## Bug fixes:
-
--
-
-
 ## Other changes:
 
 - Standardised help for several functions.
-
-
-## BREAKING CHANGES:
-
--
 
 
 # NVIcheckmate 0.8.0 - (2024-12-13)
