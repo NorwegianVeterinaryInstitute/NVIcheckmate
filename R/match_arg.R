@@ -7,7 +7,7 @@
 # All rights reserved.
 #
 # The file has been imported from
-#    https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fgihub.com%2fmllg%2fcheckmate%2fR%2f&umid=5711e6e8-6122-4eba-99ce-c61fbc457186&auth=004f5606958fa2bf5d6199a524a3177448fdaa2d-13efb903a571b4c22cdde09383725f7bdd4c9fa8
+#    https://gihub.com/mllg/checkmate/R/
 # Modifications
 # - Included @details.
 # - Use @rdname match_arg.
